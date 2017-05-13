@@ -1,0 +1,86 @@
+<div class="text-tips">
+	<ctaf-cp-grid #agGrid></ctaf-cp-grid>
+
+	<monacoeditor language='html' height="50">
+		<![CDATA[
+<ctaf-cp-grid #agGrid></ctaf-cp-grid>
+		]]>
+	</monacoeditor>
+
+	<monacoeditor language='typescript' height="400">
+		<![CDATA[
+import { ViewChild, ChangeDetectorRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CTAFComponent, ComponentBase } from '@ctaf/framework';
+import { AgGridNg2Component, GridOptions } from '../../src/entry';
+
+@CTAFComponent({
+    templateUrl: 'from-template.component.html'
+})
+export class FromTemplateComponent extends ComponentBase {
+	private gridOptions: GridOptions = <GridOptions>{};
+
+    @ViewChild('agGrid') agGrid: AgGridNg2Component;
+
+    constructor(cdr: ChangeDetectorRef) {
+        super(cdr);
+    }
+
+    ngOnInit() {
+        this.agGrid.columnDefs = this.createColumnDefs();
+    }
+
+	private createColumnDefs() {
+        let columnDefs: any[] = [];
+
+        columnDefs = [
+            {
+                headerName: 'Row',
+                field: 'row'
+            },
+            {
+                headerName: 'Square Template1',
+                field: 'value',
+                cellRendererFramework: {
+                    template: '{{squareTemplate}}'
+                },
+                width: 100,
+                suppressSizeToFit: false
+            },
+            {
+                headerName: 'Currency Pipe Template',
+                field: 'value',
+                cellRendererFramework: {
+                    template: '{{currencyPipeTemplate}}',
+                    moduleImports: [ CommonModule ]
+                }
+            },
+            {
+                headerName: 'Row Params Template',
+                field: 'row',
+                cellRendererFramework: {
+					template: '{{rowParamsTemplate}}'
+                }
+            }
+        ];
+
+        return columnDefs;
+	}
+
+    private createRowData() {
+        let rowData: any[] = [];
+
+        for (let i = 0; i < 15; i++) {
+            rowData.push({
+                row: 'Row ' + i,
+                value: i,
+                percent: Math.random()
+            });
+        }
+
+        return rowData;
+	}
+}
+]]>
+	</monacoeditor>
+</div>

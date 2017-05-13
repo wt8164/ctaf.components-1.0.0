@@ -1,0 +1,124 @@
+<div class="text-tips">
+    <ctaf-cp-amchart #amChart type="serial" theme="light" [valueAxes]="valueAxes" [depth3D]="20" [angle]="30" [graphs]="graphs" categoryField="country" [categoryAxis]="categoryAxis" [chartCursor]="chartCursor" [dataProvider]="dataProvider"></ctaf-cp-amchart>
+    <monacoeditor language='html' height="40">
+        <![CDATA[
+<ctaf-cp-amchart #amChart type="serial" theme="light" [valueAxes]="valueAxes" [depth3D]="20" [angle]="30" [graphs]="graphs" categoryField="country" [categoryAxis]="categoryAxis" [chartCursor]="chartCursor" [dataProvider]="dataProvider"></ctaf-cp-amchart>
+    		]]>
+    </monacoeditor>
+    <monacoeditor language='typescript' height="400">
+        <![CDATA[
+import { Component, ViewChild } from '@angular/core';
+import { AmChartsComponent } from '../../src/entry';
+
+import * as _ from 'underscore';
+
+@Component({
+    templateUrl: './exporting-chart-to-image.component.html'
+})
+export class ExportingChartToImageComponent {
+    @ViewChild('amChart') amChart: AmChartsComponent;
+
+    valueAxes: any;
+    graphs: any;
+    categoryAxis: any;
+    dataProvider: any;
+    chartCursor: any;
+
+    ngOnInit() {
+        this.categoryAxis = {
+            'labelRotation': 90,
+            'gridPosition': 'start'
+        };
+
+        this.dataProvider = [{
+            'country': 'USA',
+            'visits': 4025,
+            'color': '#FF0F00'
+        }, {
+            'country': 'China',
+            'visits': 1882,
+            'color': '#FF6600'
+        }, {
+            'country': 'Japan',
+            'visits': 1809,
+            'color': '#FF9E01'
+        }, {
+            'country': 'Germany',
+            'visits': 1322,
+            'color': '#FCD202'
+        }, {
+            'country': 'UK',
+            'visits': 1122,
+            'color': '#F8FF01'
+        }, {
+            'country': 'France',
+            'visits': 1114,
+            'color': '#B0DE09'
+        }, {
+            'country': 'India',
+            'visits': 984,
+            'color': '#04D215'
+        }, {
+            'country': 'Spain',
+            'visits': 711,
+            'color': '#0D8ECF'
+        }, {
+            'country': 'Netherlands',
+            'visits': 665,
+            'color': '#0D52D1'
+        }, {
+            'country': 'Russia',
+            'visits': 580,
+            'color': '#2A0CD0'
+        }, {
+            'country': 'South Korea',
+            'visits': 443,
+            'color': '#8A0CCF'
+        }, {
+            'country': 'Canada',
+            'visits': 441,
+            'color': '#CD0D74'
+        }, {
+            'country': 'Brazil',
+            'visits': 395,
+            'color': '#754DEB'
+        }, {
+            'country': 'Italy',
+            'visits': 386,
+            'color': '#DDDDDD'
+        }, {
+            'country': 'Australia',
+            'visits': 384,
+            'color': '#999999'
+        }, {
+            'country': 'Taiwan',
+            'visits': 338,
+            'color': '#333333'
+        }, {
+            'country': 'Poland',
+            'visits': 328,
+            'color': '#000000'
+        }];
+
+        this.valueAxes = [{
+            'title': 'Visitors'
+        }];
+
+        this.graphs = [{
+            'valueField': 'visits',
+            'colorField': 'color',
+            'type': 'column',
+            'lineAlpha': 0.1,
+            'fillAlphas': 1
+        }];
+
+        this.chartCursor = {
+            'cursorAlpha': 0,
+            'zoomable': false,
+            'categoryBalloonEnabled': false
+        };
+    }
+}
+    		]]>
+    </monacoeditor>
+</div>

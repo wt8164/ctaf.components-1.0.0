@@ -1,0 +1,119 @@
+<div class="container text-info">
+
+    <h4 class="text-tips">禁用功能</h4>
+    <ctaf-cp-autocomplete [disabled]="true"></ctaf-cp-autocomplete>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-autocomplete [disabled]="true"></ctaf-cp-autocomplete>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">设置主题</h4>
+    <ctaf-cp-autocomplete style="primary"></ctaf-cp-autocomplete>
+    <ctaf-cp-autocomplete style="success"></ctaf-cp-autocomplete>
+    <ctaf-cp-autocomplete style="info"></ctaf-cp-autocomplete>
+    <ctaf-cp-autocomplete style="warning"></ctaf-cp-autocomplete>
+    <ctaf-cp-autocomplete style="danger"></ctaf-cp-autocomplete>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="150">
+            <![CDATA[
+<ctaf-cp-autocomplete style="primary"></ctaf-cp-autocomplete>
+<ctaf-cp-autocomplete style="success"></ctaf-cp-autocomplete>
+<ctaf-cp-autocomplete style="info"></ctaf-cp-autocomplete>
+<ctaf-cp-autocomplete style="warning"></ctaf-cp-autocomplete>
+<ctaf-cp-autocomplete style="danger"></ctaf-cp-autocomplete>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">设置大小</h4>
+    <ctaf-cp-autocomplete [size]="0" w="200"></ctaf-cp-autocomplete>
+    <ctaf-cp-autocomplete [size]="1" w="300"></ctaf-cp-autocomplete>
+    <ctaf-cp-autocomplete [size]="2" w="400"></ctaf-cp-autocomplete>
+    <ctaf-cp-autocomplete [size]="3" w="500"></ctaf-cp-autocomplete>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="100">
+            <![CDATA[
+<ctaf-cp-autocomplete [size]="0" w="200"></ctaf-cp-autocomplete>
+<ctaf-cp-autocomplete [size]="1" w="300"></ctaf-cp-autocomplete>
+<ctaf-cp-autocomplete [size]="2" w="400"></ctaf-cp-autocomplete>
+<ctaf-cp-autocomplete [size]="3" w="500"></ctaf-cp-autocomplete>
+            ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">设置标签文本</h4>
+    <ctaf-cp-autocomplete labelText="城市："></ctaf-cp-autocomplete>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-autocomplete labelText="城市："></ctaf-cp-autocomplete>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    
+    <h4 class="text-tips">设置数据源</h4>
+    <ctaf-cp-autocomplete [suggestions]="results" #acp (completeMethod)="search($event)"></ctaf-cp-autocomplete>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="200">
+            <![CDATA[
+<ctaf-cp-autocomplete [suggestions]="results" #acp (completeMethod)="search($event)"></ctaf-cp-autocomplete>
+
+//根据自己的接口来获取数据，赋值给results即可。
+@ViewChild('acp') acp: AutoCompleteComponent;
+private results: string[] = [];
+private mockDate2: string[] = [];
+search(event) {
+    this.mockDate2 = [];
+    for (let i: number = 0; i < 10; i++) {
+        this.mockDate2.push('abcd' + i);
+    }
+
+    let query: string = event.query;
+    this.results = [];    // 搜索结果清空
+    for (let i = 0; i < this.mockDate2.length; i++) {
+        if (query !== '' && this.mockDate2[i].indexOf(query) !== -1) {
+            this.results.push(this.mockDate2[i]);
+        }
+    }
+    this.acp.completeMethodSuccess(this.results);
+}
+            ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">设置查询 Delay 时间</h4>
+    <ctaf-cp-autocomplete [delay]="1000" [suggestions]="results" (completeMethod)="search($event)"></ctaf-cp-autocomplete>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-autocomplete [delay]="1000" [suggestions]="results" (completeMethod)="search($event)"></ctaf-cp-autocomplete>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">ngModel</h4>
+    <ctaf-cp-autocomplete [(ngModel)]="value1"></ctaf-cp-autocomplete> <!--[(value)]="value1"-->
+    <label>{{value1}}</label>
+    <ctaf-cp-button title="重新设置" (click)="clickHandler()"></ctaf-cp-button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="170">
+            <![CDATA[
+<ctaf-cp-autocomplete [(ngModel)]="nvalue" ></ctaf-cp-autocomplete>
+<label>{{nvalue}}</label>
+<ctaf-cp-button title="重新设置" (click)="clickHandler()"></ctaf-cp-button>
+
+private nvalue: string = '原始值';
+private clickHandler() {
+    this.nvalue = '改变值';
+}
+		    ]]>
+        </monacoeditor>
+    </div>
+
+
+</div>
+

@@ -1,0 +1,94 @@
+<div class="container text-info">
+    <h4 class="text-tips">mask模式设置</h4>
+    <ctaf-cp-maskedit mask="9a*9-9999"></ctaf-cp-maskedit>
+    <ctaf-cp-maskedit mask="999-99-9999"></ctaf-cp-maskedit>
+    <ctaf-cp-maskedit mask="99/9999/9999"></ctaf-cp-maskedit>
+    <ctaf-cp-maskedit mask="(99)-9999?"></ctaf-cp-maskedit>
+    <ctaf-cp-maskedit mask="a*-999-a999"></ctaf-cp-maskedit>
+    <ctaf-cp-maskedit mask="99-9999" slotChar=" "></ctaf-cp-maskedit>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="220">
+            <![CDATA[
+<!--            
+a - Alpha character (A-Z,a-z)
+9 - Numeric character (0-9)
+* - Alpha numberic character (A-Z,a-z,0-9)
+-->
+<ctaf-cp-maskedit mask="9a*9-9999"></ctaf-cp-maskedit>
+<ctaf-cp-maskedit mask="999-99-9999"></ctaf-cp-maskedit>
+<ctaf-cp-maskedit mask="99/9999/9999"></ctaf-cp-maskedit>
+<ctaf-cp-maskedit mask="(99)-9999?"></ctaf-cp-maskedit>
+<ctaf-cp-maskedit mask="a*-999-a999"></ctaf-cp-maskedit>
+<ctaf-cp-maskedit mask="99-9999"></ctaf-cp-maskedit>
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">禁用功能</h4>
+    <ctaf-cp-maskedit mask="999-99-9999" [disabled]=true></ctaf-cp-maskedit>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--[disabled]=true-->
+<ctaf-cp-maskedit mask="999-99-9999" [disabled]=true></ctaf-cp-maskedit>
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置主题</h4>
+    <ctaf-cp-maskedit mask="999-99-9999"></ctaf-cp-maskedit>
+    <ctaf-cp-maskedit mask="999-99-9999" Style="primary"></ctaf-cp-maskedit>
+    <ctaf-cp-maskedit mask="999-99-9999" Style="success"></ctaf-cp-maskedit>
+    <ctaf-cp-maskedit mask="999-99-9999" Style="info"></ctaf-cp-maskedit>
+    <ctaf-cp-maskedit mask="999-99-9999" Style="warning"></ctaf-cp-maskedit>
+    <ctaf-cp-maskedit mask="999-99-9999" Style="danger"></ctaf-cp-maskedit>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<ctaf-cp-maskedit mask="999-99-9999"></ctaf-cp-maskedit>
+<ctaf-cp-maskedit mask="999-99-9999" Style="primary"></ctaf-cp-maskedit>
+<ctaf-cp-maskedit mask="999-99-9999" Style="success"></ctaf-cp-maskedit>
+<ctaf-cp-maskedit mask="999-99-9999" Style="info"></ctaf-cp-maskedit>
+<ctaf-cp-maskedit mask="999-99-9999" Style="warning"></ctaf-cp-maskedit>
+<ctaf-cp-maskedit mask="999-99-9999" Style="danger"></ctaf-cp-maskedit>
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置大小</h4>
+    <ctaf-cp-maskedit mask="999-99-9999" [size]=10></ctaf-cp-maskedit>
+    <ctaf-cp-maskedit mask="999-99-9999" [size]=30></ctaf-cp-maskedit>
+    <ctaf-cp-maskedit mask="999-99-9999" [size]=50></ctaf-cp-maskedit>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="150">
+            <![CDATA[
+<!--[size]=10-->
+<ctaf-cp-maskedit mask="999-99-9999" [size]=10></ctaf-cp-maskedit>
+<!--[size]=30-->
+<ctaf-cp-maskedit mask="999-99-9999" [size]=30></ctaf-cp-maskedit>
+<!--[size]=50-->
+<ctaf-cp-maskedit mask="999-99-9999" [size]=50></ctaf-cp-maskedit>
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置标签文本</h4>
+    <ctaf-cp-maskedit mask="999-99-9999" labelText="test"></ctaf-cp-maskedit>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<ctaf-cp-maskedit mask="999-99-9999" labelText="test"></ctaf-cp-maskedit>
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">调用API</h4>
+    <ctaf-cp-maskedit mask="999-99999" [autoClear]=false (onComplete)="abc(test.value)" #test></ctaf-cp-maskedit>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="150">
+            <![CDATA[
+<ctaf-cp-maskedit mask="999-99999" [autoClear]=false (onComplete)="abc(test.value)" #test></ctaf-cp-maskedit>
+
+@ViewChild('test') test: MaskEditComponent;
+ngOnInit() {
+}
+abc(event) { console.log(this.test.input.value); };
+		    ]]>
+        </monacoeditor>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+    <h4 class="text-tips">CTAF ClientStorage Service</h4>
+
+    <div class="jumbtron">
+        <monacoeditor language='typescript' height="550">
+            <![CDATA[
+import { ChangeDetectorRef } from '@angular/core';
+import { CTAFComponent, WidgetBase, ComponentBase, Log } from '@ctaf/framework';
+import { WidgetPanelComponent, ComponentsModule } from '../../src/entry';
+
+@CTAFComponent({
+    selector: 'ctaf-wg-widget',
+    template: `
+        <ctaf-cp-widgetpanel title="Widget" [h]="h" [w]="w" [x]="x" [y]="y" height="100%">
+            
+        </ctaf-cp-widgetpanel>
+    `
+})
+export class DemoWidgetComponent extends WidgetBase {
+
+    constructor(protected cdr: ChangeDetectorRef, public translateservice: TranslateService) {
+        super(cdr, translateservice);
+
+        // 设置LocalStorage
+        this.clientStorageService.local.put('key', 'value', new Date('expireDate')?);
+        // 设置SessionStorage
+        this.clientStorageService.session.put('key', 'value', new Date('expireDate')?);
+
+        // 取LocalStorage
+        this.clientStorageService.local.get('key');
+        // 取SessionStorage
+        this.clientStorageService.session.get('key');
+    }
+}
+            ]]>
+        </monacoeditor>
+    </div>
+</div>

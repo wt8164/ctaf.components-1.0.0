@@ -1,0 +1,12 @@
+<div [ngClass]="classes">
+    <div class="checkbox-wrap">
+        <input type="checkbox" class="checkbox-input" [attr.checked]="state" [attr.disabled]="disabled" [attr.name]="name" [attr.value]="value" />
+        <div class="checkbox-insert" (click)="this._state=!this._state;clickTrigger($event)">
+            <i class="fa fa-check" *ngIf="state"></i>
+        </div>
+        <div class="checkbox-mark"></div>
+    </div>
+    <div class="detail">
+        <ng-content></ng-content>
+    </div>
+</div>

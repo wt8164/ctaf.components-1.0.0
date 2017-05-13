@@ -1,0 +1,27 @@
+<!-- Default panel contents -->
+<div class="panel-main">
+    <div class="panel-body">
+        <div *ngFor="let item of data" class="panel-group">
+            <div class="panel panel-primary">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{item.name}}" aria-expanded="true">
+                        {{item.name}}
+                        </a>
+                    </h4>
+                </div>
+                <div id="{{item.name}}" class="panel-collapse collapse in" role="tabpanel">
+                    <div class="panel-body">
+                        <ul>
+                            <li *ngFor="let child of item.children" class="nav nav-pills nav-stacked">
+                                <span>
+                                    <a [routerLink]="child.routerLink" routerLinkActive="active">{{child.name}}</a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+@import "../../less/variables.less";
+ctaf-cp-checkboxgroup {
+    display: inline-block;
+    .checkboxCtaf {
+        margin: 2px 0;
+    }
+    .checkboxgroup-style-primary .checkbox-wrap {
+        background: @brand-primary;
+        border: 2px solid @brand-primary;
+    }
+    .checkboxgroup-style-success .checkbox-wrap {
+        background: @brand-success;
+        border: 2px solid @brand-success;
+    }
+    .checkboxgroup-style-info .checkbox-wrap {
+        background: @brand-info;
+        border: 2px solid @brand-info;
+    }
+    .checkboxgroup-style-warning .checkbox-wrap {
+        background: @brand-warning;
+        border: 2px solid @brand-warning;
+    }
+    .checkboxgroup-style-danger .checkbox-wrap {
+        background: @brand-danger;
+        border: 2px solid @brand-danger;
+    }
+    .checkboxgroup-state-false .checkbox-wrap {
+        background: transparent;
+    }
+    .checkboxgroup-size-lg .checkbox-wrap {
+        width: @height-lg;
+        height: @height-lg;
+        .checkbox-insert {
+            line-height: @height-lg;
+            i {
+                font-size: 24px;
+            }
+        }
+    }
+    .checkboxgroup-size-md .checkbox-wrap {
+        width: @height-md;
+        height: @height-md;
+        .checkbox-insert {
+            line-height: @height-md;
+            i {
+                font-size: 18px;
+            }
+        }
+    }
+    .checkboxgroup-size-sm .checkbox-wrap {
+        width: @height-sm;
+        height: @height-sm;
+        .checkbox-insert {
+            line-height: @height-sm;
+            i {
+                font-size: 16px;
+            }
+        }
+    }
+    .checkboxgroup-size-xs .checkbox-wrap {
+        width: @height-xs;
+        height: @height-xs;
+        .checkbox-insert {
+            line-height: @height-xs - 4px;
+            i {
+                font-size: 14px;
+            }
+        }
+    }
+    .checkboxgroup-disabled-true .checkbox-mark {
+        display: block;
+        cursor: not-allowed;
+    }
+    .checkboxgroup-disabled-false .checkbox-mark {
+        display: none;
+    }
+    .checkboxgroup-block-true ctaf-cp-checkbox {
+        display: block;
+    }
+    .checkboxgroup-block-false ctaf-cp-checkbox {
+        display: inline-block;
+    }
+}

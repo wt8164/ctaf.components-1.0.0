@@ -1,0 +1,199 @@
+<div class="container text-info">
+    <h4 class="text-tips">style(设置主题)</h4>
+    <ctaf-cp-radioboxgroup style="danger">
+        <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox style="success">d</ctaf-cp-radiobox>
+    </ctaf-cp-radioboxgroup>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--可选参数为primary,success,info,warning,danger-->
+<!--整体style为danger,仍可设置单独的style-->
+<ctaf-cp-radioboxgroup style="danger">
+    <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox style="success">d</ctaf-cp-radiobox>
+</ctaf-cp-radioboxgroup>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">size(设置大小)</h4>
+    <ctaf-cp-radioboxgroup size="lg">
+        <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox size="xs">d</ctaf-cp-radiobox>
+    </ctaf-cp-radioboxgroup>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--可选参数为lg(超大),md(默认),sm(小号),xs(超小)-->
+<!--整体size为lg超大,仍可设置单独的size-->
+<ctaf-cp-radioboxgroup size="lg">
+    <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox size="xs">d</ctaf-cp-radiobox>
+</ctaf-cp-radioboxgroup>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">disabled(设置禁用)</h4>
+    <ctaf-cp-radioboxgroup [disabled]="false">
+        <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox [disabled]="true">d</ctaf-cp-radiobox>
+    </ctaf-cp-radioboxgroup>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--可选参数为true,false;默认为false-->
+<!--整体disabled状态为禁用,仍可设置单独的disabled-->
+<ctaf-cp-radioboxgroup [disabled]="true">
+    <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox [disabled]="false">d</ctaf-cp-radiobox>
+</ctaf-cp-radioboxgroup>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">name(遍历设置name属性)</h4>
+    <ctaf-cp-radioboxgroup [name]="radiobox1">
+        <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>d</ctaf-cp-radiobox>
+    </ctaf-cp-radioboxgroup>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--遍历设置radiobox name属性，默认为cid-->
+<ctaf-cp-radioboxgroup [name]="radiobox1">
+    <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>d</ctaf-cp-radiobox>
+</ctaf-cp-radioboxgroup>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">block(设置排列方式)</h4>
+    <ctaf-cp-radioboxgroup [block]="false">
+        <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>d</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>e</ctaf-cp-radiobox>
+    </ctaf-cp-radioboxgroup>
+    <br/>
+    <ctaf-cp-radioboxgroup [block]="true">
+        <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>d</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>e</ctaf-cp-radiobox>
+    </ctaf-cp-radioboxgroup>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="320">
+            <![CDATA[
+<!--可选参数为false,true;默认为false-->
+<!--行内元素排列（默认）-->
+<ctaf-cp-radioboxgroup [block]="false">
+    <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>d</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>e</ctaf-cp-radiobox>
+</ctaf-cp-radioboxgroup>
+<!--块状元素排列-->
+<ctaf-cp-radioboxgroup [block]="true">
+    <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>d</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>e</ctaf-cp-radiobox>
+</ctaf-cp-radioboxgroup>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">获取选中项value</h4>
+    <ctaf-cp-radioboxgroup #radioboxgroupval>
+        <ctaf-cp-radiobox value="aaa">a</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox value="bbb">b</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox value="ccc">c</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox value="ddd">d</ctaf-cp-radiobox>
+    </ctaf-cp-radioboxgroup>
+    <button (click)="alertVal($event);" style="color:#666;transform:translateY(-5px);">弹出选中项value</button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<ctaf-cp-radioboxgroup #radioboxgroupval>
+    <ctaf-cp-radiobox value="aaa">a</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox value="bbb">b</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox value="ccc">c</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox value="ddd">d</ctaf-cp-radiobox>
+</ctaf-cp-radioboxgroup>
+<button (click)="alertVal($event);">弹出选中项value</button>
+		    ]]>
+        </monacoeditor>
+        <monacoeditor language='typescript' height="200">
+            <![CDATA[
+@CTAFComponent({
+  templateUrl: 'radioboxgroup.html'
+})
+export class DemoRadioboxGroupComponent extends ComponentBase {
+  @ViewChild('radioboxgroupval') radioboxgroupval : RadioboxGroupComponent;
+  alertVal() {
+    alert(this.radioboxgroupval.arrVal);
+  }
+}
+]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">API Click</h4>
+    <ctaf-cp-radioboxgroup #radioboxgroup style="success">
+        <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+        <ctaf-cp-radiobox>d</ctaf-cp-radiobox>
+    </ctaf-cp-radioboxgroup>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<ctaf-cp-radioboxgroup #radioboxgroup style="success">
+    <ctaf-cp-radiobox>a</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>b</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>c</ctaf-cp-radiobox>
+    <ctaf-cp-radiobox>d</ctaf-cp-radiobox>
+</ctaf-cp-radioboxgroup>
+		    ]]>
+        </monacoeditor>
+        <monacoeditor language='typescript' height="200">
+            <![CDATA[
+@CTAFComponent({
+  templateUrl: 'radioboxgroup.html'
+})
+export class DemoRadioboxGroupComponent extends ComponentBase {
+  @ViewChild('radioboxgroup') radioboxgroup : RadioboxGroupComponent;
+
+  ngOnInit() {
+    this.radioboxgroup.click.subscribe((radioboxgroup: RadioboxGroupComponent) => {
+      alert(radioboxgroup.style);
+    });
+  }
+}
+]]>
+        </monacoeditor>
+    </div>
+</div>

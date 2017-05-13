@@ -1,0 +1,4 @@
+<div class="tabcontainer">
+    <ng-content *ngIf="!url"></ng-content>
+    <iframe *ngIf="!!url" [src]="safeUrl"></iframe>
+</div>

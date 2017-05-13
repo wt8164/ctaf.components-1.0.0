@@ -1,0 +1,5 @@
+<span [ngClass]="classes" (click)="outerClick($event)" [style.margin-right.px]="marginRight">
+        <input type="checkbox" (click)="innerClick($event)" *ngIf="showCheckbox" [(ngModel)]="checked"/>
+        <input type="hidden" value="{{text}}"/>
+        <span>{{text}}</span>
+</span>

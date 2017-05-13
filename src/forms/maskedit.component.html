@@ -1,0 +1,4 @@
+{{labelText}}<input [ngClass]="classes" pInputText type="text" [name]="name" [value]="value||''" [ngStyle]="style" [ngClass]="styleClass" [attr.placeholder]="placeholder" [attr.size]="size" [attr.maxlength]="maxlength" [attr.tabindex]="tabindex" [disabled]="disabled"
+    [readonly]="readonly" (focus)="onFocus($event)" (blur)="onBlur($event)" (keydown)="onKeyDown($event)" (keypress)="onKeyPress($event)" (input)="onInput($event)" (paste)="handleInputChange($event)" class="input-mask">
+
+<!--<label [style.width.px]="labelWidth">{{labelText}}</label>-->

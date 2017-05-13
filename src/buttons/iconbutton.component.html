@@ -1,0 +1,7 @@
+<span class="iconContainer">
+<i class="{{style}} fa {{icon}} fa-{{iconSize}}x" [style.cursor]="disabled ? 'no-drop' : 'pointer'" (click)="clickIcon($event)">
+    <span class="badge {{CornerPosition}} {{cornercolor}} {{textcolor}}" *ngIf="!!text">
+        {{text}}
+    </span>
+</i>
+</span>

@@ -1,0 +1,83 @@
+@import "../../less/variables.less";
+
+.btn-file{
+        height:inherit;
+        vertical-align: middle;
+        cursor: pointer;
+        margin-bottom: 0;
+        padding: 0 4px;
+        line-height: inherit;
+        font-weight: normal;
+        color: #eaeaea;
+        border-radius: 4px;
+        &[disabled]{
+            cursor: not-allowed;
+        }
+    }
+
+ctaf-cp-fileupload{
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
+    .size-0 {
+    height: @height-xs;
+    font-size: 11px;
+    line-height: @height-xs;
+    }
+    .size-1 {
+        height: @height-sm;
+        font-size: 11px;
+        line-height: @height-sm;
+    }
+    .size-2 {
+        height: @height-md;
+        font-size: 12px;
+        line-height: @height-md;
+    }
+    .size-3 {
+        height: @height-lg;
+        font-size: 15px;
+        line-height: @height-lg;
+    }
+
+
+    .txt-file{
+         height:inherit;
+         width:148px;
+         vertical-align: middle;
+         margin-right: 4px;
+         padding: 0 4px;
+         color: #000;
+    }
+    .fileField{
+        position:absolute;
+        top: 0;
+        height:inherit;
+        filter:alpha(opacity=0);
+        opacity: 0;
+        width:148px;vertical-align: middle;
+    }
+    .file-btn-primary{
+        background-color: #2a2c31;
+        .btn-file
+    }
+    .file-btn-success{
+        background-color: #39c77d;
+        .btn-file
+    }
+    .file-btn-info{
+        background-color: #3cade3;
+        .btn-file
+    }
+    .file-btn-warning{
+        background-color: #fec558;
+        color: #000;
+        .btn-file
+    }
+    .file-btn-danger{
+        background-color: #ff5148;
+        .btn-file
+    }
+}

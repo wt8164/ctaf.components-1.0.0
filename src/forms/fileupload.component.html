@@ -1,0 +1,5 @@
+<div [ngClass]='classes'>
+    <input type='text' name='textfield' class='txt-file' placeholder="点击按钮或拖动文件" disabled="true" [attr.value]="fileName" [style.width.px]="w" />
+    <input type="file" name="fileField" class="fileField" [attr.id]="cid" [attr.disabled]="disabled?'':null" (change)="filechange()" [style.width.px]="w" #qwe />
+    <label [attr.for]="cid" [attr.disabled]="disabled?'':null" [class]="_color">{{_text}}</label>
+</div>

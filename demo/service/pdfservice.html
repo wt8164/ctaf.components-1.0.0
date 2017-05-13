@@ -1,0 +1,31 @@
+<div class="container">
+    <h4 class="text-tips">CTAF PDF Service</h4>
+
+    <div class="jumbtron">
+        <monacoeditor language='typescript' height="450">
+            <![CDATA[
+import { ChangeDetectorRef } from '@angular/core';
+import { CTAFComponent, WidgetBase, ComponentBase, Log } from '@ctaf/framework';
+import { WidgetPanelComponent, ComponentsModule } from '../../src/entry';
+
+@CTAFComponent({
+    selector: 'ctaf-wg-widget',
+    template: `
+        <ctaf-cp-widgetpanel title="Widget" [h]="h" [w]="w" [x]="x" [y]="y" height="100%">
+            
+        </ctaf-cp-widgetpanel>
+    `
+})
+export class DemoWidgetComponent extends WidgetBase {
+
+    constructor(protected cdr: ChangeDetectorRef, public translateservice: TranslateService) {
+        super(cdr, translateservice);
+
+        //预览pdf
+        this.pdfService.preview('pdfpath');
+    }
+}
+            ]]>
+        </monacoeditor>
+    </div>
+</div>

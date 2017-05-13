@@ -1,0 +1,6 @@
+<ctaf-cp-formcontrol [ngClass]="classes" [require]="require" [labelText]="labelText" [width]="width" [size]="size" [labelWidth]="labelWidth">
+    <!--<span class="input-group-addon"><i class="fa fa-camera-retro"></i></span>-->
+    <span class="input-group-addon" *ngIf="prefix"><i *ngIf="prefix" class="fa fa-{{prefix}}"></i></span>
+    <ng-content></ng-content>
+    <span class="input-group-addon" *ngIf="suffix"><i *ngIf="suffix" class="fa fa-{{suffix}}"></i></span>
+</ctaf-cp-formcontrol>

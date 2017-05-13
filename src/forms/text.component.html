@@ -1,0 +1,5 @@
+<ctaf-cp-textualinput [prefix]="prefix" [labelText]="labelText" [labelWidth]="labelWidth" [suffix]="suffix" [ngClass]="classes" [size]="size" [require]="require">
+    <input title="{{showTooltip?value:null}}" type="text" [@routeAnimation]="routeAnimation" (focus)="focusHandler($event)" (blur)="blurHandler($event)" 
+        [disabled]="disabled" (change)="changeHandler($event)" [style.width.px]="w" (input)="inputHandler($event)" [(ngModel)]="value" placeholder="{{placeHolder}}" #ipt>
+    <span class="fa fa-remove" (click)="removeValue()" *ngIf="isWrong"></span>
+</ctaf-cp-textualinput>

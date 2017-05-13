@@ -1,0 +1,180 @@
+<div class="container text-info">
+    <h4 class="text-tips">style(设置主题)</h4>
+    <ctaf-cp-checkbox></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox style="primary"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox style="success"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox style="info"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox style="warning"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox style="danger"></ctaf-cp-checkbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="260">
+            <![CDATA[
+<!--默认-->
+<ctaf-cp-checkbox></ctaf-cp-checkbox>            
+<!--标准-->
+<ctaf-cp-checkbox style="primary"></ctaf-cp-checkbox>
+<!--成功-->
+<ctaf-cp-checkbox style="success"></ctaf-cp-checkbox>
+<!--信息-->
+<ctaf-cp-checkbox style="info"></ctaf-cp-checkbox>
+<!--提醒-->
+<ctaf-cp-checkbox style="warning"></ctaf-cp-checkbox>
+<!--危险-->
+<ctaf-cp-checkbox style="danger"></ctaf-cp-checkbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">size(设置大小)</h4>
+    <ctaf-cp-checkbox size="lg"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox size="md"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox size="sm"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox size="xs"></ctaf-cp-checkbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--超大-->
+<ctaf-cp-checkbox size="lg"></ctaf-cp-checkbox>
+<!--默认-->
+<ctaf-cp-checkbox size="md"></ctaf-cp-checkbox>
+<!--小号-->
+<ctaf-cp-checkbox size="sm"></ctaf-cp-checkbox>
+<!--超小-->
+<ctaf-cp-checkbox size="xs"></ctaf-cp-checkbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">state(设置状态)</h4>
+    <ctaf-cp-checkbox [state]="true"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox [state]="false"></ctaf-cp-checkbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--初始为选中状态-->
+<ctaf-cp-checkbox [state]="true"></ctaf-cp-checkbox>
+<!--初始为未选中状态-->
+<ctaf-cp-checkbox [state]="false"></ctaf-cp-checkbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">text(设置标题)</h4>
+    <ctaf-cp-checkbox>在这里可以写入文字</ctaf-cp-checkbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="40">
+            <![CDATA[
+<!--"后面跟文字"-->
+<ctaf-cp-checkbox>在这里可以写入文字</ctaf-cp-checkbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">disabled(禁用)</h4>
+    <ctaf-cp-checkbox [disabled]="true"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox [disabled]="true" [state]="fase"></ctaf-cp-checkbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--disabled选中状态-->
+<ctaf-cp-checkbox [disabled]="true"></ctaf-cp-checkbox>
+<!--disabled未选中状态-->
+<ctaf-cp-checkbox [disabled]="true" [state]="fase"></ctaf-cp-checkbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">name(定义表单元素name属性)</h4>
+    <ctaf-cp-checkbox name="check1"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox name="check1"></ctaf-cp-checkbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--定义name属性为"check1"-->
+<ctaf-cp-checkbox name="check1"></ctaf-cp-checkbox>
+<ctaf-cp-checkbox name="check1"></ctaf-cp-checkbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">设置value</h4>
+    <ctaf-cp-checkbox value="aaa"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox value="bbb"></ctaf-cp-checkbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--定义value属性为"aaa"-->
+<ctaf-cp-checkbox value="aaa"></ctaf-cp-checkbox>
+<!--定义value属性为"bbb"-->
+<ctaf-cp-checkbox value="bbb"></ctaf-cp-checkbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">ngModel绑定状态</h4>
+    <ctaf-cp-checkbox [(ngModel)]="state1"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox [(ngModel)]="state2"></ctaf-cp-checkbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<ctaf-cp-checkbox [(ngModel)]="state1"></ctaf-cp-checkbox>
+<ctaf-cp-checkbox [(ngModel)]="state2"></ctaf-cp-checkbox>
+		    ]]>
+        </monacoeditor>
+        <monacoeditor language='javascript' height="80">
+            <![CDATA[
+export class DemoCheckboxComponent extends ComponentBase {
+  public state1: boolean = false;
+  public state2: boolean = true;
+}
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">API Click</h4>
+    <ctaf-cp-checkbox value="aaa" #checkbox1></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox style="success" #checkbox2></ctaf-cp-checkbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<ctaf-cp-checkbox value="aaa" #checkbox1></ctaf-cp-checkbox>
+<ctaf-cp-checkbox style="success" #checkbox2></ctaf-cp-checkbox> 
+		    ]]>
+        </monacoeditor>
+        <monacoeditor language='typescript' height="260">
+            <![CDATA[
+@CTAFComponent({
+  templateUrl: 'checkbox.html'
+})
+export class DemoCheckboxComponent extends ComponentBase {
+  @ViewChild('checkbox1') checkbox1 : CheckboxComponent;
+  @ViewChild('checkbox2') checkbox2 : CheckboxComponent;
+
+  ngOnInit() {
+    this.checkbox1.click.subscribe((checkbox1: CheckboxComponent) => {
+      alert(checkbox1.value);
+    });
+
+    this.checkbox2.click.subscribe((checkbox2: CheckboxComponent) => {
+      alert(checkbox2.style);
+    });
+  } 
+}
+]]>
+        </monacoeditor>
+    </div>
+
+    <!--<h4 class="text-tips">block(块状元素独占一行显示)</h4>
+    <ctaf-cp-checkbox [block]="true"></ctaf-cp-checkbox>
+    <ctaf-cp-checkbox [block]="true"></ctaf-cp-checkbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[-->
+    <!--block-->
+    <!--<ctaf-cp-checkbox [block]="true"></ctaf-cp-checkbox>
+<ctaf-cp-checkbox [block]="true"></ctaf-cp-checkbox>
+		    ]]>
+        </monacoeditor>
+    </div>-->
+
+</div>

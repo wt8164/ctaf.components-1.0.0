@@ -1,0 +1,6 @@
+<button [ngClass]="classes" (click)="clickTrigger($event)" [attr.disabled]="disabled?'':null" [attr.title]="ttitle">
+    <i class="fa {{preIcon}} iconRight" *ngIf="preIcon" [ngClass]="{'iconRight':title}"></i>
+        {{title}}
+    <i class="fa {{afterIcon}}" *ngIf="afterIcon" [ngClass]="{'iconLeft':title}"></i>
+</button>
+<!--title="showTooltip=true?{{title}}:''"-->

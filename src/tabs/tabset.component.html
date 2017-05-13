@@ -1,0 +1,44 @@
+<div class="navWrap {{smallTitle?'smallTitle':''}}" #container>
+    <div class="nav-container">
+        <div class="nav-scroll">
+            <ul class="nav" [ngClass]="classMap" (click)="$event.preventDefault()">
+                <li *ngFor="let tabz of tabs" class="nav-item" [class.active]="tabz.active" [class.disabled]="tabz.disabled" (dblclick)="tabHeaderClick($event, tabz)">
+                    <a href class="nav-link" *ngIf="!tabz.editting" [class.active]="tabz.active" [class.disabled]="tabz.disabled" (click)="tabz.active = true">
+                        <span>{{tabz.heading}}</span>
+                        <span *ngIf="tabz.removable">
+                      <span (click)="$event.preventDefault(); removeTab($event,tabz);" class="glyphicon glyphicon-remove-circle"></span>
+                        </span>
+                    </a>
+                    <a href class="nav-link" *ngIf="!!tabz.editting">
+                        <input type="text" class="form-control" #editInput [(ngModel)]="tabz.headingInput" (blur)="inputBlur($event, tabz)" (keydown)="inputKeydown($event, tabz)" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-add">
+            <div class="btn-group navSelect">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+               <span class="caret"></span>
+              </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li *ngFor="let tabz of tabs" (click)="tabz.active = true;focusTab($event)"><a href="javascript:;">{{tabz.heading}}</a></li>
+                </ul>
+            </div>
+
+            <span class="glyphicon glyphicon-plus addTab" *ngIf="addHide" (click)="$event.preventDefault(); addTab($event);"></span>
+        </div>
+
+        <div>
+            <ng-content select="[headerLeft]"></ng-content>
+        </div>
+    </div>
+
+    <div class="iconbutton">
+        <ng-content select="[headerRight]"></ng-content>
+    </div>
+</div>
+
+<div class="tab-content {{smallTitle?'smallTitle':''}}">
+    <ng-content></ng-content>
+    <div #dynamicContentPlaceHolder></div>
+</div>

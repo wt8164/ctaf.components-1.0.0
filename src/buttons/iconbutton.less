@@ -1,0 +1,121 @@
+// @default:#e6e6e6;
+// @primary:#5ec1df;
+// @success:#5fb95f;
+// @info:#468dcb;
+// @warning:#f0af51;
+// @danger:#da5652;
+
+// @import "./button.less";
+
+ctaf-cp-iconbutton{
+    .iconContainer{
+        position: relative;
+    }
+
+    .badge{
+        position: absolute;
+        //background:#95A5A6; //角标背景颜色
+        //color:red;  角标字体的颜色
+        padding: 2px 5px;
+    }
+
+    .fa{
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+
+    // 角标4个位置的class样式
+    .right-top{
+        left: calc(100% - 24px);
+        bottom: calc(100% + 28px);
+    }
+    .right-bottom{
+        left: calc(100% - 24px);
+        bottom: -2px;
+    }
+    .left-top{
+        bottom: calc(100% + 28px);
+    }
+    .left-bottom{
+        bottom: -2px;
+    }
+
+    // icon的6种颜色
+    // .default{
+    //     color:@brand-white;
+    // }
+    .info{
+        color:@brand-info;
+    }
+    .success{
+        color:@brand-success;
+    }
+    .primary{
+        color:@brand-primary;
+    }
+    .warning{
+        color:@brand-warning;
+    }
+    .danger{
+        color:@brand-danger;
+    }
+
+    //角标颜色
+    .cornercolor-default{
+        background: #7F8C8D;
+    }
+    .cornercolor-primary{
+        background: @brand-primary;
+    }
+    .cornercolor-success{
+        background: @brand-success;
+    }
+    .cornercolor-info{
+        background: @brand-info;
+    }
+    .cornercolor-warning{
+        background: @brand-warning;
+    }
+    .cornercolor-danger{
+        background: @brand-danger;
+    }
+
+    //角标字体颜色
+    .textcolor-default{
+        color:#ECF0F1;
+    }
+    .textcolor-primary{
+        color:@brand-primary;
+    }
+    .textcolor-success{
+        color:@brand-success;
+    }
+    .textcolor-info{
+        color:@brand-info;
+    }
+    .textcolor-warning{
+        color:@brand-warning;
+    }
+    .textcolor-danger{
+        color:@brand-danger;
+    }
+
+    .fa-2x{
+        font-size: 16px;
+    }
+
+    .fa-3x{
+        font-size: 22px;
+    }
+
+    .fa-4x{
+        font-size: 28px;
+    }
+
+    .fa-5x{
+        font-size: 36px;
+    }
+}
+

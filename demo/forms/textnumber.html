@@ -1,0 +1,133 @@
+<div class="container text-info">
+    <h4 class="text-tips">默认</h4>
+    <ctaf-cp-textnumber></ctaf-cp-textnumber>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+                <!--默认-->
+<ctaf-cp-textnumber></ctaf-cp-textnumber>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">value</h4>
+    <ctaf-cp-textnumber value="13"></ctaf-cp-textnumber>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+                <!--默认-->
+<ctaf-cp-textnumber value="13"></ctaf-cp-textnumber>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">w</h4>
+    <ctaf-cp-textnumber w="300"></ctaf-cp-textnumber>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+            <!--宽度-->
+<ctaf-cp-textnumber w="300"></ctaf-cp-textnumber>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">设置左侧文字</h4>
+    <ctaf-cp-textnumber labelText="体重："></ctaf-cp-textnumber>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+            <!--前面可设置文字-->
+<ctaf-cp-textnumber labelText="左侧文字位置"></ctaf-cp-textnumber>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">设置提示信息</h4>
+    <ctaf-cp-textnumber [showTooltip]="true" ></ctaf-cp-textnumber>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-textnumber [showTooltip]="true" ></ctaf-cp-textnumber>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">preIcon</h4>
+    <ctaf-cp-textnumber preIcon="fa-user"></ctaf-cp-textnumber>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+            <!--前面icon-->
+<ctaf-cp-textnumber preIcon="fa-user"></ctaf-cp-textnumber>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">block</h4>
+    <ctaf-cp-textnumber block="true"></ctaf-cp-textnumber>
+    <ctaf-cp-textnumber block="true"></ctaf-cp-textnumber>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+            <!--block设置为true，默认在一行-->
+<ctaf-cp-textnumber block="true"></ctaf-cp-textnumber>
+<ctaf-cp-textnumber block="true"></ctaf-cp-textnumber>
+		    ]]>
+        </monacoeditor>
+    </div>
+    
+    <h4 class="text-tips">size</h4>
+    <ctaf-cp-textnumber size="lg" preIcon="fa-user"></ctaf-cp-textnumber>
+    <ctaf-cp-textnumber size="md" preIcon="fa-user"></ctaf-cp-textnumber>
+    <ctaf-cp-textnumber size="sm" preIcon="fa-user"></ctaf-cp-textnumber>
+    <ctaf-cp-textnumber size="xs" preIcon="fa-user" afterIcon="fa-user"></ctaf-cp-textnumber>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="170">
+            <![CDATA[
+            <!--超大-->
+<ctaf-cp-textnumber size="lg"></ctaf-cp-textnumber>
+<!--默认-->
+<ctaf-cp-textnumber size="md"></ctaf-cp-textnumber>
+<!--小号-->
+<ctaf-cp-textnumber size="sm"></ctaf-cp-textnumber>
+<!--超小-->
+<ctaf-cp-textnumber size="xs"></ctaf-cp-textnumber>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">格式化</h4>
+    <ctaf-cp-textnumber formatStr="0.0000"></ctaf-cp-textnumber>
+    <ctaf-cp-textnumber formatStr="0,0.000"></ctaf-cp-textnumber>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+            <!--block设置为true，默认在一行-->
+<ctaf-cp-textnumber formatStr="0.0000"></ctaf-cp-textnumber>
+<ctaf-cp-textnumber formatStr="0,0.000"></ctaf-cp-textnumber>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">ngModel</h4>
+    <ctaf-cp-textnumber [(ngModel)]="value1" ></ctaf-cp-textnumber>
+    <label>{{value1}}</label>
+    <ctaf-cp-button title="重新设置" (click)="clickHandler()"></ctaf-cp-button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="170">
+            <![CDATA[
+<ctaf-cp-textnumber [(ngModel)]="nvalue" ></ctaf-cp-textnumber>
+<label>{{nvalue}}</label>
+<ctaf-cp-button title="重新设置" (click)="clickHandler()"></ctaf-cp-button>
+
+private nvalue: number = 9;
+private clickHandler() {
+    this.nvalue = 4;
+}
+		    ]]>
+        </monacoeditor>
+    </div>
+    
+
+</div>

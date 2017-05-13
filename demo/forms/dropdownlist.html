@@ -1,0 +1,195 @@
+<div class="container text-info" style="color:#666;">
+    <h4 class="text-tips">options(设置数据源)</h4>
+    <ctaf-cp-dropdownlist [options]="options"></ctaf-cp-dropdownlist>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="30">
+            <![CDATA[
+<ctaf-cp-dropdownlist [options]="options"></ctaf-cp-dropdownlist>
+		    ]]>
+        </monacoeditor>
+        <monacoeditor language='javascript' height="40">
+            <![CDATA[
+export class DemoDropDownListComponent extends ComponentBase {
+    public options = [{ value: 'option1', text: 'AAA' }, { value: 'option2', text: 'BBB' }, { value: 'option3', text: 'CCC' }];
+}
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">style(设置主题)</h4>
+    <ctaf-cp-dropdownlist [options]="options"></ctaf-cp-dropdownlist>
+    <ctaf-cp-dropdownlist style="primary" [options]="options"></ctaf-cp-dropdownlist>
+    <ctaf-cp-dropdownlist style="success" [options]="options"></ctaf-cp-dropdownlist>
+    <ctaf-cp-dropdownlist style="info" [options]="options"></ctaf-cp-dropdownlist>
+    <ctaf-cp-dropdownlist style="warning" [options]="options"></ctaf-cp-dropdownlist>
+    <ctaf-cp-dropdownlist style="danger" [options]="options"></ctaf-cp-dropdownlist>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="240">
+            <![CDATA[
+<!--默认-->
+<ctaf-cp-dropdownlist [options]="options"></ctaf-cp-dropdownlist>
+<!--标准-->
+<ctaf-cp-dropdownlist style="primary" [options]="options"></ctaf-cp-dropdownlist>
+<!--成功-->
+<ctaf-cp-dropdownlist style="success" [options]="options"></ctaf-cp-dropdownlist>
+<!--信息-->
+<ctaf-cp-dropdownlist style="info" [options]="options"></ctaf-cp-dropdownlist>
+<!--提醒-->
+<ctaf-cp-dropdownlist style="warning" [options]="options"></ctaf-cp-dropdownlist>
+<!--危险-->
+<ctaf-cp-dropdownlist style="danger" [options]="options"></ctaf-cp-dropdownlist>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">size(设置大小)</h4>
+    <ctaf-cp-dropdownlist height="lg" [options]="options"></ctaf-cp-dropdownlist>
+    <ctaf-cp-dropdownlist height="md" [options]="options"></ctaf-cp-dropdownlist>
+    <ctaf-cp-dropdownlist height="sm" [options]="options"></ctaf-cp-dropdownlist>
+    <ctaf-cp-dropdownlist height="xs" [options]="options"></ctaf-cp-dropdownlist>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--超大-->
+<ctaf-cp-dropdownlist height="lg" [options]="options"></ctaf-cp-dropdownlist>
+<!--默认-->
+<ctaf-cp-dropdownlist height="md" [options]="options"></ctaf-cp-dropdownlist>
+<!--小号-->
+<ctaf-cp-dropdownlist height="sm" [options]="options"></ctaf-cp-dropdownlist>
+<!--超小-->
+<ctaf-cp-dropdownlist height="xs" [options]="options"></ctaf-cp-dropdownlist>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">multiple(支持多选)</h4>
+    <ctaf-cp-dropdownlist [options]="options"></ctaf-cp-dropdownlist>
+    <ctaf-cp-dropdownlist multiple="multiple" [options]="options"></ctaf-cp-dropdownlist>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="100">
+            <![CDATA[
+<!--默认单选-->
+<ctaf-cp-dropdownlist [options]="options"></ctaf-cp-dropdownlist>
+<!--可多选-->
+<ctaf-cp-dropdownlist multiple="multiple" [options]="options"></ctaf-cp-dropdownlist>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">disabled（禁用）</h4>
+    <ctaf-cp-dropdownlist [disabled]="true" [options]="options"></ctaf-cp-dropdownlist>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--禁用-->
+<ctaf-cp-dropdownlist [disabled]="true" [options]="options"></ctaf-cp-dropdownlist>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">number(显示选项行数，超出有滚动条)</h4>
+    <ctaf-cp-dropdownlist [number]="4" [options]="optionsMore"></ctaf-cp-dropdownlist>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="100">
+            <![CDATA[
+<!--"显示4行内容"-->
+<ctaf-cp-dropdownlist [number]="4" [options]="optionsMore"></ctaf-cp-dropdownlist>
+		    ]]>
+        </monacoeditor>
+        <monacoeditor language='javascript' height="100">
+            <![CDATA[
+export class DemoDropDownListComponent extends ComponentBase {
+    public optionsMore = [{ value: 'option1', text: 'AAA' }, { value: 'option2', text: 'BBB' }, { value: 'option3', text: 'CCC' }, { value: 'option4', text: 'Abb' }, { value: 'option5', text: 'BcB' }, { value: 'option6', text: 'abc' }, { value: 'option7', text: 'BcB' }, { value: 'option8', text: 'abc' }];
+}
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">showTooltip（显示提示信息）</h4>
+    <ctaf-cp-dropdownlist [options]="options"></ctaf-cp-dropdownlist>
+    <ctaf-cp-dropdownlist [showTooltip]="false" [options]="options"></ctaf-cp-dropdownlist>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="100">
+            <![CDATA[
+<!--默认状态下值为true，鼠标移上显示提示信息-->
+<ctaf-cp-dropdownlist [options]="options"></ctaf-cp-dropdownlist>
+<!--设为false，鼠标移上不显示提示信息-->
+<ctaf-cp-dropdownlist [showTooltip]="false" [options]="options"></ctaf-cp-dropdownlist>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">searchbox(搜索功能)</h4>
+    <ctaf-cp-dropdownlist [searchbox]="true" [options]="optionsMore"></ctaf-cp-dropdownlist>
+    <ctaf-cp-dropdownlist multiple="multiple" [searchbox]="true" [options]="optionsMore"></ctaf-cp-dropdownlist>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="100">
+            <![CDATA[
+<!--"单选下拉菜单搜索功能"-->
+<ctaf-cp-dropdownlist [searchbox]="true" [options]="optionsMore"></ctaf-cp-dropdownlist>         
+<!--"多选下拉菜单搜索功能"-->
+<ctaf-cp-dropdownlist multiple="multiple" [searchbox]="true" [options]="optionsMore"></ctaf-cp-dropdownlist>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">selectValue(设置初始选中值)</h4>
+    <ctaf-cp-dropdownlist [selectValue]="['option2']" [options]="options"></ctaf-cp-dropdownlist>
+    <ctaf-cp-dropdownlist multiple="multiple" [selectValue]="['option2','option3']" [options]="options"></ctaf-cp-dropdownlist>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--设置初始选中value值'option2'-->
+<ctaf-cp-dropdownlist [selectValue]="['option2']" [options]="options"></ctaf-cp-dropdownlist>
+<!--设置初始选中value值'['option2','option3']'-->
+<ctaf-cp-dropdownlist multiple="multiple" [selectValue]="['option2','option3']" [options]="options"></ctaf-cp-dropdownlist>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">提取选中value值</h4>
+    <ctaf-cp-dropdownlist #dropdownlist1 [options]="options"></ctaf-cp-dropdownlist>
+    <button (click)="alertval1()">弹出value</button>
+    <ctaf-cp-dropdownlist #dropdownlist2 multiple="multiple" [options]="options"></ctaf-cp-dropdownlist>
+    <button (click)="alertval2()">弹出value</button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="140">
+            <![CDATA[
+<!--单选下拉菜单弹出value值-->
+<ctaf-cp-dropdownlist #dropdownlist1 [options]="options"></ctaf-cp-dropdownlist>
+<button (click)="alertval1()">弹出value</button>            
+<!--多选下拉菜单弹出value值-->
+<ctaf-cp-dropdownlist #dropdownlist2 multiple="multiple" [options]="options"></ctaf-cp-dropdownlist>
+<button (click)="alertval2()">弹出value</button>
+        ]]>
+        </monacoeditor>
+        <monacoeditor language='html' height="140">
+            <![CDATA[
+import { CTAFComponent, ViewChild, AfterViewInit, AfterViewChecked, OnInit, Output, ComponentBase } from '@ctaf/framework';
+import { SelectComponent } from '../../src/entry';
+
+@CTAFComponent({
+    templateUrl: 'dropdownlist.html'
+})
+export class DemoSelectComponent extends ComponentBase {
+    @ViewChild('dropdownlist1') dropdownlist1: DropDownListComponent;
+    @ViewChild('dropdownlist2') dropdownlist2: DropDownListComponent;
+
+    public options = [{ value: 'option1', text: 'AAA' }, { value: 'option2', text: 'BBB' }, { value: 'option3', text: 'CCC' }];
+
+    @Output()
+    private alertval1() {
+        alert(this.dropdownlist1.val);
+    }
+
+    @Output()
+    private alertval2() {
+        alert(this.dropdownlist2.val);
+    }
+}
+
+	]]>
+        </monacoeditor>
+    </div>
+
+</div>

@@ -1,0 +1,214 @@
+<div class="container text-info">
+    <ctaf-cp-datetimepicker></ctaf-cp-datetimepicker>
+    <h4 class="text-tips">默认显示效果</h4>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!--默认显示效果-->
+<ctaf-cp-datetimepicker></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">禁用启用</h4>
+    <ctaf-cp-datetimepicker [disabled]=true></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!--禁用启用-->
+<ctaf-cp-datetimepicker [disabled]=true></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">readonly</h4>
+    <ctaf-cp-datetimepicker [readonlyInput]=true></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!--readonly-->
+<ctaf-cp-datetimepicker [readonlyInput]=true></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置主题</h4>
+    <ctaf-cp-datetimepicker></ctaf-cp-datetimepicker>
+    <ctaf-cp-datetimepicker Style="success"></ctaf-cp-datetimepicker>
+    <ctaf-cp-datetimepicker Style="info"></ctaf-cp-datetimepicker>
+    <ctaf-cp-datetimepicker Style="warning"></ctaf-cp-datetimepicker>
+    <ctaf-cp-datetimepicker Style="danger"></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="200">
+            <![CDATA[
+<!--默认-->
+<ctaf-cp-datetimepicker></ctaf-cp-datetimepicker>
+<!--success-->
+<ctaf-cp-datetimepicker Style="success"></ctaf-cp-datetimepicker>
+<!--info-->
+<ctaf-cp-datetimepicker Style="info"></ctaf-cp-datetimepicker>
+<!--warning-->
+<ctaf-cp-datetimepicker Style="warning"></ctaf-cp-datetimepicker>
+<!--danger-->
+<ctaf-cp-datetimepicker Style="danger"></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置大小</h4>
+    <ctaf-cp-datetimepicker [size]=50></ctaf-cp-datetimepicker>
+    <ctaf-cp-datetimepicker [size]=100></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!-- [size]=50-->
+<ctaf-cp-datetimepicker [size]=50></ctaf-cp-datetimepicker>
+<!-- [size]=100-->
+<ctaf-cp-datetimepicker [size]=100></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置标签文字</h4>
+    <ctaf-cp-datetimepicker labelText="text"></ctaf-cp-datetimepicker>
+    <ctaf-cp-datetimepicker [labelWidth]=100></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!--默认-->
+<ctaf-cp-datetimepicker [disabled]=true></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置默认日期时间</h4>
+    <!--<ctaf-cp-datetimepicker defaultDate="100/100/2011"></ctaf-cp-datetimepicker>-->
+    <ctaf-cp-datetimepicker [(ngModel)]='date'></ctaf-cp-datetimepicker>
+    <button class="text-dark" (click)="changedate()">修改value</button>
+    <ctaf-cp-datetimepicker [defaultDate]="defaultDate"></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="100">
+            <![CDATA[
+<!--设置默认日期时间-->
+<ctaf-cp-datetimepicker [(ngModel)]='date'></ctaf-cp-datetimepicker>
+<ctaf-cp-datetimepicker [defaultDate]="defaultDate"></ctaf-cp-datetimepicker>
+public date = new Date(2015, 10, 1);
+            ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">ngModel</h4>
+    <ctaf-cp-datetimepicker [(ngModel)]='value'></ctaf-cp-datetimepicker>{{value}}
+    <button class="text-dark" (click)="changevalue()">修改value</button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="100">
+            <![CDATA[
+<!--ngModel-->
+<ctaf-cp-datetimepicker [(ngModel)]='value'></ctaf-cp-datetimepicker>{{value}}
+<button class="text-dark" (click)="changevalue()">修改value</button>
+public value = new Date(2008, 8, 8);
+    changevalue() {
+        this.value = new Date(this.value.setDate(this.value.getDate() + 1));
+    }
+            ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置日期时间</h4>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!--默认-->
+<ctaf-cp-datetimepicker [disabled]=true></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置显示格式：年，月，日，小时分钟秒</h4>
+    <ctaf-cp-datetimepicker dateFormat="MM - month name long"></ctaf-cp-datetimepicker>
+    <ctaf-cp-datetimepicker dateFormat="mm/dd/yy"></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!--默认-->
+<ctaf-cp-datetimepicker dateFormat="MM - month name long"></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+    <!--<ctaf-cp-datetimepicker showTime="showTime" hourFormat="24"></ctaf-cp-datetimepicker>-->
+    <!--<ctaf-cp-datetimepicker [minDate]="minDateValue" [maxDate]="maxDateValue" readonlyInput="readonlyInput"></ctaf-cp-datetimepicker>-->
+    <!--<ctaf-cp-datetimepicker icon="fa fa-calendar"></ctaf-cp-datetimepicker>-->
+    <!--<ctaf-cp-datetimepicker [inline]="true"></ctaf-cp-datetimepicker>-->
+    <!--<ctaf-cp-datetimepicker [timeOnly]="true" showTime="showTime"></ctaf-cp-datetimepicker>-->
+    <!--<ctaf-cp-datetimepicker placeholder="test" showTime="showTime"></ctaf-cp-datetimepicker>-->
+    <!--<ctaf-cp-datetimepicker [yearNavigator]="true"></ctaf-cp-datetimepicker>-->
+    <h4 class="text-tips">minDate</h4>
+    <ctaf-cp-datetimepicker minDate="11-11-2016"></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!--minDate-->
+<ctaf-cp-datetimepicker minDate="11-11-2016"></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">maxDate</h4>
+    <ctaf-cp-datetimepicker maxDate="01/01/2017"></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!--maxDate-->
+<ctaf-cp-datetimepicker maxDate="01/01/2017"></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">yearNavigator&&monthNavigator</h4>
+    <ctaf-cp-datetimepicker [monthNavigator]=true></ctaf-cp-datetimepicker>
+    <ctaf-cp-datetimepicker [yearNavigator]=true></ctaf-cp-datetimepicker>
+    <ctaf-cp-datetimepicker [yearNavigator]=true [monthNavigator]=true>></ctaf-cp-datetimepicker>
+    <ctaf-cp-datetimepicker [yearNavigator]=true yearRange="1000:1500"></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="200">
+            <![CDATA[
+<!--monthNavigator,月份下拉选择功能-->
+<ctaf-cp-datetimepicker [monthNavigator]=true></ctaf-cp-datetimepicker>
+<!--monthNavigator,年份下拉选择功能-->
+<ctaf-cp-datetimepicker [yearNavigator]=true></ctaf-cp-datetimepicker>
+<!--年、月均设为可下拉-->
+<ctaf-cp-datetimepicker [yearNavigator]=true [monthNavigator]=true>></ctaf-cp-datetimepicker>
+<!--yearRange年份下拉范围自定义，默认为当前年至20年前-->
+<ctaf-cp-datetimepicker [yearNavigator]=true yearRange="1000:1500"></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">JustifyRight</h4>
+    <ctaf-cp-datetimepicker [JustifyRight]=true></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+
+<ctaf-cp-datetimepicker [JustifyRight]=true></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">appendTo</h4>
+    <ctaf-cp-datetimepicker appendTo="body"></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!--Target element to attach the overlay, valid values are "body" or a local template variable of another element-->
+<ctaf-cp-datetimepicker appendTo="body"></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">event</h4>
+    <ctaf-cp-datetimepicker (onSelect)="select($event)"></ctaf-cp-datetimepicker>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<ctaf-cp-datetimepicker (onSelect)="select($event)"></ctaf-cp-datetimepicker>
+            ]]>
+        </monacoeditor>
+    </div>
+</div>
+<!--showTime,显示当前时间-->
+<!--disabled,禁用-->
+<!--dateFormat,日期格式-->
+<!--hourFormat,24小时时间格式-->

@@ -1,0 +1,84 @@
+<div class="container text-info">
+    <h4 class="text-tips">默认</h4>
+    <ctaf-cp-loading></ctaf-cp-loading>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!--默认-->
+<ctaf-cp-loading></ctaf-cp-loading>
+		]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">overlay&&event</h4>
+    <button (click)="hide($event)" class="text-dark">hide</button>
+    <button (click)="show($event)" class="text-dark">show</button>
+    <ctaf-cp-loading #a [overlay]=false></ctaf-cp-loading>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="300">
+            <![CDATA[
+<!--overlay&&event-->
+<button (click)="hide($event)">hide</button>
+<button (click)="show($event)">show</button>
+<ctaf-cp-loading #a></ctaf-cp-loading>
+
+ts代码
+@ViewChild('a') a: LoadingComponent;
+    hide() {
+        this.a.hideOverlay();
+    }
+
+    show() {
+        this.a.showOverlay();
+    }
+		]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">tips</h4>
+    <ctaf-cp-loading tips="this is the tips of text"></ctaf-cp-loading>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--tips-->
+<ctaf-cp-loading tips="this is the tips of text"></ctaf-cp-loading>
+		]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">appendTo</h4>
+    <button (click)="set($event)" class="text-dark">appendTo</button>
+    <ctaf-cp-loading #c appendTo="body" [overlay]=false></ctaf-cp-loading>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="200">
+            <![CDATA[
+<!---->
+<button (click)="append($event)">appendTo</button>
+<ctaf-cp-loading #c appendTo="body" [overlay]=false></ctaf-cp-loading>
+ts代码
+@ViewChild('c') c: LoadingComponent;
+set() {
+        this.c.showOverlay();
+        setTimeout(() => {
+            this.c.hideOverlay();
+        }, 3000);
+    }
+		]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">appendTo ID</h4>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="200">
+            <![CDATA[
+<!---->
+<button (click)="append($event)">appendTo</button>
+<ctaf-cp-loading #c appendTo="body" [overlay]=false></ctaf-cp-loading>
+ts代码
+@ViewChild('append') appendTo: LoadingComponent;
+set() {
+        this.c.showOverlay();
+        setTimeout(() => {
+            this.c.hideOverlay();
+        }, 3000);
+    }
+		]]>
+        </monacoeditor>
+    </div>
+</div>

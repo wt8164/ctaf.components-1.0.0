@@ -1,0 +1,95 @@
+<div style='height:150px'>
+    <ctaf-wg-widget [h]="12" [w]="12" [x]="0" [y]="0"></ctaf-wg-widget>
+</div>
+
+<ctaf-cp-button (click)="a()" title='改变语言'></ctaf-cp-button>
+<br/>
+
+文件结构
+<div>
+<img src='./pathview.png' height="130px"/>
+</div>
+
+en.json
+<monacoeditor language='json' height="60">
+<![CDATA[
+{
+    "Hello Widget!": "Hello Widget!"
+}               
+]]>
+</monacoeditor>
+
+zh.json
+<monacoeditor language='json' height="60">
+<![CDATA[
+{
+    "Hello Widget!": "你好Widget！"
+}            
+]]>
+</monacoeditor>
+
+locales.ts
+<monacoeditor language='typescript' height="120">
+<![CDATA[
+let zh = require('./zh.json');
+let en = require('./en.json');
+
+export var locales = {
+    en: en,
+    zh: zh
+};
+]]>
+</monacoeditor>
+
+Widget.ts
+<monacoeditor language='typescript' height="300">
+<![CDATA[
+import { ChangeDetectorRef } from '@angular/core';
+
+import { CTAFComponent, WidgetBase, ComponentBase, PageService, TranslateService } from '@ctaf/framework';
+
+import { WidgetPanelComponent, ComponentsModule } from '../../src/entry';
+
+import { locales } from './locales/locales';
+
+@CTAFComponent({
+    selector: 'ctaf-wg-widget',
+    template: `
+        <ctaf-cp-widgetpanel title="Widget" [h]="h" [w]="w" [x]="x" [y]="y" height="100%">
+            \{\{"Hello Widget!" | translate\}\}
+        </ctaf-cp-widgetpanel>
+    `
+})
+export class DemoWidgetComponent extends WidgetBase {
+
+    constructor(protected cdr: ChangeDetectorRef, public translateservice: TranslateService) {
+        super(cdr, translateservice);
+    }
+
+    ngAfterViewInit() {
+
+    }
+
+    protected locales() {
+        return locales;
+    }
+}
+
+@CTAFComponent({
+    templateUrl: 'widgetMultiLanguage.html'
+})
+export class DemoWidgetMultiLanguage extends ComponentBase {
+    a() {
+        this.context.language = this.context.language === 'zh' ? 'en' : 'zh';
+    }
+}
+
+]]>
+</monacoeditor>
+
+widget 模板
+<monacoeditor language='html' height="20">
+<![CDATA[
+<ctaf-wg-widget [h]="12" [w]="12" [x]="0" [y]="0"></ctaf-wg-widget>             
+]]>
+</monacoeditor>

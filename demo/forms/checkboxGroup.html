@@ -1,0 +1,199 @@
+<div class="container text-info">
+    <h4 class="text-tips">style(设置主题)</h4>
+    <ctaf-cp-checkboxgroup style="danger">
+        <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox style="success">d</ctaf-cp-checkbox>
+    </ctaf-cp-checkboxgroup>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--可选参数为primary,success,info,warning,danger-->
+<!--整体style为danger,仍可设置单独的style-->
+<ctaf-cp-checkboxgroup style="danger">
+    <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox style="success">d</ctaf-cp-checkbox>
+</ctaf-cp-checkboxgroup>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">size(设置大小)</h4>
+    <ctaf-cp-checkboxgroup size="lg">
+        <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox size="xs">d</ctaf-cp-checkbox>
+    </ctaf-cp-checkboxgroup>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--可选参数为lg(超大),md(默认),sm(小号),xs(超小)-->
+<!--整体size为lg超大,仍可设置单独的size-->
+<ctaf-cp-checkboxgroup size="lg">
+    <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox size="xs">d</ctaf-cp-checkbox>
+</ctaf-cp-checkboxgroup>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">disabled(设置禁用)</h4>
+    <ctaf-cp-checkboxgroup [disabled]="false">
+        <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox [disabled]="true">d</ctaf-cp-checkbox>
+    </ctaf-cp-checkboxgroup>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--可选参数为true,false;默认为false-->
+<!--整体disabled状态为禁用,仍可设置单独的disabled-->
+<ctaf-cp-checkboxgroup [disabled]="true">
+    <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox [disabled]="false">d</ctaf-cp-checkbox>
+</ctaf-cp-checkboxgroup>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">name(遍历设置name属性)</h4>
+    <ctaf-cp-checkboxgroup [name]="checkbox1">
+        <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>d</ctaf-cp-checkbox>
+    </ctaf-cp-checkboxgroup>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--遍历设置checkbox name属性，默认为cid-->
+<ctaf-cp-checkboxgroup [name]="checkbox1">
+    <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>d</ctaf-cp-checkbox>
+</ctaf-cp-checkboxgroup>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">block(设置排列方式)</h4>
+    <ctaf-cp-checkboxgroup [block]="false">
+        <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>d</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>e</ctaf-cp-checkbox>
+    </ctaf-cp-checkboxgroup>
+    <br/>
+    <ctaf-cp-checkboxgroup [block]="true">
+        <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>d</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>e</ctaf-cp-checkbox>
+    </ctaf-cp-checkboxgroup>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="320">
+            <![CDATA[
+<!--可选参数为false,true;默认为false-->
+<!--行内元素排列（默认）-->
+<ctaf-cp-checkboxgroup [block]="false">
+    <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>d</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>e</ctaf-cp-checkbox>
+</ctaf-cp-checkboxgroup>
+<!--块状元素排列-->
+<ctaf-cp-checkboxgroup [block]="true">
+    <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>d</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>e</ctaf-cp-checkbox>
+</ctaf-cp-checkboxgroup>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">获取选中项value</h4>
+    <ctaf-cp-checkboxgroup #checkboxgroupval>
+        <ctaf-cp-checkbox value="aaa">a</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox value="bbb">b</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox value="ccc">c</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox value="ddd">d</ctaf-cp-checkbox>
+    </ctaf-cp-checkboxgroup>
+    <button (click)="alertVal($event);" style="color:#666;transform:translateY(-5px);">弹出选中项value</button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<ctaf-cp-checkboxgroup #checkboxgroupval>
+    <ctaf-cp-checkbox value="aaa">a</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox value="bbb">b</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox value="ccc">c</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox value="ddd">d</ctaf-cp-checkbox>
+</ctaf-cp-checkboxgroup>
+<button (click)="alertVal($event);">弹出选中项value</button>
+		    ]]>
+        </monacoeditor>
+        <monacoeditor language='typescript' height="200">
+            <![CDATA[
+@CTAFComponent({
+  templateUrl: 'checkboxgroup.html'
+})
+export class DemoCheckboxGroupComponent extends ComponentBase {
+  @ViewChild('checkboxgroupval') checkboxgroupval : CheckboxGroupComponent;
+  alertVal() {
+    alert(this.checkboxgroupval.arrVal);
+  }
+}
+]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">API Click</h4>
+    <ctaf-cp-checkboxgroup #checkboxgroup style="success">
+        <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+        <ctaf-cp-checkbox>d</ctaf-cp-checkbox>
+    </ctaf-cp-checkboxgroup>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<ctaf-cp-checkboxgroup #checkboxgroup style="success">
+    <ctaf-cp-checkbox>a</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>b</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>c</ctaf-cp-checkbox>
+    <ctaf-cp-checkbox>d</ctaf-cp-checkbox>
+</ctaf-cp-checkboxgroup>
+		    ]]>
+        </monacoeditor>
+        <monacoeditor language='typescript' height="200">
+            <![CDATA[
+@CTAFComponent({
+  templateUrl: 'checkboxgroup.html'
+})
+export class DemoCheckboxGroupComponent extends ComponentBase {
+  @ViewChild('checkboxgroup') checkboxgroup : CheckboxGroupComponent;
+
+  ngOnInit() {
+    this.checkboxgroup.click.subscribe((checkboxgroup: CheckboxGroupComponent) => {
+      alert(checkboxgroup.style);
+    });
+  }
+}
+]]>
+        </monacoeditor>
+    </div>
+</div>

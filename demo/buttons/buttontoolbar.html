@@ -1,0 +1,110 @@
+<h3 class="text-tips">buttontoolbar</h3>
+<ctaf-cp-buttontoolbar></ctaf-cp-buttontoolbar>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<!--默认，点击后会增加背景颜色-->
+<ctaf-cp-buttontoolbar></ctaf-cp-buttontoolbar>
+    ]]>
+    </monacoeditor>
+</div>
+
+<h3 class="text-tips">style</h3>
+<ctaf-cp-buttontoolbar [marginRight]=20></ctaf-cp-buttontoolbar>
+<ctaf-cp-buttontoolbar style="success" [marginRight]=20 text="success"></ctaf-cp-buttontoolbar>
+<ctaf-cp-buttontoolbar style="info" [marginRight]=20 text="info"></ctaf-cp-buttontoolbar>
+<ctaf-cp-buttontoolbar style="warning" [marginRight]=20 text="warning"></ctaf-cp-buttontoolbar>
+<ctaf-cp-buttontoolbar style="danger" [marginRight]=20 text="danger"></ctaf-cp-buttontoolbar>
+<div class="jumbtron">
+    <monacoeditor language='html' height="220">
+        <![CDATA[
+<!--default-->
+<ctaf-cp-buttontoolbar></ctaf-cp-buttontoolbar>
+<!--success-->
+<ctaf-cp-buttontoolbar style="success"></ctaf-cp-buttontoolbar>
+<!--info-->
+<ctaf-cp-buttontoolbar style="info"></ctaf-cp-buttontoolbar>
+<!--warning-->
+<ctaf-cp-buttontoolbar style="warning"></ctaf-cp-buttontoolbar>
+<!--danger-->
+<ctaf-cp-buttontoolbar style="danger"></ctaf-cp-buttontoolbar>
+    ]]>
+    </monacoeditor>
+</div>
+
+
+
+<h3 class="text-tips">text</h3>
+<ctaf-cp-buttontoolbar text="abc"></ctaf-cp-buttontoolbar>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<!--text-->
+<ctaf-cp-buttontoolbar text="abc"></ctaf-cp-buttontoolbar>
+    ]]>
+    </monacoeditor>
+</div>
+
+<h3 class="text-tips">size</h3>
+<ctaf-cp-buttontoolbar size=1></ctaf-cp-buttontoolbar>
+<ctaf-cp-buttontoolbar size=2></ctaf-cp-buttontoolbar>
+<ctaf-cp-buttontoolbar size=3></ctaf-cp-buttontoolbar>
+<ctaf-cp-buttontoolbar size=4></ctaf-cp-buttontoolbar>
+<div class="jumbtron">
+    <monacoeditor language='html' height="160">
+        <![CDATA[
+<!--1-->
+<ctaf-cp-buttontoolbar size=1></ctaf-cp-buttontoolbar>
+<!--2-->
+<ctaf-cp-buttontoolbar size=2></ctaf-cp-buttontoolbar>
+<!--3-->
+<ctaf-cp-buttontoolbar size=3></ctaf-cp-buttontoolbar>
+<!--4-->
+<ctaf-cp-buttontoolbar size=4></ctaf-cp-buttontoolbar>
+    ]]>
+    </monacoeditor>
+</div>
+
+<h3 class="text-tips">showCheckbox</h3>
+<ctaf-cp-buttontoolbar text="test" [showCheckbox]="true"></ctaf-cp-buttontoolbar>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<!--showCheckbox，设置showCheckbox="true"可显示左侧的单选框-->
+<ctaf-cp-buttontoolbar text="test" [showCheckbox]="true"></ctaf-cp-buttontoolbar>
+    ]]>
+    </monacoeditor>
+</div>
+
+<h3 class="text-tips">marginRight</h3>
+<ctaf-cp-buttontoolbar [marginRight]=20></ctaf-cp-buttontoolbar>
+<ctaf-cp-buttontoolbar></ctaf-cp-buttontoolbar>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<!--marginRight，设置选项按钮之前的边距，默认为0-->
+<ctaf-cp-buttontoolbar [marginRight]=20></ctaf-cp-buttontoolbar>
+    ]]>
+    </monacoeditor>
+</div>
+
+<h3 class="text-tips">getData</h3>
+<button (click)="getData">getData</button>
+<div class="jumbtron">
+    <monacoeditor language='html' height="250">
+        <![CDATA[
+<!--getData方法，勾选任意选项按钮均会执行此操作，获取所有已选中按钮的值，返回一个数组-->
+<button (click)="getData">getData</button>
+private get getData() { 
+let elements = document.querySelectorAll('.btn-tool-checked'); 
+let checkData: Array<any> = []; 
+    for (var i = 0; i< elements.length; i++) 
+    { 
+        checkData.push(elements[i].lastElementChild.innerHTML); 
+    } 
+    //console.log(checkData); 
+    return checkData; 
+}
+    ]]>
+    </monacoeditor>
+</div>

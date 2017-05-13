@@ -1,0 +1,180 @@
+<div class="demo-scrollbar">
+    <h4 class="text-tips">mCustomScrollbar</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="jumbtron">
+                <monacoeditor language='html' height="60">
+                    <![CDATA[
+<div class="scroll-container" #mCustomScrollbar1>
+    <div class="content"><img src="1.jpg" /></div>
+</div>
+<button class="btn1">点击改变内容宽高且不刷新滚动</button>
+<div class="scroll-container" #mCustomScrollbar2>
+    <div class="content"><img src="1.jpg" /></div>
+</div>
+<button class="btn2">点击改变内容宽高且刷新滚动</button>
+		    ]]>
+                </monacoeditor>
+                <monacoeditor language='css' height="260">
+                    <![CDATA[
+.scroll-container {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    overflow: hidden;
+    .content {
+        width: 800px;
+        height: 600px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    /*重置样式*/
+    .mCSB_container_wrapper { 
+        margin-right: 0;
+        margin-bottom: 0;
+        .mCSB_container {
+            display: inline-block;
+            width: auto !important;
+            padding-right: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+		    ]]>
+                </monacoeditor>
+                <monacoeditor language='javascript' height="400">
+                    <![CDATA[
+export class DemoScrollbarComponent extends ComponentBase {
+    ngOnInit() {
+        $(this.mCustomScrollbar1.nativeElement).mCustomScrollbar({
+            axis: 'yx',
+            theme: 'inset-2',
+            autoHideScrollbar: true,
+            advanced: { updateOnContentResize: false }
+        });
+        $(this.mCustomScrollbar2.nativeElement).mCustomScrollbar({
+            axis: 'yx',
+            theme: 'inset-2',
+            autoHideScrollbar: true,
+            advanced: { updateOnContentResize: false }
+        });
+        $(this.mCustomScrollbar1.nativeElement).next('button').click(() => {
+            if ($(this.mCustomScrollbar1.nativeElement).find('.content').width() === 800) {
+                $(this.mCustomScrollbar1.nativeElement).find('.content').width(600).height(250);
+            } else {
+                $(this.mCustomScrollbar1.nativeElement).find('.content').width(800).height(600);
+            }
+        });
+        $(this.mCustomScrollbar2.nativeElement).next('button').click(() => {
+            if ($(this.mCustomScrollbar2.nativeElement).find('.content').width() === 800) {
+                $(this.mCustomScrollbar2.nativeElement).find('.content').width(600).height(250);
+            } else {
+                $(this.mCustomScrollbar2.nativeElement).find('.content').width(800).height(600);
+            }            
+            $(this.mCustomScrollbar2.nativeElement).mCustomScrollbar('update'); 
+        });        
+    }
+}
+		    ]]>
+                </monacoeditor>
+            </div>
+        </div>
+        <div class="col-md-6 mCustomScrollbar">
+            <div class="scroll-container" #mCustomScrollbar1>
+                <div class="content"><img src="1.jpg" /></div>
+            </div>
+            <button class="btn1">点击改变内容宽高且不刷新滚动</button>
+            <div class="scroll-container" #mCustomScrollbar2>
+                <div class="content"><img src="1.jpg" /></div>
+            </div>
+            <button class="btn2">点击改变内容宽高且刷新滚动</button>
+        </div>
+    </div>
+
+    <h4 class="text-tips">iScroll</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="jumbtron">
+                <monacoeditor language='html' height="60">
+                    <![CDATA[
+<div class="scroll-container" #iScroll1>
+    <div class="content"><img src="1.jpg" /></div>
+</div>
+<button class="btn1">点击改变内容宽高且不刷新滚动</button>
+<div class="scroll-container" #iScroll2>
+    <div class="content"><img src="1.jpg" /></div>
+</div>
+<button class="btn2">点击改变内容宽高且刷新滚动</button>
+		    ]]>
+                </monacoeditor>
+                <monacoeditor language='css' height="260">
+                    <![CDATA[
+.scroll-container {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    overflow: hidden;
+    .content {
+        width: 800px;
+        height: 600px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+		    ]]>
+                </monacoeditor>
+                <monacoeditor language='javascript' height="400">
+                    <![CDATA[
+export class DemoScrollbarComponent extends ComponentBase {
+    ngOnInit() {
+        let myScroll1 = new IScroll($(this.iScroll1.nativeElement)[0], {
+            scrollX: true,
+            scrollY: true,
+            mouseWheel: true,
+            scrollbars: true,
+            interactiveScrollbars: true
+        });
+        let myScroll2 = new IScroll($(this.iScroll2.nativeElement)[0], {
+            scrollX: true,
+            scrollY: true,
+            mouseWheel: true,
+            scrollbars: true,
+            interactiveScrollbars: true
+        });
+        $(this.iScroll1.nativeElement).next('button').click(() => {
+            if ($(this.iScroll1.nativeElement).find('.content').width() === 800) {
+                $(this.iScroll1.nativeElement).find('.content').width(600).height(250);
+            } else {
+                $(this.iScroll1.nativeElement).find('.content').width(800).height(600);
+            }
+        });
+        $(this.iScroll2.nativeElement).next('button').click(() => {
+            if ($(this.iScroll2.nativeElement).find('.content').width() === 800) {
+                $(this.iScroll2.nativeElement).find('.content').width(600).height(250);
+            } else {
+                $(this.iScroll2.nativeElement).find('.content').width(800).height(600);
+            }
+            myScroll2.refresh();
+        });
+    }
+}
+		    ]]>
+                </monacoeditor>
+            </div>
+        </div>
+        <div class="col-md-6 iScroll">
+            <div class="scroll-container" #iScroll1>
+                <div class="content"><img src="1.jpg" /></div>
+            </div>
+            <button class="btn1">点击改变内容宽高且不刷新滚动</button>
+            <div class="scroll-container" #iScroll2>
+                <div class="content"><img src="1.jpg" /></div>
+            </div>
+            <button class="btn2">点击改变内容宽高且刷新滚动</button>
+        </div>
+    </div>
+</div>

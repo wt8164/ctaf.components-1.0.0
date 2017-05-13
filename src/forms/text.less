@@ -1,0 +1,106 @@
+@import "../../less/variables.less";
+@text-height-base: 20px;
+ctaf-cp-textbox {
+    color: #3d3d3d;
+    label {
+        color:@text-light !important; 
+    }
+    input[disabled] {
+        cursor: not-allowed;
+    }
+    input {
+        width:148px;
+        height: 100%;
+        line-height: 100%;
+        padding: 0 4px;
+        border: 1px solid @brand-primary;
+        border-radius: 3px;
+        position: relative;
+    }
+    .fa-remove{
+        cursor: pointer;
+        position: absolute;
+        top: 17px;
+        right: 19px;
+        color: @brand-danger;
+    }
+    .text-style-primary {
+        input {
+            border: 1px solid @brand-primary;
+        }
+    }
+    .text-style-success {
+        input {
+            border: 1px solid @brand-success;
+        }
+    }
+    .text-style-info {
+        input {
+            border: 1px solid @brand-info;
+        }
+    }
+    .text-style-warning {
+        input {
+            border: 1px solid @brand-warning;
+        }
+    }
+    .text-style-danger {
+        input {
+            border: 1px solid @brand-danger;
+        }
+    }
+    .size-3 {
+        font-size: @font-size-large;
+        input {
+            font-size: @font-size-large;
+        }
+        .fa-remove{
+            top: 24px;
+            right: 22px;
+        }
+        label{
+            height: @height-lg;
+            line-height: @height-lg;
+        }
+    }
+    .size-2 {
+        font-size: @font-size-base;
+        input {
+            font-size: @font-size-base;
+        }
+        label{
+            height: @height-md;
+            line-height: @height-md;
+        }
+    }
+    .size-1 {
+        font-size: @font-size-small;
+        input {
+            font-size: @font-size-small;
+        }
+        .fa-remove{
+            top: 13px;
+            right: 18px;
+        }
+        label{
+            height: @height-sm;
+            line-height: @height-sm;
+        }
+    }
+    .size-0 {
+        font-size: @font-size-small;
+        input {
+            font-size: @font-size-small;
+        }
+        .fa-remove{
+            top: 7px;
+            right: 17px;
+        }
+        label{
+            height: @height-xs;
+            line-height: @height-xs;
+        }
+    }
+}
+
+//size 36 28（默认28） 22 16

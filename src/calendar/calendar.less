@@ -1,0 +1,46 @@
+@import '../../less/variables.less';
+ctaf-cp-calendar {
+    color: #eaeaea;
+    .fc-row .fc-content-skeleton td {
+        border-color: #eaeaea;
+    }
+    .fc-row .fc-helper-skeleton td {
+        border-color: #eaeaea;
+    }
+    button {
+        display: inline-block;
+        margin-bottom: 0; // For input.btn
+        font-weight: @btn-font-weight;
+        text-align: center;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+        border: 1px solid transparent;
+        white-space: nowrap;
+        background-color: @brand-info;
+        border: 1px solid #eaeaea;
+        &, &:active, &.active {
+            &:focus, &.focus {
+                outline: none;
+            }
+        }
+        &:hover, &:focus, &.focus {
+            color: @btn-default-color;
+            text-decoration: none;
+            outline: none;
+        }
+        &:active, &.active {
+            outline: 0;
+            background-image: none;
+        }
+        &.disabled, &[disabled], fieldset[disabled] & {
+            cursor: @cursor-disabled;
+        }
+        a& {
+            &.disabled, fieldset[disabled] & {
+                pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+            }
+        }
+    }
+}

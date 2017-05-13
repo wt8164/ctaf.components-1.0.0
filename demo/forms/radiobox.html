@@ -1,0 +1,180 @@
+<div class="container text-info">
+    <h4 class="text-tips">style(设置主题)</h4>
+    <ctaf-cp-radiobox></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox style="primary"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox style="success"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox style="info"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox style="warning"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox style="danger"></ctaf-cp-radiobox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="260">
+            <![CDATA[
+<!--默认-->
+<ctaf-cp-radiobox></ctaf-cp-radiobox>            
+<!--标准-->
+<ctaf-cp-radiobox style="primary"></ctaf-cp-radiobox>
+<!--成功-->
+<ctaf-cp-radiobox style="success"></ctaf-cp-radiobox>
+<!--信息-->
+<ctaf-cp-radiobox style="info"></ctaf-cp-radiobox>
+<!--提醒-->
+<ctaf-cp-radiobox style="warning"></ctaf-cp-radiobox>
+<!--危险-->
+<ctaf-cp-radiobox style="danger"></ctaf-cp-radiobox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">size(设置大小)</h4>
+    <ctaf-cp-radiobox size="lg"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox size="md"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox size="sm"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox size="xs"></ctaf-cp-radiobox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--超大-->
+<ctaf-cp-radiobox size="lg"></ctaf-cp-radiobox>
+<!--默认-->
+<ctaf-cp-radiobox size="md"></ctaf-cp-radiobox>
+<!--小号-->
+<ctaf-cp-radiobox size="sm"></ctaf-cp-radiobox>
+<!--超小-->
+<ctaf-cp-radiobox size="xs"></ctaf-cp-radiobox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">state(设置状态)</h4>
+    <ctaf-cp-radiobox [state]="true"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox [state]="false"></ctaf-cp-radiobox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--初始为选中状态-->
+<ctaf-cp-radiobox [state]="true"></ctaf-cp-radiobox>
+<!--初始为未选中状态-->
+<ctaf-cp-radiobox [state]="false"></ctaf-cp-radiobox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">text(设置标题)</h4>
+    <ctaf-cp-radiobox>在这里可以写入文字</ctaf-cp-radiobox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="40">
+            <![CDATA[
+<!--"后面跟文字"-->
+<ctaf-cp-radiobox>在这里可以写入文字</ctaf-cp-radiobox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">disabled(禁用)</h4>
+    <ctaf-cp-radiobox [disabled]="true"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox [disabled]="true" [state]="fase"></ctaf-cp-radiobox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--disabled选中状态-->
+<ctaf-cp-radiobox [disabled]="true"></ctaf-cp-radiobox>
+<!--disabled未选中状态-->
+<ctaf-cp-radiobox [disabled]="true" [state]="fase"></ctaf-cp-radiobox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">name(定义表单元素name属性)</h4>
+    <ctaf-cp-radiobox name="check1"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox name="check1"></ctaf-cp-radiobox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--定义name属性为"check1"-->
+<ctaf-cp-radiobox name="check1"></ctaf-cp-radiobox>
+<ctaf-cp-radiobox name="check1"></ctaf-cp-radiobox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">设置value</h4>
+    <ctaf-cp-radiobox value="aaa"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox value="bbb"></ctaf-cp-radiobox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--定义value属性为"aaa"-->
+<ctaf-cp-radiobox value="aaa"></ctaf-cp-radiobox>
+<!--定义value属性为"bbb"-->
+<ctaf-cp-radiobox value="bbb"></ctaf-cp-radiobox>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">ngModel绑定状态</h4>
+    <ctaf-cp-radiobox [(ngModel)]="state1"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox [(ngModel)]="state2"></ctaf-cp-radiobox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<ctaf-cp-radiobox [(ngModel)]="state1"></ctaf-cp-radiobox>
+<ctaf-cp-radiobox [(ngModel)]="state2"></ctaf-cp-radiobox>
+		    ]]>
+        </monacoeditor>
+        <monacoeditor language='javascript' height="80">
+            <![CDATA[
+export class DemoRadioboxComponent extends ComponentBase {
+  public state1: boolean = false;
+  public state2: boolean = true;
+}
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">API Click</h4>
+    <ctaf-cp-radiobox value="aaa" #radiobox1></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox style="success" #radiobox2></ctaf-cp-radiobox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<ctaf-cp-radiobox value="aaa" #radiobox1></ctaf-cp-radiobox>
+<ctaf-cp-radiobox style="success" #radiobox2></ctaf-cp-radiobox> 
+		    ]]>
+        </monacoeditor>
+        <monacoeditor language='typescript' height="260">
+            <![CDATA[
+@CTAFComponent({
+  templateUrl: 'radiobox.html'
+})
+export class DemoRadioboxComponent extends ComponentBase {
+  @ViewChild('radiobox1') radiobox1 : RadioboxComponent;
+  @ViewChild('radiobox2') radiobox2 : RadioboxComponent;
+
+  ngOnInit() {
+    this.radiobox1.click.subscribe((radiobox1: RadioboxComponent) => {
+      alert(radiobox1.value);
+    });
+
+    this.radiobox2.click.subscribe((radiobox2: RadioboxComponent) => {
+      alert(radiobox2.style);
+    });
+  } 
+}
+]]>
+        </monacoeditor>
+    </div>
+
+    <!--<h4 class="text-tips">block(块状元素独占一行显示)</h4>
+    <ctaf-cp-radiobox [block]="true"></ctaf-cp-radiobox>
+    <ctaf-cp-radiobox [block]="true"></ctaf-cp-radiobox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[-->
+    <!--block-->
+    <!--<ctaf-cp-radiobox [block]="true"></ctaf-cp-radiobox>
+<ctaf-cp-radiobox [block]="true"></ctaf-cp-radiobox>
+		    ]]>
+        </monacoeditor>
+    </div>-->
+
+</div>

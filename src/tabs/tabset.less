@@ -1,0 +1,281 @@
+@import "../../less/variables.less";
+@height: 30px;
+@smallHeight: 26px;
+.tab-content {
+    height: calc(~'100% - @{height}');
+    .tab-pane {
+        height: 100%;
+        iframe {
+            border: none;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &.smallTitle{
+        height: calc(~'100% - @{smallHeight}');
+    }
+}
+
+.navWrap  {
+    .nav-add{
+        float:left;
+        width:58px;
+        position:relative;
+        height: @height;
+        line-height: @height;
+        color: #8e9ac1;
+        font-size: 16px;
+        .addTab:hover {
+            cursor: pointer;
+            color: #555;
+        };
+        background:#25272F;
+    }
+    &.smallTitle{
+        .nav-add{
+            height: @smallHeight;
+            line-height: @smallHeight;
+        }
+    }
+}
+.navWrap .nav-container .nav-add-position{
+    position:absolute;
+    right:0;
+    top:0;
+}
+.nav-add .addTab{
+    float:left;
+    height:@height;
+    line-height: @height;
+    padding:0 10px;
+}
+.smallTitle .nav-add .addTab{
+    height: @smallHeight;
+    line-height: @smallHeight;
+}
+.navSelect{
+    float:left;
+    text-align: center;
+    width:20px;
+    height:@height;
+}
+.smallTitle .navSelect{
+    height: @smallHeight;
+}
+.navSelect button{
+    width:20px;
+    height:@height;
+    padding:0;
+    color: #8e9ac1 !important;
+    &:hover {
+        color: #666 !important;
+        background:#25272F !important;
+    };
+    background:#25272F !important;
+    border:0;
+}
+.smallTitle .navSelect button{
+    height: @smallHeight;
+}
+.tab-menu-button {
+    width: @height;
+    height: @height;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    /*background-color: yellow;*/
+    text-align: center;
+    vertical-align: middle;
+    line-height: @height;
+}
+.smallTitle .tab-menu-button{
+    height: @smallHeight;
+    line-height: @smallHeight;
+}
+.tab-menu-button:hover {
+    cursor: pointer;
+}
+
+.tab-menu {
+    position: absolute;
+    top: 44px;
+    width: 0;
+    right: 0;
+}
+
+.tab-menu-show .tab-menu {
+    animation-name: showmenu;
+    animation-duration: 1s;
+    width: 300px;
+    border: 1px solid #ccc;
+}
+
+@keyframes showmenu {
+    from {
+        width: 0;
+    }
+    to {
+        width: 300px;
+    }
+}
+
+.widget {
+    height: 120px;
+    line-height: 120px;
+    margin: 5px;
+    text-align: center;
+    /*border: 1px solid #ccc;*/
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
+}
+
+// .tab-content .panel {
+//     width: 30%;
+//     float: left;
+//     margin: 5px;
+// }
+
+.tab-content .tabcontainer{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.tab-content .tab-pane {
+    display: none;
+}
+
+.tab-content .tab-pane.active {
+    display: block;
+}
+
+.nav-tabs > li.active > a > input, .nav-tabs > li.active > a > input:focus {
+    border: none;
+    // border-bottom: 1px solid #ccc;
+}
+
+.navWrap{
+    position:relative;
+    display: -webkit-box;
+    border: none;
+    vertical-align: middle;
+    background-color: @cp-title-background;
+    height: @height;
+    width: 100%;    
+}
+.navWrap.smallTitle{
+    height: @smallHeight;
+}
+.nav-container{
+    position:relative;  
+    -webkit-box-flex:1;
+    .iScrollHorizontalScrollbar{
+        position: absolute;
+        z-index: 9999;
+        height: 4px;
+        left: 1px;
+        right: 1px;
+        bottom: 1px;
+        overflow: hidden;
+        filter: alpha(opacity=80);
+        opacity: .8;
+    }
+    .iScrollHorizontalScrollbar.iScrollBothScrollbars {
+        right: 18px;
+    }
+    .iScrollIndicator {
+        position: absolute;
+        background: @text-dark;
+        border-width: 1px;
+        border-style: solid;
+        border-color: @text-base;
+        border-radius: 8px;
+    }
+
+    .iScrollHorizontalScrollbar .iScrollIndicator {
+        height: 100%;
+        background: transparent;
+    }
+}
+.nav-scroll{
+    position:relative;
+    float:left;
+    height: @height;
+    overflow: hidden;
+}
+.smallTitle .nav-scroll{
+    height: @smallHeight;
+}
+.nav-tabs {
+    display:block;
+    height: @height;
+    float:left;
+    border-bottom: none;
+    // transition-property:transform;
+    // transition-duration:.5s !important;
+}
+.smallTitle .nav-tabs{
+    height: @smallHeight;
+}
+.nav-tabs li {
+    width:140px;
+}
+.nav-tabs li a {
+    display: block;
+    padding: 0 !important;
+    width: 134px;
+    text-align: center;
+    color: inherit;
+    border-bottom: 1px solid;
+    margin: 0;
+    height: @height;
+    line-height: @height !important;
+}
+.smallTitle .nav-tabs li a{
+    height: @smallHeight;
+    line-height: @smallHeight !important;
+}
+
+.nav-tabs li a:hover {
+    background: none;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1.5px solid;
+    color: #5B627A
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background: none;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1.5px solid #3CADE3;
+    color: #3CADE3;
+}
+
+.iconbutton {
+    -webkit-box-flex:initial;
+    height: @height;
+    line-height: @height;
+    .btn {
+        background: transparent;
+        border: none;
+        color: inherit;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+.smallTitle .iconbutton{
+    height: @smallHeight;
+    line-height: @smallHeight;
+}
+
+.nav-link input{
+    color: @text-light;
+}
+.glyphicon-remove-circle{
+    &:hover{
+        cursor: pointer;
+    }
+}

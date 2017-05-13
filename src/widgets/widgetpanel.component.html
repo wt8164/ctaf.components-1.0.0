@@ -1,0 +1,10 @@
+<div [ngClass]="classes" [style.height]="height" [attr.data-x]="x" [attr.data-y]="y" [attr.data-w]="w" [attr.data-h]="h" *ngIf="!destroyed">
+    <div class="inner">
+        <ctaf-cp-panel [title]="title" [customClass]="customClass" [headerHeight]="headerHeight" [borderNum]="borderNum" [columns]="12"
+            height="100%" [icon]="icon">
+            <ng-content></ng-content>
+        </ctaf-cp-panel>
+    </div>
+</div>
+
+<div #dialogContainer></div>

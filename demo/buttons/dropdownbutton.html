@@ -1,0 +1,148 @@
+<h3 class="text-tips">下拉菜单</h3>
+<h4 class="text-tips">style</h4>
+<ctaf-cp-dropdownbutton style="primary" text="primary"></ctaf-cp-dropdownbutton>
+<ctaf-cp-dropdownbutton style="success" text="success"></ctaf-cp-dropdownbutton>
+<ctaf-cp-dropdownbutton style="info" text="info"></ctaf-cp-dropdownbutton>
+<ctaf-cp-dropdownbutton style="warning" text="warning"></ctaf-cp-dropdownbutton>
+<ctaf-cp-dropdownbutton style="danger" text="danger"></ctaf-cp-dropdownbutton>
+<div class="jumbtron">
+    <monacoeditor language='html' height="240">
+        <![CDATA[
+<!--首选-->
+<ctaf-cp-dropdownbutton style="primary" text="primary"></ctaf-cp-dropdownbutton>
+<!--成功-->
+<ctaf-cp-dropdownbutton style="success" text="success"></ctaf-cp-dropdownbutton>
+<!--信息-->
+<ctaf-cp-dropdownbutton style="info" text="info"></ctaf-cp-dropdownbutton>
+<!--提醒-->
+<ctaf-cp-dropdownbutton style="warning" text="warning"></ctaf-cp-dropdownbutton>
+<!--危险-->
+<ctaf-cp-dropdownbutton style="danger" text="danger"></ctaf-cp-dropdownbutton>
+    ]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">items</h4>
+<ctaf-cp-dropdownbutton style="primary" items='[{"id":1, "value":"a"},{"id":2, "value":"b"},{"role":"separator"},{"id":1, "value":"c"}]' text="items"></ctaf-cp-dropdownbutton>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<!--items属性设置下拉列表的选项-->
+<ctaf-cp-dropdownbutton style="primary" items='[{"id":1, "value":"a"},{"id":2, "value":"b"},{"role":"separator"},{"id":1, "value":"c"}]' text="items"></ctaf-cp-dropdownbutton>
+    ]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">showTooltip</h4>
+<ctaf-cp-dropdownbutton style="primary" items='[{"id":1, "value":"a"},{"id":2, "value":"b"},{"role":"separator"},{"id":1, "value":"c"}]' text="items" [showTooltip]=true></ctaf-cp-dropdownbutton>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<!--items属性设置下拉列表的选项-->
+<ctaf-cp-dropdownbutton style="primary" items='[{"id":1, "value":"a"},{"id":2, "value":"b"},{"role":"separator"},{"id":1, "value":"c"}]' text="items" [showTooltip]=true></ctaf-cp-dropdownbutton>
+    ]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">size</h4>
+<ctaf-cp-dropdownbutton text="默认"></ctaf-cp-dropdownbutton>
+<ctaf-cp-dropdownbutton size="1" text="小号"></ctaf-cp-dropdownbutton>
+<ctaf-cp-dropdownbutton size="3" text="中号"></ctaf-cp-dropdownbutton>
+<ctaf-cp-dropdownbutton size="4" text="大号"></ctaf-cp-dropdownbutton>
+<div class="jumbtron">
+    <monacoeditor language='html' height="160">
+        <![CDATA[
+<!--默认尺寸-->
+<ctaf-cp-dropdownbutton text="默认"></ctaf-cp-dropdownbutton>
+<!--小号-->
+<ctaf-cp-dropdownbutton size="1" text="小号"></ctaf-cp-dropdownbutton>
+<!--中号-->
+<ctaf-cp-dropdownbutton size="3" text="中号"></ctaf-cp-dropdownbutton>
+<!--大号-->
+<ctaf-cp-dropdownbutton size="4" text="大号"></ctaf-cp-dropdownbutton>
+    ]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">isSplit</h4>
+<ctaf-cp-dropdownbutton style="primary" [isSplit]="true" text="Output Click" (click)="buttonClick($event)" items='[{"id":1, "value":"a"},{"id":2, "value":"b"},{"role":"separator"},{"id":1, "value":"c"}]' (itemclick)="itemclick($event)">text</ctaf-cp-dropdownbutton>
+<ctaf-cp-dropdownbutton style="primary" [isSplit]="true" text="API Click" #clickButton>text</ctaf-cp-dropdownbutton>
+
+<div class="jumbtron">
+    <monacoeditor language='html' height="150">
+        <![CDATA[
+<!--是否使用分裂式按钮下拉菜单-->
+<ctaf-cp-dropdownbutton style="primary" [isSplit]="true" text="Output Click" (click)="buttonClick($event)" items='[{"id":1, "value":"a"},{"id":2, "value":"b"},{"role":"separator"},{"id":1, "value":"c"}]' (itemclick)="itemclick($event)">text</ctaf-cp-dropdownbutton>
+<ctaf-cp-dropdownbutton style="primary" [isSplit]="true" text="API Click" #clickButton>text</ctaf-cp-dropdownbutton>
+ts--代码
+itemclick(item) {
+        console.log(item.value);
+    }
+    ]]>
+    </monacoeditor>
+</div>
+<div class="jumbtron">
+    <monacoeditor language='html' height="80">
+        <![CDATA[
+<!--是否使用分裂式按钮下拉菜单-->
+<!--html-->
+<!--dropdownbutton.html-->		
+<ctaf-cp-dropdownbutton style="primary" [isSplit]="true" text="API Click" #clickButton>text</ctaf-cp-dropdownbutton>
+    ]]>
+    </monacoeditor>
+    <monacoeditor language='html' height="310">
+        <![CDATA[
+<!--是否使用分裂式按钮下拉菜单-->
+<!--typescript-->
+<!-- button.ts-->	
+@Component({
+	templateUrl:'dropdownbutton.html',
+	directives:[DropdownButtonComponent]
+})
+export class DemoDropdownButtonComponent{
+	@ViewChild('clickButton') clickButton: DropdownButtonComponent;
+
+  	ngOnInit() {
+    this.clickButton.click.subscribe((button: DropdownButtonComponent) => {
+      alert(button.text);
+    });
+  	}
+}
+    ]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">preIcon</h4>
+<ctaf-cp-dropdownbutton style="primary" preIcon="fa-camera-retro" text="preIcon"></ctaf-cp-dropdownbutton>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<!--preIcon-->
+<ctaf-cp-dropdownbutton style="primary" preIcon="fa-camera-retro" text="preIcon"></ctaf-cp-dropdownbutton>
+    ]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">disabled</h4>
+<ctaf-cp-dropdownbutton text="default" [disabled]=true></ctaf-cp-dropdownbutton>
+<ctaf-cp-dropdownbutton text="default" [disabled]=false></ctaf-cp-dropdownbutton>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<!--disabled-->
+<ctaf-cp-dropdownbutton text="default" [disabled]=true></ctaf-cp-dropdownbutton>
+<ctaf-cp-dropdownbutton text="default" [disabled]=false></ctaf-cp-dropdownbutton>
+    ]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">isDropUp</h4>
+<ctaf-cp-dropdownbutton style="success" [isDropUp]="true" text="isDropUp" items='[{"id":1, "value":"a"},{"id":2, "value":"b"},{"role":"separator"},{"id":1, "value":"c"}]'></ctaf-cp-dropdownbutton>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<!--<h5>添加isDropUp="dropup"属性可以设置菜单的显示方向为上</h5>-->
+<ctaf-cp-dropdownbutton style="success" [isDropUp]="true" text="isDropUp" items='[{"id":1, "value":"a"},{"id":2, "value":"b"},{"role":"separator"},{"id":1, "value":"c"}]'></ctaf-cp-dropdownbutton>
+    ]]>
+    </monacoeditor>
+</div>

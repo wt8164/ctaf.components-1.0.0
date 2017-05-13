@@ -1,0 +1,72 @@
+// @import "./button.less";
+
+ctaf-cp-buttontoolbar{
+.button-toolbar{
+    position: relative;
+    background: #2C3E50;
+    border-radius: 5px;
+    cursor:pointer;
+    transition: all 0.3s;
+    // &:hover{
+    //   background: #34495E;  
+    // }
+    input{
+        margin: 0px;
+        vertical-align: middle;
+    }
+    span{
+        display: inline-block;
+    }
+}
+
+@default:#8e44ad;
+
+.btn-tool-checked{
+    transform: scale(1.05);
+    // background: #8e44ad;
+}
+
+.checked-default{
+    background: @default;
+}
+.checked-primary{
+    background: @default;//@brand-primary
+}
+.checked-success{
+    background: @brand-success;
+}
+.checked-info{
+    background: @brand-info;
+}
+.checked-warning{
+    background: @brand-warning;
+}
+.checked-danger{
+    background: @brand-danger;
+}
+
+
+.btn-group{
+    display: inline-block;
+    margin-right: -4px;//移除inline-block边距
+}
+
+// buttontoolbar的4种尺寸
+/*
+.btn-xs{
+    padding: 2px 2px;
+}
+.btn-sm{
+    padding: 4px 6px;
+}
+.btn-md{
+    padding: 6px 12px;
+}
+.btn-lg{
+    padding: 12px 12px;
+}
+*/
+.btn-md{
+    padding: 4px 6px;
+}
+}

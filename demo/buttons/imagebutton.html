@@ -1,0 +1,116 @@
+<div class="container text-info">
+    <h4 class="text-tips">imgUrl</h4>
+    <ctaf-cp-imagebutton imgUrl="../src/img/1.png"></ctaf-cp-imagebutton>
+    <ctaf-cp-imagebutton imgUrl="http://h.hiphotos.baidu.com/zhidao/pic/item/6d81800a19d8bc3ed69473cb848ba61ea8d34516.jpg"></ctaf-cp-imagebutton>
+    <!--imgUrl地址必须为游客可访问-->
+    <div class="jumbtron">
+        <monacoeditor language='html' height="100">
+            <![CDATA[
+<!--传入相对路径-->
+<ctaf-cp-imagebutton imgUrl="../src/img/1.png"></ctaf-cp-imagebutton>
+<!--传入网络地址,imgUrl地址必须为游客可访问-->
+<ctaf-cp-imagebutton imgUrl="http://h.hiphotos.baidu.com/zhidao/pic/item/6d81800a19d8bc3ed69473cb848ba61ea8d34516.jpg"></ctaf-cp-imagebutton>
+		]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">size</h4>
+    <ctaf-cp-imagebutton imgUrl="../src/img/1.png" size="lg"></ctaf-cp-imagebutton>
+    <ctaf-cp-imagebutton imgUrl="../src/img/1.png" size="md"></ctaf-cp-imagebutton>
+    <ctaf-cp-imagebutton imgUrl="../src/img/1.png" size="sm"></ctaf-cp-imagebutton>
+    <ctaf-cp-imagebutton imgUrl="../src/img/1.png" size="xs"></ctaf-cp-imagebutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--超大-->
+<ctaf-cp-imagebutton imgUrl="../src/img/1.png" size="lg"></ctaf-cp-imagebutton>
+<!--默认-->
+<ctaf-cp-imagebutton imgUrl="../src/img/1.png" size="md"></ctaf-cp-imagebutton>
+<!--小号-->   		
+<ctaf-cp-imagebutton imgUrl="../src/img/1.png" size="sm"></ctaf-cp-imagebutton>
+<!--超小-->   		
+<ctaf-cp-imagebutton imgUrl="../src/img/1.png" size="xs"></ctaf-cp-imagebutton>
+   		]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">w,h(自定义宽高)</h4>
+    <ctaf-cp-imagebutton imgUrl="../src/img/1.png" w="80" h="50"></ctaf-cp-imagebutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--宽80px,高50px-->
+<ctaf-cp-imagebutton imgUrl="../src/img/1.png" w="80" h="50"></ctaf-cp-imagebutton>
+    		]]>
+        </monacoeditor>
+
+    </div>
+    <h4 class="text-tips">isBlock(设置为块状元素，独占一行显示)</h4>
+    <ctaf-cp-imagebutton imgUrl="../src/img/1.png" [isBlock]="true"></ctaf-cp-imagebutton>
+    <ctaf-cp-imagebutton imgUrl="../src/img/1.png" [isBlock]="true"></ctaf-cp-imagebutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--isBlock-->
+<ctaf-cp-imagebutton imgUrl="../src/img/1.png" [isBlock]="true"></ctaf-cp-imagebutton>
+<ctaf-cp-imagebutton imgUrl="../src/img/1.png" [isBlock]="true"></ctaf-cp-imagebutton>
+    		]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">opacity</h4>
+    <!--透明度-->
+    <ctaf-cp-imagebutton imgUrl="../src/img/1.png" [opacity]=0.2></ctaf-cp-imagebutton>
+    <ctaf-cp-imagebutton imgUrl="../src/img/1.png"></ctaf-cp-imagebutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--opacity-->
+<ctaf-cp-imagebutton imgUrl="../src/img/1.png" [opacity]=0.2></ctaf-cp-imagebutton>
+<ctaf-cp-imagebutton imgUrl="../src/img/1.png"></ctaf-cp-imagebutton>
+    		]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">disabled</h4>
+    <ctaf-cp-imagebutton imgUrl="../src/img/1.png" [disabled]=true></ctaf-cp-imagebutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--disabled-->
+<ctaf-cp-imagebutton imgUrl="../src/img/1.png" [disabled]=true></ctaf-cp-imagebutton>
+    		]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">showTooltip</h4>
+    <ctaf-cp-imagebutton imgUrl="../src/img/1.png" title="abc" [showTooltip]=true></ctaf-cp-imagebutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--title-->
+<ctaf-cp-imagebutton imgUrl="../src/img/1.png" title="abc" [showTooltip]=true></ctaf-cp-imagebutton>
+    		]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">API Click</h4>
+    <ctaf-cp-imagebutton #clickImagebutton imgUrl="../src/img/1.png"></ctaf-cp-imagebutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="30">
+            <![CDATA[
+<ctaf-cp-imagebutton #clickImagebutton imgUrl="../src/img/1.png"></ctaf-cp-imagebutton>
+]]>
+        </monacoeditor>
+        <monacoeditor language='typescript' height="150">
+            <![CDATA[
+export class DemoImagebuttonComponent extends ComponentBase {
+  @ViewChild('clickImagebutton') clickImagebutton: ImagebuttonComponent;
+  ngOnInit() {
+    this.clickImagebutton.click.subscribe(() => {
+      alert('Hello World');
+    });
+  }
+}
+]]>
+        </monacoeditor>
+    </div>
+</div>

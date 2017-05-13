@@ -1,0 +1,20 @@
+<div [ngClass]="classes" (click)="menuShow($event);listIscrollRefresh()" #dropdownlist>
+    <button class="selecttop" [attr.title]="showTooltip?valtext:''">
+        <span>{{valtext}}</span>
+        <i class="fa fa-sort-down"></i>
+    </button>
+    <div class="menu" (click)="stopPro($event)">
+        <div class="searchbox">
+            <input class="searchinput" type="search" autocomplete="off" (keyup)="searchtextchange()" [(ngModel)]="searchvalue" />
+        </div>
+        <div class="scroll-container">
+            <ul class="menuList">
+                <li *ngFor="let option of options" (click)="selectval($event)" [class.selected]="arrvalue.indexOf(option.value)>-1">{{option.text}}<i class="fa fa-check"></i></li>
+            </ul>
+        </div>
+    </div>
+    <select class="selectpicker" [attr.multiple]=multiple>
+        <option *ngFor="let option of firstoptions" value="{{option.value}}" title="{{option.text}}">{{option.text}}</option>
+    </select>
+    <div *ngIf="disabled" class="mark" (click)="stopProMark($event)"></div>
+</div>

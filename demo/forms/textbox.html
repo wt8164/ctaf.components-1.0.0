@@ -1,0 +1,203 @@
+<div class="container text-info">
+    <h4 class="text-tips">禁用启用</h4>
+    <ctaf-cp-textbox [disabled]="true"></ctaf-cp-textbox>
+    <ctaf-cp-textbox [disabled]="false"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-textbox [disabled]="true"></ctaf-cp-textbox>
+<ctaf-cp-textbox [disabled]="false"></ctaf-cp-textbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置主题</h4>
+    <ctaf-cp-textbox></ctaf-cp-textbox>
+    <ctaf-cp-textbox style="primary"></ctaf-cp-textbox>
+    <ctaf-cp-textbox style="success"></ctaf-cp-textbox>
+    <ctaf-cp-textbox style="info"></ctaf-cp-textbox>
+    <ctaf-cp-textbox style="warning"></ctaf-cp-textbox>
+    <ctaf-cp-textbox style="danger"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="250">
+            <![CDATA[
+<!--默认-->
+<ctaf-cp-textbox></ctaf-cp-textbox>            
+<!--标准-->
+<ctaf-cp-textbox style="primary"></ctaf-cp-textbox>
+<!--成功-->
+<ctaf-cp-textbox style="success"></ctaf-cp-textbox>
+<!--信息-->
+<ctaf-cp-textbox style="info"></ctaf-cp-textbox>
+<!--提醒-->
+<ctaf-cp-textbox style="warning"></ctaf-cp-textbox>
+<!--危险-->
+<ctaf-cp-textbox style="danger"></ctaf-cp-textbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置标题</h4>
+    <ctaf-cp-textbox labelText="用户名：" [labelWidth]=60></ctaf-cp-textbox>
+    <ctaf-cp-textbox labelText="用户名：" [labelWidth]="100"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-textbox labelText="用户名："></ctaf-cp-textbox>
+<ctaf-cp-textbox labelText="用户名：" [labelWidth]="100"></ctaf-cp-textbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置提示信息</h4>
+    <ctaf-cp-textbox [showTooltip]="true"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-textbox [showTooltip]="true" ></ctaf-cp-textbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置大小</h4>
+    <ctaf-cp-textbox [size]=0 w="200"></ctaf-cp-textbox>
+    <ctaf-cp-textbox [size]=1 w="300"></ctaf-cp-textbox>
+    <ctaf-cp-textbox [size]=2 w="400"></ctaf-cp-textbox>
+    <ctaf-cp-textbox [size]=3 w="500"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="100">
+            <![CDATA[
+<ctaf-cp-textbox [size]=0 w="200"></ctaf-cp-textbox>
+<ctaf-cp-textbox [size]=1 w="300"></ctaf-cp-textbox>
+<ctaf-cp-textbox [size]=2 w="400"></ctaf-cp-textbox>
+<ctaf-cp-textbox [size]=3 w="500"></ctaf-cp-textbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">支持规则校验</h4>
+    <ctaf-cp-textbox regstr="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+"></ctaf-cp-textbox>
+    <ctaf-cp-textbox regstr="^(\-)*\d+(\.\d+)?$"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="100">
+            <![CDATA[
+<!--电子邮件正则表达式-->
+<ctaf-cp-textbox regstr="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+"></ctaf-cp-textbox>
+<!--符号开头有或者没有、数字和小数点、不能小数点结尾-->
+<ctaf-cp-textbox regstr="^(\-)*\d+(\.\d+)?$"></ctaf-cp-textbox>
+
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">提供值闪烁功能</h4>
+    <ctaf-cp-textbox [animation]="true"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">提供必填标志</h4>
+    <ctaf-cp-textbox [require]=true></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-textbox [require]=true></ctaf-cp-textbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+    
+    <h4 class="text-tips">ngModel</h4>
+    <ctaf-cp-textbox  [(ngModel)]="value1" ></ctaf-cp-textbox>
+    <label>{{value1}}</label>
+    <ctaf-cp-button title="重新设置" (click)="clickHandler()"></ctaf-cp-button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="170">
+            <![CDATA[
+<ctaf-cp-textbox [(ngModel)]="nvalue" ></ctaf-cp-textbox>
+<label>{{nvalue}}</label>
+<ctaf-cp-button title="重新设置" (click)="clickHandler()"></ctaf-cp-button>
+
+private nvalue: string = '原始值';
+private clickHandler() {
+    this.nvalue = '改变值';
+}
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">focus事件</h4>
+    <ctaf-cp-textbox (onFocus)="focusHandler()"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+private focusHandler(): void {
+    console.log('focus');
+}
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">blur事件</h4>
+    <ctaf-cp-textbox (onBlur)="blurHandler()"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+private blurHandler(): void {
+    alert('blur');
+}
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">change事件</h4>
+    <ctaf-cp-textbox (onChange)="changeHandler()"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+private changeHandler(): void {
+    alert('change');
+}
+		    ]]>
+        </monacoeditor>
+    </div>
+    <!--<h4 class="text-tips">默认</h4>
+    <ctaf-cp-textbox labelText="testabcdefgabcdefg">{{textValue}}</ctaf-cp-textbox>
+    <ctaf-cp-textbox labelText="test">{{textValue}}</ctaf-cp-textbox>
+    <ctaf-cp-textbox [size]=4>{{textValue}}</ctaf-cp-textbox>
+    <ctaf-cp-textbox prefix="bug" labelText="test">{{textValue}}</ctaf-cp-textbox>
+    <ctaf-cp-textbox prefix="bug" #input1>{{textValue}}</ctaf-cp-textbox>
+    <ctaf-cp-textbox suffix="bug">{{textValue}}</ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">w</h4>
+    <ctaf-cp-textbox w="300"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-textbox w="300"></ctaf-cp-textbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">block</h4>
+    <ctaf-cp-textbox block="true"></ctaf-cp-textbox>
+    <ctaf-cp-textbox block="true"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+            block设置为true，默认在一行
+<ctaf-cp-textbox block="true"></ctaf-cp-textbox>
+<ctaf-cp-textbox block="true"></ctaf-cp-textbox>
+		    ]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">placeHolder</h4>
+    <ctaf-cp-textbox placeHolder="请输入用户名"></ctaf-cp-textbox>
+    <ctaf-cp-textbox placeHolder="请输入搜索关键字"></ctaf-cp-textbox>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-textbox placeHolder="请输入用户名"></ctaf-cp-textbox>
+<ctaf-cp-textbox placeHolder="请输入搜索关键字"></ctaf-cp-textbox>
+		    ]]>
+        </monacoeditor>
+    </div>-->
+</div>

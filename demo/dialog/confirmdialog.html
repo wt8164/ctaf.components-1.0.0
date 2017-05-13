@@ -1,0 +1,34 @@
+<div class="container text-info">
+
+    <h4 class="text-tips">点击事件</h4>
+    <button type="text" style="color: #4D4D4D;" (click)="display=true">Show</button>
+    <ctaf-cp-confirmdialog #dialog1 width="350" preIcon="camera-retro" [visible]="display">
+        Are you sure that you want to perform this action?
+    </ctaf-cp-confirmdialog>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="200">
+            <![CDATA[
+<ctaf-cp-confirmdialog #dialog1 width="350" preIcon="camera-retro" [visible]="display">
+    Are you sure that you want to perform this action?
+</ctaf-cp-confirmdialog>
+
+<!--获取事件方式-->
+@ViewChild('dialog1') dialog1: ConfirmDialogComponent;
+    private display: boolean = false;
+
+    ngOnInit() {
+    this.dialog1.onConfirm.subscribe((e) => {
+        this.display = false;
+        alert('confirm');
+    });
+
+    this.dialog1.onCancel.subscribe((e) => {
+        this.display = false;
+        alert('cancel');
+    });
+}
+		        ]]>
+        </monacoeditor>
+    </div>
+
+</div>

@@ -1,0 +1,61 @@
+<div class="container">
+    <h4 class="text-tips">NotificationService(注册websocket)</h4>
+    <div class="jumbtron">
+        <monacoeditor language='typescript' height="1000">
+            <![CDATA[
+public addListener(url: string, channel: string) {
+        let key: string = url + channel;
+        if (!this.listeners.containsKey(key)) {
+            this.getWebSocket(url).addListener(channel, (_url: string, data: any) => {
+                this.listenerHandler(_url, data);
+            });
+
+            this.listeners.add(key, this.getWebSocket(url));
+        }
+    }
+
+    /**
+     * @description Set websocket connect to server.
+     * @param {string} url The URL of the websocket server.
+     * @return {boolean} true if the server is already connected, otherwise false.
+     */
+    public connect(url: string): boolean {
+        let config: NotificationConfig = new NotificationConfig(url);
+        return this.getWebSocket(url).connet(config);
+    }
+
+    /**
+     * @description Publish data to specific channel.
+     * @param {string} url The URL of the websocket server.
+     * @param {string} channel Target channel.
+     * @param {any} data message data to push.
+     */
+    public publish(url: string, channel: string, data: any) {
+        this.getWebSocket(url).publish(channel, data);
+    }
+
+    /**
+     * @description Subscribe channel to specific websocket.
+     * @param {string} url The URL of the websocket server.
+     * @param {string} channel Target channel.
+     * @param {(message: any) => void} callback The callback related to this subscription.
+     * @return {any} The instance of subscribe.
+     */
+    public subscribe(url: string, channel: string, callback: (url: string, message: any) => void): any {
+        return this.getWebSocket(url).subscribe(channel, (_url: string, message: any) => {
+            callback(_url, message);
+        });
+    }
+
+    /**
+     * @description Unsubscribe channel to specific websocket.
+     * @param {string} url The URL of the websocket server.
+     * @param {any} subscription The instance of subscribe.
+     */
+    public unSubscribe(url: string, subscription: any) {
+        this.getWebSocket(url).unSubscribe(subscription);
+    }            
+            ]]>
+        </monacoeditor>
+    </div>
+</div>

@@ -1,0 +1,223 @@
+
+<h4 class="text-tips">设置主题</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton style="primary"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton style="success"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton style="info"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton style="warning"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton style="danger"></ctaf-cp-iconbutton>
+        </div>
+    </div>
+</div>
+<div class="jumbtron">
+    <monacoeditor language='html' height="200">
+        <![CDATA[
+<!--primary-->
+<ctaf-cp-iconbutton style="primary"></ctaf-cp-iconbutton>
+<!--success-->
+<ctaf-cp-iconbutton style="success"></ctaf-cp-iconbutton>
+<!--info-->
+<ctaf-cp-iconbutton style="info"></ctaf-cp-iconbutton>
+<!--warning-->
+<ctaf-cp-iconbutton style="warning"></ctaf-cp-iconbutton>
+<!--danger-->
+<ctaf-cp-iconbutton style="danger"></ctaf-cp-iconbutton>
+    		]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">设置文本</h4>
+<ctaf-cp-iconbutton style="danger" text="2"></ctaf-cp-iconbutton>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<!--text为角标的内容，未设置text时，角标隐藏-->
+<ctaf-cp-iconbutton style="danger" text="2"></ctaf-cp-iconbutton>
+        ]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">设置 Icon</h4>
+<ctaf-cp-iconbutton icon="fa-file"></ctaf-cp-iconbutton>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<!--图标支持font-awesome,设置不同的图标名称即可显示-->
+<ctaf-cp-iconbutton icon="fa-file"></ctaf-cp-iconbutton>
+        ]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">禁用功能</h4>
+<ctaf-cp-iconbutton [disabled]="true"></ctaf-cp-iconbutton>
+<ctaf-cp-iconbutton [disabled]="false" (click)="iconButtonClick($event)"></ctaf-cp-iconbutton>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<ctaf-cp-iconbutton [disabled]="true"></ctaf-cp-iconbutton>
+<ctaf-cp-iconbutton [disabled]="false" (click)="iconButtonClick($event)"></ctaf-cp-iconbutton>
+        ]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">点击事件</h4>
+<ctaf-cp-iconbutton (click)="iconButtonClick($event)"></ctaf-cp-iconbutton>
+<div class="jumbtron">
+    <monacoeditor language='html' height="50">
+        <![CDATA[
+<ctaf-cp-iconbutton (click)="buttonClick($event)"></ctaf-cp-iconbutton>
+        ]]>
+    </monacoeditor>
+</div>
+
+<!--<h4 class="text-tips">cornerPosition</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton style="success" text=5></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton style="success" CornerPosition="right-top" text=5></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton style="success" CornerPosition="left-top" text=5></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton style="success" CornerPosition="left-bottom" text=5></ctaf-cp-iconbutton>
+        </div>
+    </div>
+</div>
+<div class="jumbtron">
+    <monacoeditor language='html' height="180">
+        <![CDATA[
+CornerPosition，控制角标的位置，默认位置为右下角
+default
+<ctaf-cp-iconbutton text=5></ctaf-cp-iconbutton>
+right-top
+<ctaf-cp-iconbutton CornerPosition="right-top" text=5></ctaf-cp-iconbutton>
+left-top
+<ctaf-cp-iconbutton CornerPosition="left-top" text=5></ctaf-cp-iconbutton>
+left-bottom
+<ctaf-cp-iconbutton CornerPosition="left-bottom" text=5></ctaf-cp-iconbutton>
+        ]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">cornercolor</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton text="1"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton cornercolor="primary" text="1"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton cornercolor="success" text="1"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton cornercolor="info" text="1"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton cornercolor="warning" text="1"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton cornercolor="danger" text="1"></ctaf-cp-iconbutton>
+        </div>
+    </div>
+</div>
+<div class="jumbtron">
+    <monacoeditor language='html' height="250">
+        <![CDATA[
+cornercolor可设置角标的颜色，颜色为bootstrap的default,primary,success,info,warning和danger
+default
+<ctaf-cp-iconbutton text="1"></ctaf-cp-iconbutton>
+primary
+<ctaf-cp-iconbutton cornercolor="primary" text="1"></ctaf-cp-iconbutton>
+success
+<ctaf-cp-iconbutton cornercolor="success" text="1"></ctaf-cp-iconbutton>
+info
+<ctaf-cp-iconbutton cornercolor="info" text="1"></ctaf-cp-iconbutton>
+warning
+<ctaf-cp-iconbutton cornercolor="warning" text="1"></ctaf-cp-iconbutton>
+danger
+<ctaf-cp-iconbutton cornercolor="danger" text="1"></ctaf-cp-iconbutton>
+        ]]>
+    </monacoeditor>
+</div>
+
+<h4 class="text-tips">textcolor</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton text="1"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton textcolor="primary" text="1"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton textcolor="success" text="1"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton textcolor="info" text="1"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton textcolor="warning" text="1"></ctaf-cp-iconbutton>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <ctaf-cp-iconbutton textcolor="danger" text="1"></ctaf-cp-iconbutton>
+        </div>
+    </div>
+</div>
+
+<div class="jumbtron">
+    <monacoeditor language='html' height="250">
+        <![CDATA[
+textcolor可设置角标的字体颜色，颜色为bootstrap的default,primary,success,info,warning和danger
+default
+<ctaf-cp-iconbutton text="1"></ctaf-cp-iconbutton>
+primary
+<ctaf-cp-iconbutton textcolor="primary" text="1"></ctaf-cp-iconbutton>
+success
+<ctaf-cp-iconbutton textcolor="success" text="1"></ctaf-cp-iconbutton>
+info
+<ctaf-cp-iconbutton textcolor="info" text="1"></ctaf-cp-iconbutton>
+warning
+<ctaf-cp-iconbutton textcolor="warning" text="1"></ctaf-cp-iconbutton>
+danger
+<ctaf-cp-iconbutton textcolor="danger" text="1"></ctaf-cp-iconbutton>
+        ]]>
+    </monacoeditor>
+</div>
+
+
+<h4 class="text-tips">iconSize</h4>
+<ctaf-cp-iconbutton [iconSize]=1 style="primary"></ctaf-cp-iconbutton>
+<ctaf-cp-iconbutton [iconSize]=2 style="primary"></ctaf-cp-iconbutton>
+<ctaf-cp-iconbutton [iconSize]=3 style="primary"></ctaf-cp-iconbutton>
+<ctaf-cp-iconbutton [iconSize]=4 style="primary"></ctaf-cp-iconbutton>
+<div class="jumbtron">
+    <monacoeditor language='html' height="180">
+        <![CDATA[
+iconSize可设置icon的大小，有1,2,3,4四个尺寸，默认为2
+1
+<ctaf-cp-iconbutton [iconSize]=1></ctaf-cp-iconbutton>
+2
+<ctaf-cp-iconbutton [iconSize]=2></ctaf-cp-iconbutton>
+3
+<ctaf-cp-iconbutton [iconSize]=3></ctaf-cp-iconbutton>
+4
+<ctaf-cp-iconbutton [iconSize]=4></ctaf-cp-iconbutton>
+        ]]>
+    </monacoeditor>
+</div>-->

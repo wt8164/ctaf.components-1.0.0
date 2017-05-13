@@ -1,0 +1,10 @@
+node_modules
+._.gitignore
+/dist
+/demo/dist
+/.vscode
+/docs
+/npm-debug.log
+/.idea/
+/test/
+/backup/

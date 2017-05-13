@@ -1,0 +1,21 @@
+<div [ngClass]="classes">
+    <div [style.width.px]="w">
+        <label *ngIf="labelText">{{labelText}}</label>
+        <span class="fa {{preIcon}} textnumber-icon textnumber-icon-left" *ngIf="preIcon"></span>
+        <input #ipt title="{{showTooltip?value:null}}" type="text" [(ngModel)]="value"
+            (focus)="focusHandler($event)" (blur)="blurHandler($event)" 
+            (keydown)="keydownHandler($event)" oninput="this.value=this.value.replace(/[^0-9-.]/g,'')" />
+        <!--<span class="fa {{afterIcon}} textnumber-icon textnumber-icon-right" *ngIf="afterIcon"></span>-->
+        <div>
+            <span class="triangle-up" [class.enterBg]="addEnterState" (click)="clickHandler($event,'add')"
+                 (mouseenter)="addEnterState=true" (mouseleave)="addEnterState=false;mouseleaveHandler($event)">
+                <i></i>
+            </span>
+            <span class="triangle-down" [class.enterBg]="subEnterState" (click)="clickHandler($event,'sub')"
+                 (mouseenter)="subEnterState=true" (mouseleave)="subEnterState=false;mouseleaveHandler($event)">
+                <i></i>
+            </span>
+        </div>
+    </div>
+    <input type="hidden" value="{{value}}" [attr.id]="cid"/>
+</div>

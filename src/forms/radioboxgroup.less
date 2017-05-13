@@ -1,0 +1,83 @@
+@import "../../less/variables.less";
+ctaf-cp-radioboxgroup {
+  display: inline-block;
+  .radioboxCtaf {
+    margin: 2px 0;
+  }
+  .radioboxgroup-style-primary .radiobox-wrap {
+    background: @brand-primary;
+    border: 2px solid @brand-primary;
+  }
+  .radioboxgroup-style-success .radiobox-wrap {
+    background: @brand-success;
+    border: 2px solid @brand-success;
+  }
+  .radioboxgroup-style-info .radiobox-wrap {
+    background: @brand-info;
+    border: 2px solid @brand-info;
+  }
+  .radioboxgroup-style-warning .radiobox-wrap {
+    background: @brand-warning;
+    border: 2px solid @brand-warning;
+  }
+  .radioboxgroup-style-danger .radiobox-wrap {
+    background: @brand-danger;
+    border: 2px solid @brand-danger;
+  }
+  .radioboxgroup-state-false .radiobox-wrap {
+    background: transparent;
+  }
+  .radioboxgroup-size-lg .radiobox-wrap {
+    width: @height-lg;
+    height: @height-lg;
+    .radiobox-insert {
+      line-height: @height-lg;
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+  .radioboxgroup-size-md .radiobox-wrap {
+    width: @height-md;
+    height: @height-md;
+    .radiobox-insert {
+      line-height: @height-md;
+      i {
+        font-size: 18px;
+      }
+    }
+  }
+  .radioboxgroup-size-sm .radiobox-wrap {
+    width: @height-sm;
+    height: @height-sm;
+    .radiobox-insert {
+      line-height: @height-sm;
+      i {
+        font-size: 16px;
+      }
+    }
+  }
+  .radioboxgroup-size-xs .radiobox-wrap {
+    width: @height-xs;
+    height: @height-xs;
+    .radiobox-insert {
+      line-height: @height-xs - 4px;
+      i {
+        font-size: 14px;
+      }
+    }
+  }
+  .radioboxgroup-disabled-true .radiobox-mark {
+    display: block;
+    cursor: not-allowed;
+  }
+  .radioboxgroup-disabled-false .radiobox-mark {
+    display: none;
+  }
+  .radioboxgroup-block-true ctaf-cp-radiobox {
+    display: block;
+  }
+  .radioboxgroup-block-false ctaf-cp-radiobox {
+    display: inline-block;
+  }
+}

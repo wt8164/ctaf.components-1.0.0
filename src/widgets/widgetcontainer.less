@@ -1,0 +1,48 @@
+@import "../../less/variables.less";
+.widgetcontainer {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    div.grid {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        div.ctaf-cp-widgetpanel {
+            display: inline-block;
+            position: absolute;
+            -webkit-transition: top 0.2s, left 0.2s, width 0.2s, height 0.2s, font-size 0.2s, line-height 0.2s;
+            transition: top 0.2s, left 0.2s, width 0.2s, height 0.2s, font-size 0.2s, line-height 0.2s;
+            border: none;
+            padding: 0;
+            .panel-heading {
+                cursor: move;
+            }
+            &.ui-draggable-dragging {
+                -webkit-transition: none;
+                transition: none;
+                .panel {
+                    border-color: @brand-warning;
+                }
+            }
+            &.position-highlight {
+                -webkit-transition: none;
+                transition: none;
+            }
+            &.position-highlight .inner {
+                border: 2px dotted @brand-warning;
+                background-color: fade(@brand-warning, 20%);
+            }
+        }
+    }
+
+    .mCSB_inside>.mCSB_container{
+        margin-right: 0;
+    }
+}

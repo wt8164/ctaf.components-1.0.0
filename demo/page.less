@@ -1,0 +1,86 @@
+@import '../less/variables.less';
+ul{
+    margin: 0px;
+    padding: 0px;
+    li{
+        list-style: none;
+    }
+}
+a {
+  //&:link{color: pink;text-decoration: none}
+  &:visited {
+    text-decoration: none;
+  }
+  //一般情况下只定义visited和hover的样式，link和active的可以不写
+  &:hover {
+    text-decoration: none;
+  }
+  &:link{
+    text-decoration: none;
+  }
+;
+  //&:active{color: pink;text-decoration: none;};
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  position: relative;
+}
+.pagemain {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.pagemain .left {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  /* right: 300px; */
+  width: 200px;
+  overflow: auto;
+}
+.pagemain .right {
+  top: 50px;
+  bottom: 0;
+  right: 10px;
+  left: 205px;
+  position: absolute;
+  overflow: auto;
+}
+
+main{
+    overflow: hidden;
+}
+.panel-main{
+    float: left;
+    width:200px;
+    overflow: hidden; 
+}
+
+.body-content{
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 5px;
+    // background-color: @body-bg;
+    // overflow: hidden;
+    width: 100%;
+    color: #666;
+}
+
+.body-content .container{
+    width: 100%;
+}
+body{
+  -moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	// -khtml-user-select: none;
+	user-select: none;
+}

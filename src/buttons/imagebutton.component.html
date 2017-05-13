@@ -1,0 +1,5 @@
+<span class="imgbutton" [ngClass]="{'imgbtn-block':isBlock}">
+<img [ngClass]="classes" [attr.src]="imgUrl" [style.width.px]="w" [style.height.px]="h" (click)="clickImage($event)" [style.opacity]="opacity" [attr.disabled]="disabled?'':null" [attr.title]="ttitle"/>
+<span *ngIf="!!title">{{title}}</span>
+<span class="cover" *ngIf="disabled"></span>
+</span>

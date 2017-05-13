@@ -1,0 +1,6 @@
+<div [ngClass]="classes" [style.width.px]="width">
+    <label *ngIf="labelText" [style.width.px]="labelWidth">{{labelText}}</label>
+    <ng-content></ng-content>
+    <!--<span><i class="fa fa-asterisk require"></i></span>-->
+    <span class="iconContainer"><i *ngIf="require" class="require">*</i></span>
+</div>

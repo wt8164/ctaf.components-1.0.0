@@ -1,0 +1,141 @@
+import { Component, ViewChild } from '@angular/core';
+import { AmChartsComponent } from '../../src/entry';
+
+import * as _ from 'underscore';
+
+@Component({
+    templateUrl: './column-with-rotated-series.component.html',
+    styles: [ `
+        .select {
+            margin-top: 10px;
+            position: relative;
+            width: 200px;
+        }
+        .select:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 14px;
+            height: 10px;
+            pointer-events: none;
+            background: url(/demo/chart/images/select.svg) no-repeat,linear-gradient(transparent,transparent);
+        }
+        select {
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            color: #3cabff;
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0,0,0,0);
+            border-radius: 3px;
+            background-color: #fff;
+            box-shadow: 0 1px 4px 0 rgba(0,0,0,0.26);
+            width: 100%;
+        }
+    }
+  `]
+})
+export class ColumnWithRotatedSeriesComponent {
+    @ViewChild('amChart') amChart: AmChartsComponent;
+
+    data: any;
+    valueAxes: any;
+    graphs: any;
+    chartCursor: any;
+    categoryAxis: any;
+
+    constructor() {
+        this.data = [ {
+            'country': 'USA',
+            'visits': 3025,
+            'color': '#FF0F00'
+        }, {
+            'country': 'China',
+            'visits': 1882,
+            'color': '#FF6600'
+        }, {
+            'country': 'Japan',
+            'visits': 1809,
+            'color': '#FF9E01'
+        }, {
+            'country': 'Germany',
+            'visits': 1322,
+            'color': '#FCD202'
+        }, {
+            'country': 'UK',
+            'visits': 1122,
+            'color': '#F8FF01'
+        }, {
+            'country': 'France',
+            'visits': 1114,
+            'color': '#B0DE09'
+        }, {
+            'country': 'India',
+            'visits': 984,
+            'color': '#04D215'
+        }, {
+            'country': 'Spain',
+            'visits': 711,
+            'color': '#0D8ECF'
+        }, {
+            'country': 'Netherlands',
+            'visits': 665,
+            'color': '#0D52D1'
+        }, {
+            'country': 'Russia',
+            'visits': 580,
+            'color': '#2A0CD0'
+        }, {
+            'country': 'South Korea',
+            'visits': 443,
+            'color': '#8A0CCF'
+        }, {
+            'country': 'Canada',
+            'visits': 441,
+            'color': '#CD0D74'
+        }];
+
+        this.valueAxes = [ {
+            'axisAlpha': 0,
+            'position': 'left',
+            'title': 'Visitors from country'
+        }];
+
+        this.graphs = [ {
+            'balloonText': '<b>[[category]]: [[value]]</b>',
+            'fillColorsField': 'color',
+            'fillAlphas': 0.9,
+            'lineAlpha': 0.2,
+            'type': 'column',
+            'valueField': 'visits'
+        }];
+
+        this.chartCursor = {
+            'categoryBalloonEnabled': false,
+            'cursorAlpha': 0,
+            'zoomable': false
+        };
+
+        this.categoryAxis = {
+            'gridPosition': 'start',
+            'labelRotation': 45
+        };
+    }
+
+    ngOnInit() {
+
+    }
+
+    selectChanged(e) {
+        // let graphs = _.clone(this.graphs);
+        // graphs[0].type = e.target.value;
+
+        // this.graphs = graphs;
+
+        this.graphs[0].type = e.target.value;
+        this.amChart.ngOnChanges();
+    }
+}

@@ -1,0 +1,122 @@
+@import "../../less/variables.less";
+ctaf-cp-checkbox {
+    .checkboxCtaf {
+        display: inline-block;
+        vertical-align: bottom;
+        &.checkbox-block {
+            display: block;
+        }
+        &.checkbox-style-primary .checkbox-wrap {
+            background: @brand-primary;
+            border: 2px solid @brand-primary;
+        }
+        &.checkbox-style-success .checkbox-wrap {
+            background: @brand-success;
+            border: 2px solid @brand-success;
+        }
+        &.checkbox-style-info .checkbox-wrap {
+            background: @brand-info;
+            border: 2px solid @brand-info;
+        }
+        &.checkbox-style-warning .checkbox-wrap {
+            background: @brand-warning;
+            border: 2px solid @brand-warning;
+        }
+        &.checkbox-style-danger .checkbox-wrap {
+            background: @brand-danger;
+            border: 2px solid @brand-danger;
+        }
+        &.checkbox-state-false .checkbox-wrap {
+            background: transparent;
+        }
+        &.checkbox-size-lg .checkbox-wrap {
+            width: @height-lg;
+            height: @height-lg;
+            .checkbox-insert {
+                line-height: @height-lg;
+                i {
+                    font-size: 24px;
+                }
+            }
+        }
+        &.checkbox-size-md .checkbox-wrap {
+            width: @height-md;
+            height: @height-md;
+            .checkbox-insert {
+                line-height: @height-md;
+                i {
+                    font-size: 18px;
+                }
+            }
+        }
+        &.checkbox-size-sm .checkbox-wrap {
+            width: @height-sm;
+            height: @height-sm;
+            .checkbox-insert {
+                line-height: @height-sm;
+                i {
+                    font-size: 16px;
+                }
+            }
+        }
+        &.checkbox-size-xs .checkbox-wrap {
+            width: @height-xs;
+            height: @height-xs;
+            .checkbox-insert {
+                line-height: @height-xs - 4px;
+                i {
+                    font-size: 12px;
+                }
+            }
+        }
+        &.checkbox-disabled-true .checkbox-wrap .checkbox-mark {
+            display: block;
+            cursor: not-allowed;
+        }
+        &.checkbox-disabled-false .checkbox-wrap .checkbox-mark {
+            display: none;
+            cursor: not-allowed;
+        }
+        .checkbox-wrap {
+            display: inline-block;
+            vertical-align: bottom;
+            position: relative;
+            width: @height-md;
+            height: @height-md;
+            background: @brand-info;
+            border: 2px solid @brand-info;
+            .checkbox-input {
+                display: none;
+            }
+            .checkbox-insert {
+                display: block;
+                width: 100%;
+                height: 100%;
+                line-height: @height-md;
+                text-align: center;
+                cursor: pointer;
+                i {
+                    font-size: 16px;
+                    color: #fff;
+                }
+            }
+        }
+        .detail {
+            display: inline;
+            font-size: 18px;
+            color: @text-dark;
+        }
+    }
+    .checkbox-mark {
+        display: none;
+        z-index: 1001;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+    }
+}
+
+//size 36 28 22 16

@@ -1,0 +1,7 @@
+<div [ngClass]="classes">
+    <div class="progress" [style.width.px]="w" [style.height.px]="h">
+        <div class="progress-bar {{style}}" role="progressbar" [attr.aria-valuenow]="value"  [style.line-height.px]="h" aria-valuemin="0" aria-valuemax="100" [style.width.%]="value">
+            <label *ngIf="titleShow">{{value}}%</label>
+        </div>
+    </div>
+</div>

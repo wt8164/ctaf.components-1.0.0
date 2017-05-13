@@ -1,0 +1,28 @@
+<div [ngClass]="classes" [style.border-width.px]="borderNum" [style.height]="height" *ngIf="!destroyed">
+    <div class="panel-heading out-layer setColor" [style.height.px]="headerHeight">
+        <div class="in-layer">
+            <span class="panel-title">
+			        <span>
+                        <i class="fa {{icon}} iconRight" *ngIf="!!icon" ></i>
+        	        </span>
+            <span>
+				        <a data-toggle="collapse" data-parent="#accordion" href="#{{cid}}collapse" *ngIf="collapsed">
+				        {{title}}
+				        </a>
+			        </span>
+            <span *ngIf="!collapsed">
+        		        {{title}}
+        	        </span>
+            </span>
+            <span class="pull-right">
+			        <ng-content select="[headerRight]"></ng-content>
+                    <ctaf-cp-button headerRight preIcon="fa-close fa-lg" (click)="destroy()"></ctaf-cp-button>
+		        </span>
+        </div>
+    </div>
+    <div class="panel-collapse collapse in set-scroll" id="{{cid}}collapse">
+        <div class="panel-body setTransparent">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

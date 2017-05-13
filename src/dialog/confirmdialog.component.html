@@ -1,0 +1,13 @@
+<ctaf-cp-dialog [header]="header" [width]="width" [(visible)]="visible" [modal]="true" [draggable]="false" [resizable]="false">
+    <!--<header>
+        Header content here
+    </header>        -->
+    <i class="fa fa-{{preIcon}} iconRight" *ngIf="preIcon"></i>
+    <ng-content></ng-content>
+    <footer>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <button type="text" style="color: #4D4D4D;" (click)="clickHandler(false)">取消</button>
+            <button type="text" style="color: #4D4D4D;" (click)="clickHandler(true)" >确认</button>
+        </div>
+    </footer>   
+</ctaf-cp-dialog>

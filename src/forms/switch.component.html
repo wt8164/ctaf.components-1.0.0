@@ -1,0 +1,14 @@
+<div [ngClass]="classes">
+    <div class="switch" (click)="clickToggle($event)">
+        <div class="switch-insert">
+            <input type="checkbox" [attr.checked]="state" [attr.disabled]="disabled">
+            <span class="switch-left">{{onText}}</span>
+            <label></label>
+            <span class="switch-right">{{offText}}</span>
+        </div>
+    </div>
+    <div class="switch-mark"></div>
+    <div class="detail">
+        <ng-content></ng-content>
+    </div>
+</div>

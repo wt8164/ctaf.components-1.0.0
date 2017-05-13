@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="pull-left">
+            <span><img src="../logo.png"></span>
+            <a class="btn navbar-btn text-info">CTAF</a>
+        </div>
+        <div class="pull-right">
+            <a class="btn navbar-btn" href="#">frameworkAPI</a>
+            <a class="btn navbar-btn" href="#">API</a>
+        </div>
+    </div>
+</nav>
+<div class="pagemain">
+    <div class="left">
+        <ctaf-demo-panel [data]="ITEMDATA"></ctaf-demo-panel>
+    </div>
+    <div class="right">
+        <div class="body-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<!--// data="itemData"-->

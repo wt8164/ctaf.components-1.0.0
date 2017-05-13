@@ -1,0 +1,5 @@
+<div class="alertgroup">
+  <alert *ngFor="let alert of alerts;let i = index" [type]="alert.type" dismissible="true" [dismissOnTimeout]=alert.dismissOnTimeout (close)="closeAlert(i)">
+    {{ alert?.msg }}
+  </alert>
+</div>

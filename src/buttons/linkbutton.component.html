@@ -1,0 +1,5 @@
+<span [ngClass]="classes" (click)="clickevent($event)" [attr.title]="title">
+    <a [attr.href]="href">{{text}}</a>
+    <span class="cover" *ngIf="disabled"></span>
+</span>
+<!--<ng-content></ng-content>-->

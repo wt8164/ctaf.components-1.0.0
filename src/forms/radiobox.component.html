@@ -1,0 +1,12 @@
+<div [ngClass]="classes">
+    <div class="radiobox-wrap">
+        <input type="radio" class="radiobox-input" [attr.checked]="state" [attr.disabled]="disabled" [attr.name]="name" [attr.value]="value" />
+        <div class="radiobox-insert" (click)="this._state=!this._state;clickTrigger($event)">
+            <i class="fa fa-check" *ngIf="state"></i>
+        </div>
+        <div class="radiobox-mark"></div>
+    </div>
+    <div class="detail">
+        <ng-content></ng-content>
+    </div>
+</div>

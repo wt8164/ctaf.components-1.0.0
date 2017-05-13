@@ -1,0 +1,28 @@
+<span [ngClass]="{'ui-autocomplete ui-widget':true,'ui-autocomplete-dd':dropdown,'ui-autocomplete-multiple':multiple}" [class]="size || size===0?'size-'+size:'size-2'"><!-- [class]="styleClass"-->
+    <label *ngIf="labelText">{{labelText}}</label>
+    <input *ngIf="!multiple" #in pInputText type="text" [ngStyle]="inputStyle" [class]="style?'text-style-'+style:null" autocomplete="off"
+        [value]="value ? (field ? resolveFieldData(value)||value : value) : null" (input)="onInput($event)" (keydown)="onKeydown($event)" (focus)="onFocus()" (blur)="onBlur()"
+        [attr.placeholder]="placeholder" [attr.maxlength]="maxlength" [attr.readonly]="readonly" [disabled]="disabled"
+        [ngClass]="{'ui-autocomplete-input':true,'ui-autocomplete-dd-input':dropdown}" [style.width.px]="w"
+    ><ul *ngIf="multiple" class="ui-autocomplete-multiple-container ui-widget ui-inputtext ui-state-default ui-corner-all" (click)="multiIn.focus()">
+        <li #token *ngFor="let val of value" class="ui-autocomplete-token ui-state-highlight ui-corner-all">
+            <span class="ui-autocomplete-token-icon fa fa-fw fa-close" (click)="removeItem(token)"></span>
+            <span class="ui-autocomplete-token-label">{{field ? val[field] : val}}</span>
+        </li>
+        <li class="ui-autocomplete-input-token">
+            <input #multiIn type="text" pInputText [attr.placeholder]="placeholder" (input)="onInput($event)" (keydown)="onKeydown($event)" (focus)="onFocus()" (blur)="onBlur()" autocomplete="off">
+        </li>
+    </ul
+    ><button type="button" pButton icon="fa-fw fa-caret-down" class="ui-autocomplete-dropdown" [disabled]="disabled"
+        (click)="handleDropdownClick($event)" *ngIf="dropdown" (focus)="onDropdownFocus($event)" (blur)="onDropdownBlur($event)"></button>
+    <div class="ui-autocomplete-panel ui-widget-content ui-corner-all ui-shadow" [style.display]="panelVisible ? 'block' : 'none'" [style.width]="'100%'" [style.max-height]="scrollHeight">
+        <ul class="ui-autocomplete-items ui-autocomplete-list ui-widget-content ui-widget ui-corner-all ui-helper-reset">
+            <li></li>
+            <li *ngFor="let option of suggestions" [ngClass]="{'ui-autocomplete-list-item ui-corner-all':true,'ui-state-highlight':(highlightOption==option)}"
+                (mouseenter)="highlightOption=option;" (mouseleave)="mouseleaveHandler();liClicked=false;" (click)="liClicked=true;selectItem(option);">
+                <span *ngIf="!itemTemplate">{{field ? option[field] : option}}</span>
+                <template *ngIf="itemTemplate" [pTemplateWrapper]="itemTemplate" [item]="option"></template>
+            </li>
+        </ul>
+    </div>
+</span>

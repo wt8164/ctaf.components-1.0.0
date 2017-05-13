@@ -1,0 +1,31 @@
+<div [innerHTML]="_html"></div>
+<div [ngClass]="classes" class="treeCtaf">
+  <ul class="tree" *ngIf="tree"  #treeContainer>
+    <li>
+      <div (contextmenu)="showMenu($event)" *ngIf="!rootNodeHide" [nodeDraggable]="element" [tree]="tree">
+        <input type="checkbox" (click)="checkHandler()" [name]="tree.value" [disabled]="disabled" [checked]="tree._checked" *ngIf="checkboxShow" />
+        <div class="folding" (click)="switchFoldingType($event, tree)" [ngClass]="getFoldingTypeCssClass(tree)"></div>
+        <div title="{{showTooltip?tree.value:null}}" href="#" class="node-value" *ngIf="!isEditInProgress()" [class.node-selected]="isSelected" (click)="onNodeSelected($event)" 
+          [innerHTML]="keyword?(tree.value | ctafKeyHighLight: keyword) : tree.value"></div>
+
+        <input type="text" class="node-value" *ngIf="isEditInProgress()"
+              [nodeEditable]="tree.value"
+              (valueChanged)="applyNewValue($event, tree)"/>
+      </div>
+
+      <node-menu *ngIf="isMenuVisible" (menuItemSelected)="onMenuItemSelected($event)"></node-menu>
+
+      <template [ngIf]="isNodeExpanded()">
+        <tree-internal *ngFor="let child of tree.children; let position = index"
+              [parentTree]="tree"
+              [indexInParent]="position"
+              [tree]="child"
+              [keyword]="keyword"
+              [disabled]="disabled"
+              [checkboxShow]="checkboxShow"
+              [showTooltip]="showTooltip"
+              (nodeRemoved)="onChildRemoved($event)"></tree-internal>
+      </template>
+    </li>
+  </ul>
+</div>

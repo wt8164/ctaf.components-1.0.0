@@ -1,0 +1,74 @@
+@import '../../less/variables.less';
+// @text-height-base: 20px;
+ctaf-cp-autocomplete{
+    .text-style-primary {
+        border: 1px solid @brand-primary;
+    }
+    .text-style-success {
+        border: 1px solid @brand-success;
+    }
+    .text-style-info {
+        border: 1px solid @brand-info;
+    }
+    .text-style-warning {
+        border: 1px solid @brand-warning;
+    }
+    .text-style-danger {
+        border: 1px solid @brand-danger;
+    }
+
+
+    input {
+        width:148px;
+        height: 100%;
+        line-height: 100%;
+        padding: 0 4px;
+        border: 1px solid @brand-primary;
+        border-radius: 3px;
+    }
+    .size-3 {
+        font-size: @font-size-large;
+        height: @height-lg;
+        input {
+            font-size: @font-size-large;
+        }
+        label{
+            height: @height-lg;
+            line-height: @height-lg;
+        }
+    }
+    .size-2 {
+        font-size: @font-size-base;
+        height: @height-md;
+        input {
+            font-size: @font-size-base;
+        }
+        label{
+            height: @height-md;
+            line-height: @height-md;
+        }
+    }
+    .size-1 {
+        font-size: @font-size-small;
+        height: @height-sm;
+        input {
+            font-size: @font-size-small;
+        }
+        label{
+            height: @height-sm;
+            line-height: @height-sm;
+        }
+    }
+    .size-0 {
+        font-size: @font-size-small;
+        height: @height-xs;
+        input {
+            font-size: @font-size-small;
+        }
+        label{
+            height: @height-xs;
+            line-height: @height-xs;
+        }
+    }
+}
+//size 36 28（默认28） 22 16

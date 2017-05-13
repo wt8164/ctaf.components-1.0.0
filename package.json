@@ -1,0 +1,38 @@
+{
+    "name": "@ctaf/components",
+    "version": "0.1.0-beta-20161230.0",
+    "description": "CTAF Front-End Components",
+    "main": "ctaf_components.js",
+    "typings": "declaration/src/entry.d.ts",
+    "scripts": {
+        "start": "node server.js",
+        "build": "./node_modules/.bin/gulp build",
+        "build.demo": "./node_modules/.bin/gulp build.demo",
+        "release": "./node_modules/.bin/gulp publish",
+        "release.minor": "./node_modules/.bin/gulp publish -v minor",
+        "release.major": "./node_modules/.bin/gulp publish -v major",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "YangLiu",
+    "license": "ISC",
+    "dependencies": {
+        "@ctaf/config": "latest",
+        "@ctaf/framework": "~0.1.0-beta",
+        "@ctaf/tslint-rules": "latest",
+        "@types/amcharts": "0.0.36",
+        "@types/iscroll-5": "0.0.1",
+        "ag-grid": "^6.2.1",
+        "ag-grid-enterprise": "^6.2.0",
+        "bootstrap": "^3.3.7",
+        "font-awesome": "^4.6.3",
+        "fullcalendar": "3.0.2-beta.0",
+        "gulp-bump": "^2.4.0",
+        "imports-loader": "^0.6.5",
+        "malihu-custom-scrollbar-plugin": "3.1.6-beta.0",
+        "monaco-editor": "^0.5.3"
+    },
+    "devDependencies": {
+        "rxjs": "^5.0.0-rc.1",
+        "typescript": "^2.0.3"
+    }
+}

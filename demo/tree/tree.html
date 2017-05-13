@@ -1,0 +1,170 @@
+<div class="container text-info">
+
+    <h4 class="text-tips">点击事件</h4>
+    <ctaf-cp-tree [tree]="data" #tree1></ctaf-cp-tree>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="170">
+            <![CDATA[
+<ctaf-cp-tree [tree]="data" #tree1></ctaf-cp-tree>
+
+@ViewChild('tree1') tree1: TreeComponent; 
+ngOnInit() {
+    this.tree1.nodeSelected.subscribe((e) => {
+        alert(<TreeModel>(e.node).value);
+    });
+}
+		        ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">设置提示信息</h4>
+    <ctaf-cp-tree [tree]="data" [showTooltip]="true"></ctaf-cp-tree>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-tree [tree]="data" [showTooltip]="true"></ctaf-cp-tree>
+		        ]]>
+        </monacoeditor>
+    </div>
+
+
+    <h4 class="text-tips">隐藏根节点</h4>
+    <ctaf-cp-tree [tree]="data"  [rootNodeHide]="true"></ctaf-cp-tree><!--data-tree="tree7"-->
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-tree [tree]="data" [rootNodeHide]="true"></ctaf-cp-tree>
+		        ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">禁用功能</h4>
+    <ctaf-cp-tree [tree]="data3" [disabled]="true"></ctaf-cp-tree>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<ctaf-cp-tree [tree]="data" [disabled]="true"></ctaf-cp-tree>
+		        ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">设置数据源</h4>
+    <ctaf-cp-tree [tree]="data"></ctaf-cp-tree>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="400">
+            <![CDATA[
+<ctaf-cp-tree [tree]="data"></ctaf-cp-tree>
+
+private data: Object = {
+    value: 'parent',
+    children: [
+      {
+        value: 'child1',
+        children: [
+          {value: 'Java', _checked: true},
+          {value: 'C++', _checked: true},
+          {value: 'C#', _checked: false},
+        ]
+      },
+      {
+        value: 'child2',
+        children: [
+          {value: 'JavaScript'},
+          {value: 'CoffeeScript'},
+          {value: 'Lua'},
+        ]
+      }
+    ]
+  };
+		        ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">支持 Checkbox 多选</h4>
+    <ctaf-cp-tree #tree5 [tree]="data"></ctaf-cp-tree>
+    <button (click)="btnhandler($event)" style="color: #4D4D4D;">获取选中节点</button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="300">
+            <![CDATA[
+<!--模板代码-->
+<ctaf-cp-tree #tree5 [tree]="data"></ctaf-cp-tree>
+<button (click)="btnhandler($event)" style="color: #4D4D4D;">获取选中节点</button>
+
+<!--component.ts代码-->
+import { TreeModel } from '../../src/tree/tree.types';
+
+@ViewChild('tree5') tree5: TreeComponent; 
+
+btnhandler(e: Event) {
+    let arr: Array<TreeModel> = [];
+    arr = this.tree5.getChecked();
+    alert(arr);
+}
+		        ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">隐藏checkbox</h4>
+    <ctaf-cp-tree [tree]="data" [checkboxShow]=false></ctaf-cp-tree>
+    <button (click)="btnhandler($event)" style="color: #4D4D4D;">获取选中节点</button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<!--模板代码-->
+<ctaf-cp-tree [tree]="data" [checkboxShow]=false></ctaf-cp-tree>
+		        ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">关键字高亮</h4>
+    <ctaf-cp-tree [tree]="data" keyword="a"></ctaf-cp-tree>
+    <button (click)="btnhandler($event)" style="color: #4D4D4D;">获取选中节点</button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="70">
+            <![CDATA[
+<!--模板代码-->
+<ctaf-cp-tree [tree]="data" keyword="a"></ctaf-cp-tree>
+		        ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">支持分级加载</h4>
+    <ctaf-cp-tree [tree]="data2" #tree6 [canLoading]="true"></ctaf-cp-tree>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="370">
+            <![CDATA[
+<ctaf-cp-tree [tree]="data2" #tree6 [canLoading]="true"></ctaf-cp-tree>
+
+
+import { TreeComponent, TreeModel } from '../../src/entry';
+
+private data2: Object = {
+    value: 'parent',
+    children: [
+        {
+        value: 'child1'
+        },
+        {
+        value: 'child2'
+        }
+    ]
+};
+
+@ViewChild('tree6') tree6: TreeComponent;
+ngOnInit() {
+    this.tree6.nodeLoad.subscribe((e) => {
+        let _node: TreeModel = <TreeModel>(e.node);
+        setTimeout(() => {
+            let arr: Array<TreeModel> = [];
+            arr.push({ value: 'Java', _checked: true });
+            arr.push({ value: 'C++', _checked: true });
+            arr.push({ value: 'C#', _checked: false });
+            this.tree6.nodeLoadedHandler(_node, arr);
+        }, 500);
+    });
+}
+		        ]]>
+        </monacoeditor>
+    </div>
+    
+</div>

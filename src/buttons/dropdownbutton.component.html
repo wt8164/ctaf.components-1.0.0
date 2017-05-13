@@ -1,0 +1,42 @@
+<div [class]="isDropUp? 'btn-group dropup' : 'btn-group'" [attr.title]="showTooltip===true?text:''">
+    <button *ngIf="isSplit" type="button" (click)="clickTrigger($event)" [ngClass]="classes" [attr.disabled]="disabled?'':null">
+		<span *ngIf="isSplit" >
+			<i *ngIf="preIcon" class="fa {{preIcon}} right10"></i>
+		</span>
+  		<span *ngIf="isSplit">{{text}}</span>
+  	</button>
+    <button type="button" [ngClass]="classes" data-toggle="dropdown" class="dropdown-toggle" [attr.disabled]="disabled?'':null">
+		<span *ngIf="!isSplit" >
+			<i *ngIf="preIcon " class="fa {{preIcon}} iconRight "></i>
+		</span>
+  		<span *ngIf="!isSplit ">{{text}}</span>
+    	<span class="caret "></span>
+  	</button>
+    <ul class="dropdown-menu" *ngIf="!!itemDatas">
+        <li *ngFor="let item of itemDatas " [attr.role]="item.role " [attr.title]="showTooltip===true? item.value: ''" [class]="item.role==null? '' : 'divider' " (click)="itemClick(item)">
+            <a href="javascript: void(0)" *ngIf="item.value ">{{item.value}}</a>
+        </li>
+    </ul>
+</div>
+<!-- [attr.title]='item.value' -->
+
+<!--
+	<div [ngClass]="classes "><!-- [class]="isDropUp? 'btn-group dropup' : 'btn-group' "
+	<button *ngIf="isSplit " type="button " (click)="clickTrigger($event) " class="btn btn-{{style}} btn-{{size}}
+		"  [attr.disabled]="disabled ">
+  		<i *ngIf="preIcon " class="fa {{preIcon}} right10 "></i>
+  		<span *ngIf="isSplit ">{{text}}</span>
+  	</button>
+	<button type="button " class="btn btn-{{style}} btn-{{size}} dropdown-toggle " data-toggle="dropdown
+		"  [attr.disabled]="disabled ">
+  		<i *ngIf="preIcon " class="fa {{preIcon}} right10 "></i>
+  		<span *ngIf="!isSplit ">{{text}}</span>
+    	<span class="caret "></span>
+  	</button>
+	<ul class="dropdown-menu ">
+		<li *ngFor="let item of itemDatas " [attr.role]="item.role " [class]="item.role==null? '' : 'divider' ">
+			<a href="# " *ngIf="item.value " (click)="itemClick(item) ">{{item.value}}</a>
+		</li>
+	</ul>
+</div>
+-->

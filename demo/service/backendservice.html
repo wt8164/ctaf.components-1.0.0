@@ -1,0 +1,110 @@
+<div class="container">
+    <h4 class="text-tips">BackendService(后端API)</h4>
+    <div class="jumbtron">
+        <monacoeditor language='typescript' height="1500">
+            <![CDATA[
+public get(url: string, options?: BackendServiceOptions): Promise<any> {
+
+        if (options && options.params != null) {
+            url += this.getQueryString(options.params);
+        }
+
+        let requestOptions = this.getRequestOptions(RequestMethod.Get, options);
+
+        return this.http.get(url, requestOptions)
+            .toPromise()
+            .then(response => this.parse(response, options))
+            .catch(this.handleError);
+    }
+
+    /**
+     * @description Head method to http request.
+     * @param {string} url http request url.
+     * @param {BackendServiceOptions} options http request options.
+     * @return {any} http response.
+     */
+    public head(url: string, options?: BackendServiceOptions): Promise<any> {
+
+        if (options && options.params != null) {
+            url += this.getQueryString(options.params);
+        }
+
+        let requestOptions = this.getRequestOptions(RequestMethod.Head, options);
+
+        return this.http.head(url, requestOptions)
+            .toPromise()
+            .then(response => this.parse(response, options))
+            .catch(this.handleError);
+    }
+
+    /**
+     * @description Post method to http request.
+     * @param {string} url http request url.
+     * @param {BackendServiceOptions} options http request options.
+     * @return {any} http response.
+     */
+    public post(url: string, options?: BackendServiceOptions): Promise<any> {
+
+        let requestOptions = this.getRequestOptions(RequestMethod.Post, options);
+
+        return this.http
+            .post(url, requestOptions.body, requestOptions)
+            .toPromise()
+            .then(response => this.parse(response, options))
+            .catch(this.handleError);
+    }
+
+    /**
+     * @description Put method to http request.
+     * @param {string} url http request url.
+     * @param {BackendServiceOptions} options http request options.
+     * @return {any} http response.
+     */
+    public put(url: string, options?: BackendServiceOptions): Promise<any> {
+
+        let requestOptions = this.getRequestOptions(RequestMethod.Put, options);
+
+        return this.http
+            .put(url, requestOptions.body, requestOptions)
+            .toPromise()
+            .then(response => this.parse(response, options))
+            .catch(this.handleError);
+    }
+
+    /**
+     * @description Patch method to http request.
+     * @param {string} url http request url.
+     * @param {BackendServiceOptions} options http request options.
+     * @return {any} http response.
+     */
+    public patch(url: string, options?: BackendServiceOptions): Promise<any> {
+
+        let requestOptions = this.getRequestOptions(RequestMethod.Patch, options);
+
+        return this.http
+            .patch(url, requestOptions.body, requestOptions)
+            .toPromise()
+            .then(response => this.parse(response, options))
+            .catch(this.handleError);
+    }
+
+    /**
+     * @description Delete method to http request.
+     * @param {string} url http request url.
+     * @param {BackendServiceOptions} options http request options.
+     * @return {any} http response.
+     */
+    public delete(url: string, options?: BackendServiceOptions): Promise<any> {
+
+        let requestOptions = this.getRequestOptions(RequestMethod.Delete, options);
+
+        return this.http
+            .delete(url, requestOptions)
+            .toPromise()
+            .then(response => this.parse(response, options))
+            .catch(this.handleError);
+    }            
+            ]]>
+        </monacoeditor>
+    </div>
+</div>

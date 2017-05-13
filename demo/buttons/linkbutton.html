@@ -1,0 +1,95 @@
+<div class="container text-info">
+    <h4 class="text-tips">点击</h4>
+    <ctaf-cp-linkbutton text="default"></ctaf-cp-linkbutton>
+    <ctaf-cp-linkbutton text="this is a link" (click)="buttonClick($event)"></ctaf-cp-linkbutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--click事件已阻止，无法调用-->
+<ctaf-cp-linkbutton text="this is a link" (click)="buttonClick($event)"></ctaf-cp-linkbutton>
+		]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">启用禁用</h4>
+    <ctaf-cp-linkbutton [disabled]=true></ctaf-cp-linkbutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--[disabled]=true-->
+<ctaf-cp-linkbutton [disabled]=true></ctaf-cp-linkbutton>
+		]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置主题</h4>
+    <ctaf-cp-linkbutton text="default"></ctaf-cp-linkbutton>
+    <ctaf-cp-linkbutton text="info" style="info"></ctaf-cp-linkbutton>
+    <ctaf-cp-linkbutton text="danger" style="danger"></ctaf-cp-linkbutton>
+    <ctaf-cp-linkbutton text="warning" style="warning"></ctaf-cp-linkbutton>
+    <ctaf-cp-linkbutton text="success" style="success"></ctaf-cp-linkbutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="200">
+            <![CDATA[
+<!--default-->
+<ctaf-cp-linkbutton text="default"></ctaf-cp-linkbutton>
+<!--info-->
+<ctaf-cp-linkbutton text="info" style="info"></ctaf-cp-linkbutton>
+<!--danger-->
+<ctaf-cp-linkbutton text="danger" style="danger"></ctaf-cp-linkbutton>
+<!--warning-->
+<ctaf-cp-linkbutton text="warning" style="warning"></ctaf-cp-linkbutton>
+<!--success-->
+<ctaf-cp-linkbutton text="success" style="success"></ctaf-cp-linkbutton>
+		]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置标题</h4>
+    <ctaf-cp-linkbutton text="this is a link"></ctaf-cp-linkbutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--text-->
+<ctaf-cp-linkbutton text="this is a link" style="info"></ctaf-cp-linkbutton>
+		]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置大小</h4>
+    <ctaf-cp-linkbutton text="size" [size]=0></ctaf-cp-linkbutton>
+    <ctaf-cp-linkbutton text="size" [size]=1></ctaf-cp-linkbutton>
+    <ctaf-cp-linkbutton text="size" [size]=2></ctaf-cp-linkbutton>
+    <ctaf-cp-linkbutton text="size" [size]=3></ctaf-cp-linkbutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="180">
+            <![CDATA[
+<!--[size]=0-->
+<ctaf-cp-linkbutton text="size" [size]=0></ctaf-cp-linkbutton>
+<!--[size]=1-->
+<ctaf-cp-linkbutton text="size" [size]=1></ctaf-cp-linkbutton>
+<!--[size]=2-->
+<ctaf-cp-linkbutton text="size" [size]=2></ctaf-cp-linkbutton>
+<!--[size]=3-->
+<ctaf-cp-linkbutton text="size" [size]=3></ctaf-cp-linkbutton>
+		]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">设置连接</h4>
+    <ctaf-cp-linkbutton href="http://www.qq.com/"></ctaf-cp-linkbutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--href属性-->
+<ctaf-cp-linkbutton href="http://www.qq.com/"></ctaf-cp-linkbutton>
+		]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">showTooltip</h4>
+    <ctaf-cp-linkbutton text="default" [showTooltip]=true></ctaf-cp-linkbutton>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!--设置showTooltip为true后，title提醒文字默认为组件文本内容-->
+<ctaf-cp-linkbutton text="default" [showTooltip]=true></ctaf-cp-linkbutton>
+		]]>
+        </monacoeditor>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+ctaf-cp-buttongroup{
+    .buttons-group {
+        display: inline-block;
+        &.buttongroup-style-default .btn {
+            .button-variant(@btn-default-color;
+            @btn-default-bg;
+            @btn-default-border);
+        }
+        &.buttongroup-style-primary .btn {
+            .button-variant(@btn-primary-color;
+            @btn-primary-bg;
+            @btn-primary-border);
+        }
+        // Success appears as green
+        &.buttongroup-style-success .btn {
+            .button-variant(@btn-success-color;
+            @btn-success-bg;
+            @btn-success-border);
+        }
+        // Info appears as blue-green
+        &.buttongroup-style-info .btn {
+            .button-variant(@btn-info-color;
+            @btn-info-bg;
+            @btn-info-border);
+        }
+        // Warning appears as orange
+        &.buttongroup-style-warning .btn {
+            .button-variant(@btn-warning-color;
+            @btn-warning-bg;
+            @btn-warning-border);
+        }
+        // Danger and error appear as red
+        &.buttongroup-style-danger .btn {
+            .button-variant(@btn-danger-color;
+            @btn-danger-bg;
+            @btn-danger-border);
+        }
+        // Button Sizes
+        // --------------------------------------------------
+        &.buttongroup-size-lg .btn {
+            // line-height: ensure even-numbered height of button next to large input
+            .button-size(@padding-large-vertical;
+            @padding-large-horizontal;
+            @font-size-large;
+            @line-height-large;
+            @btn-border-radius-large);
+        }
+        &.buttongroup-size-sm .btn {
+            // line-height: ensure proper height of button next to small input
+            .button-size(@padding-small-vertical;
+            @padding-small-horizontal;
+            @font-size-small;
+            @line-height-small;
+            @btn-border-radius-small);
+        }
+        &.buttongroup-size-xs .btn {
+            .button-size(@padding-xs-vertical;
+            @padding-xs-horizontal;
+            @font-size-small;
+            @line-height-small;
+            @btn-border-radius-small);
+        }
+        
+    }
+}

@@ -1,0 +1,158 @@
+<div class="container text-info">
+    <h4 class="text-tips">styleOn / styleOff (ON/OFF颜色)</h4>
+    <ctaf-cp-switch></ctaf-cp-switch>
+    <ctaf-cp-switch styleOn="primary" styleOff="info"></ctaf-cp-switch>
+    <ctaf-cp-switch styleOn="info" styleOff="success"></ctaf-cp-switch>
+    <ctaf-cp-switch styleOn="success" styleOff="warning"></ctaf-cp-switch>
+    <ctaf-cp-switch styleOn="warning" styleOff="danger"></ctaf-cp-switch>
+    <ctaf-cp-switch styleOn="danger" styleOff="primary"></ctaf-cp-switch>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="240">
+            <![CDATA[
+<!--默认-->
+<ctaf-cp-switch></ctaf-cp-switch>
+<!--标准-->
+<ctaf-cp-switch styleOn="primary" styleOff="info"></ctaf-cp-switch>
+<!--信息-->
+<ctaf-cp-switch styleOn="info" styleOff="success"></ctaf-cp-switch>
+<!--成功-->
+<ctaf-cp-switch styleOn="success" styleOff="warning"></ctaf-cp-switch>
+<!--提醒-->
+<ctaf-cp-switch styleOn="warning" styleOff="danger"></ctaf-cp-switch>
+<!--危险-->
+<ctaf-cp-switch styleOn="danger" styleOff="primary"></ctaf-cp-switch>        
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">gradient (ON/OFF过渡色)</h4>
+    <ctaf-cp-switch [gradient]="true" styleOn="primary" styleOff="info"></ctaf-cp-switch>
+    <ctaf-cp-switch [gradient]="true" styleOn="info" styleOff="success"></ctaf-cp-switch>
+    <ctaf-cp-switch [gradient]="true" styleOn="success" styleOff="warning"></ctaf-cp-switch>
+    <ctaf-cp-switch [gradient]="true" styleOn="warning" styleOff="danger"></ctaf-cp-switch>
+    <ctaf-cp-switch [gradient]="true" styleOn="danger" styleOff="primary"></ctaf-cp-switch>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="240">
+            <![CDATA[
+<!--标准(过渡色)-->
+<ctaf-cp-switch [gradient]="true" styleOn="primary" styleOff="info"></ctaf-cp-switch>
+<!--信息(过渡色)-->
+<ctaf-cp-switch [gradient]="true" styleOn="info" styleOff="success"></ctaf-cp-switch>
+<!--成功(过渡色)-->
+<ctaf-cp-switch [gradient]="true" styleOn="success" styleOff="warning"></ctaf-cp-switch>
+<!--提醒(过渡色)-->
+<ctaf-cp-switch [gradient]="true" styleOn="warning" styleOff="danger"></ctaf-cp-switch>
+<!--危险(过渡色)-->
+<ctaf-cp-switch [gradient]="true" styleOn="danger" styleOff="primary"></ctaf-cp-switch>        
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">size</h4>
+    <ctaf-cp-switch size="lg"></ctaf-cp-switch>
+    <ctaf-cp-switch size="md"></ctaf-cp-switch>
+    <ctaf-cp-switch size="sm"></ctaf-cp-switch>
+    <ctaf-cp-switch size="xs"></ctaf-cp-switch>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--超大-->
+<ctaf-cp-switch size="lg"></ctaf-cp-switch>
+<!--默认-->
+<ctaf-cp-switch size="md"></ctaf-cp-switch>
+<!--小号-->
+<ctaf-cp-switch size="sm"></ctaf-cp-switch>
+<!--超小-->
+<ctaf-cp-switch size="xs"></ctaf-cp-switch>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">animate</h4>
+    <ctaf-cp-switch [animate]="false"></ctaf-cp-switch>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--无动画过渡效果-->
+<ctaf-cp-switch [animate]="false"></ctaf-cp-switch>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">onText/offText(ON/OFF提示文字)</h4>
+    <ctaf-cp-switch onText="开" offText="关"></ctaf-cp-switch>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--“开/关”-->
+<ctaf-cp-switch onText="开" offText="关"></ctaf-cp-switch>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">text(文字说明)</h4>
+    <ctaf-cp-switch>这里可以文字说明</ctaf-cp-switch>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--"后面跟文字"-->
+<ctaf-cp-switch>这里可以文字说明</ctaf-cp-switch>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">block(块状元素显示)</h4>
+    <ctaf-cp-switch [block]="true"></ctaf-cp-switch>
+    <ctaf-cp-switch [block]="true"></ctaf-cp-switch>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--block-->
+<ctaf-cp-switch [block]="true"></ctaf-cp-switch>
+<ctaf-cp-switch [block]="true"></ctaf-cp-switch>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">disabled(禁用)</h4>
+    <ctaf-cp-switch [disabled]="true"></ctaf-cp-switch>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--disabled-->
+<ctaf-cp-switch [disabled]="true"></ctaf-cp-switch>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">state(开关状态)</h4>
+    <ctaf-cp-switch [state]="true"></ctaf-cp-switch>
+    <ctaf-cp-switch [state]="false"></ctaf-cp-switch>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--初始状态：ON-->
+<ctaf-cp-switch [state]="true"></ctaf-cp-switch>
+<!--初始状态：OFF-->
+<ctaf-cp-switch [state]="false"></ctaf-cp-switch>
+		    ]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">ngModel绑定开关状态</h4>
+    <ctaf-cp-switch [(ngModel)]="state"></ctaf-cp-switch>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="40">
+            <![CDATA[
+<ctaf-cp-switch [(ngModel)]="state"></ctaf-cp-switch>
+		    ]]>
+        </monacoeditor>
+        <monacoeditor language='javascript' height="80">
+            <![CDATA[
+export class DemoSwitchComponent extends ComponentBase {
+  public state: boolean = false;
+}
+		    ]]>
+        </monacoeditor>
+    </div>
+</div>

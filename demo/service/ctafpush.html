@@ -1,0 +1,71 @@
+<div class="container">
+    <h4 class="text-tips">CTAF推送Service</h4>
+    <div class="jumbtron">
+        <monacoeditor language='typescript' height="1200">
+            <![CDATA[
+WebSocket 使用说明
+更新最新ctaf框架
+sh
+    npm update
+引入NotificationService
+ts
+   import { NotificationService } from '@ctaf/framework';
+构造函数实例化
+ts
+    constructor(protected cdr: ChangeDetectorRef, protected ns: NotificationService) {
+        super(cdr);
+    }
+
+方法介绍
+连接推送服务器。 url推送服务器地址,返回是否订阅成功
+ts
+connect(url: string): boolean
+
+订阅。url推送服务器地址，channel订阅主题（topic），callback回调函数返回响应数据，返回subscription订阅记录信息
+ts
+subscribe(url: string, channel: string, callback: (url: string, message: any) => void): any;
+
+取消订阅。url推送服务器地址，subscription订阅记录（指定取消哪一个订阅）
+ts
+unSubscribe(url: string, subscription: any): void;
+
+例子
+ts
+import { ChangeDetectorRef } from '@angular/core';
+import { CTAFComponent, WidgetBase, NotificationService } from '@ctaf/framework';
+import { WidgetPanelComponent } from '@ctaf/components';
+
+@CTAFComponent({
+    selector: 'ts-wg-widget',
+    templateUrl: 'widget.component.html'
+})
+export class WidgetComponent extends WidgetBase {
+   
+    private subscription: any;
+    
+    constructor(protected cdr: ChangeDetectorRef, protected ns: NotificationService) {
+        super(cdr);
+    }
+    //服务器连接 
+    private connectServer() {
+        this.ns.connect('http://200.31.180.158:8080/dps/wp');
+    }
+    //订阅topic
+    private subscribeTopic() {
+        this.subscription = this.ns.subscribe('http://200.31.180.158:8080/dps/wp', '/fx/out', (url, message) => { this.callback(url,message) })
+    }
+    //取消该订阅
+    private unsubscribeTopic() {
+        this.ns.unSubscribe('http://200.31.180.158:8080/dps/wp', this.subscription);
+    }
+    //回调函数
+    private callback(url,message) {
+        console.log(message);
+    }
+}
+
+测试推送服务地址http://200.31.180.158:8080/dps/cwap-s-wp/fx.do
+            ]]>
+        </monacoeditor>
+    </div>
+</div>

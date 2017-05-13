@@ -1,0 +1,525 @@
+<h4 class="text-tips">translate</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--位移-->
+animations: [
+    trigger('routeAnimation', [
+        state('off', style({         
+            transform: 'translateX(0)'
+        })),
+        state('on', style({        
+            transform: 'translateX(100%)'
+        })),
+        transition('off => on', animate('500ms ease')),
+        transition('on => off', animate('300ms ease'))
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation1.animationState=!this.animation1.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: bottom;">
+            <ctaf-cp-animation1 #animation1></ctaf-cp-animation1>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">scale</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="270">
+                <![CDATA[
+<!--缩放-->
+animations: [
+    trigger('routeAnimation', [
+        state('off', style({
+            transform: 'scale(1)',
+            transformOrigin: 'left bottom'
+        })),
+        state('on', style({
+            transform: 'scale(1.5)',
+            transformOrigin: 'left bottom'
+        })),
+        transition('off => on', animate('500ms ease')),
+        transition('on => off', animate('300ms ease'))
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation2.animationState=!this.animation2.animationState;"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: bottom;">
+            <ctaf-cp-animation2 #animation2></ctaf-cp-animation2>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">rotate</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--旋转-->
+animations: [
+    trigger('routeAnimation', [
+        state('off', style({
+            transform: 'rotate(0deg)'
+        })),
+        state('on', style({
+            transform: 'rotate(180deg)'
+        })),
+        transition('off => on', animate('500ms ease')),
+        transition('on => off', animate('500ms ease'))
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation3.animationState=!this.animation3.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: bottom;">
+            <ctaf-cp-animation3 #animation3></ctaf-cp-animation3>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">skew</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--拉伸-->
+animations: [
+    trigger('routeAnimation', [
+        state('off', style({
+            transform: 'skew(0deg)'
+        })),
+        state('on', style({
+            transform: 'skew(-45deg,-45deg)'
+        })),
+        transition('off => on', animate('.5s ease')),
+        transition('on => off', animate('.5s ease'))
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation4.animationState=!this.animation4.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: bottom;">
+            <ctaf-cp-animation4 #animation4></ctaf-cp-animation4>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">opacity</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--透明度-->
+animations: [
+    trigger('routeAnimation', [
+        state('off', style({
+            opacity:1
+        })),
+        state('on', style({
+            opacity:.3
+        })),
+        transition('off => on', animate('.5s ease')),
+        transition('on => off', animate('.5s ease'))
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation5.animationState=!this.animation5.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: bottom;">
+            <ctaf-cp-animation5 #animation5></ctaf-cp-animation5>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">width</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--宽度-->
+animations: [
+    trigger('routeAnimation', [
+        state('off', style({
+            opacity:1
+        })),
+        state('on', style({
+            opacity:.3
+        })),
+        transition('off => on', animate('.5s ease')),
+        transition('on => off', animate('.5s ease'))
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation6.animationState=!this.animation6.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: bottom;">
+            <ctaf-cp-animation6 #animation6></ctaf-cp-animation6>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">height</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--高度-->
+animations: [
+    trigger('routeAnimation', [
+        state('off', style({
+            height:"100px"
+        })),
+        state('on', style({
+            height:"0px"
+        })),
+        transition('off => on', animate('.5s ease')),
+        transition('on => off', animate('.5s ease'))
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation7.animationState=!this.animation7.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: top;">
+            <ctaf-cp-animation7 #animation7></ctaf-cp-animation7>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">zoomInDown</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--zoomInDown-->
+animations: [
+    trigger('routeAnimation', [
+        state('off', style({
+        transform: 'translateY(-200%) scale(0)',
+        opacity: 0.3
+        })),
+        state('on', style({
+        transform: 'translateY(0) scale(1)',
+        opacity: 1
+        })),
+        transition('off => on', group([
+        animate('0.3s ease', style({
+            transform: 'translateY(0) scale(1)'
+        })),
+        animate('0.3s 0.2s ease', style({
+            opacity: 1
+        }))
+        ])
+        ),
+        transition('on => off', animate('.3s ease'))
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation8.animationState=!this.animation8.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: top;">
+            <ctaf-cp-animation8 #animation8></ctaf-cp-animation8>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">slideOutUp</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--slideOutUp-->
+animations: [
+    trigger('routeAnimation', [
+      state('off', style({
+        transform: 'translateY(0)'
+      })),
+      state('on', style({
+        transform: 'translateY(0)'
+      })),
+      transition('off <=> on', [
+        animate(900, keyframes([
+          style({ transform: 'translateY(0)', offset: 0 }),
+          style({ transform: 'translateY(-100%)', offset: 0.8 }),
+          style({ transform: 'translateY(-100%)', offset: 0.9 }),
+          style({ transform: 'translateY(0)', offset: 1.0 })
+        ]))
+      ])
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation9.animationState=!this.animation9.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: top;">
+            <ctaf-cp-animation9 #animation9></ctaf-cp-animation9>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">rotateOut</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--rotateOut-->
+animations: [
+    trigger('routeAnimation', [
+        state('off', style({
+        transform: 'rotate(0)',
+        opacity: 1
+        })),
+        state('on', style({
+        transform: 'totate(0)',
+        opacity: 1
+        })),
+        transition('off <=> on', [
+        animate(900, keyframes([
+            style({ transform: 'rotate(0)', opacity: 1, offset: 0 }),
+            style({ transform: 'rotate(180deg)', opacity: 0, offset: 0.8 }),
+            style({ transform: 'rotate(0)', opacity: 0, offset: 0.8 }),
+            style({ transform: 'rotate(0)', opacity: 1, offset: 1.0 })
+        ]))
+        ])
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation10.animationState=!this.animation10.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: top;">
+            <ctaf-cp-animation10 #animation10></ctaf-cp-animation10>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">rotateInDownLeft</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--rotateInDownLeft-->
+animations: [
+    trigger('routeAnimation', [
+      state('off', style({
+        transform: 'rotate(0)',
+        opacity: 1,
+        transformOrigin:"left bottom"
+      })),
+      state('on', style({
+        transform: 'rotate(0)',
+        opacity: 1,
+        transformOrigin:"left bottom"
+      })),
+      transition('off <=> on', [
+        animate(700,keyframes([
+          style({ transform: 'rotate(-45deg)', opacity: 0, offset: 0 }),
+          style({ transform: 'rotate(0deg)', opacity: 1, offset: 1 })
+        ]))
+      ])
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation11.animationState=!this.animation11.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: top;">
+            <ctaf-cp-animation11 #animation11></ctaf-cp-animation11>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">flash</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--flash-->
+animations: [
+    trigger('routeAnimation', [
+      state('off', style({
+        opacity: 1
+      })),
+      state('on', style({
+        opacity: 1
+      })),
+      transition('off <=> on', [
+        animate(900,keyframes([
+          style({opacity: 1, offset: 0 }),
+          style({opacity: 0, offset: 0.2 }),
+          style({opacity: 1, offset: 0.5 }),
+          style({opacity: 0, offset: 0.8 }),
+          style({opacity: 1, offset: 1 })
+        ]))
+      ])
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation12.animationState=!this.animation12.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: top;">
+            <ctaf-cp-animation12 #animation12></ctaf-cp-animation12>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">bounceInRight</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--bounceInRight-->
+animations: [
+    trigger('routeAnimation', [
+        state('off', style({
+        transform: "translateX(0)"
+        })),
+        state('on', style({
+        transform: "translateX(0)"
+        })),
+        transition('off <=> on', [
+        animate(600,keyframes([
+            style({transform: "translateX(100%)", offset: 0 }),
+            style({transform: "translateX(-10px)", offset: 0.5 }),
+            style({transform: "translateX(10px)", offset: 0.7 }),
+            style({transform: "translateX(-5px)", offset: 0.9 }),
+            style({transform: "translateX(0)", offset: 1 })
+        ]))
+        ])
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation13.animationState=!this.animation13.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: top;">
+            <ctaf-cp-animation13 #animation13></ctaf-cp-animation13>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">bounceInRight</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--bounceInRight-->
+animations: [
+    trigger('routeAnimation', [
+      state('off', style({
+        transform: "scale(1)"
+      })),
+      state('on', style({
+        transform: "scale(1)"
+      })),
+      transition('off <=> on', [
+        animate(600,keyframes([
+          style({transform: "scale(1)", offset: 0 }),
+          style({transform: "scale(1.5,0.8)", offset: 0.5 }),
+          style({transform: "scale(0.8,1)", offset: 0.7 }),
+          style({transform: "scale(1.3,1)", offset: 0.8 }),
+          style({transform: "scale(0.9,1)", offset: 0.9 }),
+          style({transform: "scale(1)", offset: 1 })
+        ]))
+      ])
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation14.animationState=!this.animation14.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: top;">
+            <ctaf-cp-animation14 #animation14></ctaf-cp-animation14>
+        </div>
+    </div>
+</div>
+
+<h4 class="text-tips">bounceInRight</h4>
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbtron">
+            <monacoeditor language='html' height="250">
+                <![CDATA[
+<!--bounceInRight-->
+animations: [
+    trigger('routeAnimation', [
+      state('off', style({
+        transform: "translateX(0) skew(0)"
+      })),
+      state('on', style({
+        transform: "translateX(0) skew(0)"
+      })),
+      transition('off <=> on', [
+        animate(600, keyframes([
+          style({ transform: "translateX(100%) skew(0)", offset: 0 }),
+          style({ transform: "translateX(20px) skew(40deg)", offset: 0.6 }),
+          style({ transform: "translateX(0) skew(0)", offset: 1 })
+        ]))
+      ])
+    ])
+]
+		    ]]>
+            </monacoeditor>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ctaf-cp-button style="success" title="点击" (click)="this.animation15.animationState=!this.animation15.animationState"></ctaf-cp-button>
+        <div class="animation-Wrap" style="display: inline-block;vertical-align: top;">
+            <ctaf-cp-animation15 #animation15></ctaf-cp-animation15>
+        </div>
+    </div>
+</div>

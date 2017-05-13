@@ -1,0 +1,60 @@
+<div class="text-tips">
+    <ctaf-cp-amchart #amChart type="funnel" theme="light" [balloon]="balloon" valueField="value" titleField="title" [marginRight]="240" [marginLeft]="50" [startX]="-500" [depth3D]="100" [angle]="40" [outlineAlpha]="1" outlineColor="#FFFFFF" [outlineThickness]="2"
+        labelPosition="right" [balloonText]="balloonText" [dataProvider]="dataProvider"></ctaf-cp-amchart>
+    <monacoeditor language='html' height="40">
+        <![CDATA[
+<ctaf-cp-amchart #amChart type="funnel" theme="light" [balloon]="balloon" valueField="value" titleField="title" [marginRight]="240" [marginLeft]="50" [startX]="-500" [depth3D]="100" [angle]="40" [outlineAlpha]="1" outlineColor="#FFFFFF" [outlineThickness]="2"
+        labelPosition="right" [balloonText]="balloonText" [dataProvider]="dataProvider"></ctaf-cp-amchart>
+    		]]>
+    </monacoeditor>
+    <monacoeditor language='typescript' height="400">
+        <![CDATA[
+import { Component, ViewChild } from '@angular/core';
+import { AmChartsComponent } from '../../src/entry';
+
+import * as _ from 'underscore';
+
+@Component({
+    templateUrl: './3d-funnel-chart.component.html'
+})
+export class ThreeFunnelChartComponent {
+    @ViewChild('amChart') amChart: AmChartsComponent;
+
+    balloon: any;
+    balloonText: any;
+    dataProvider: any;
+
+    ngOnInit() {
+        this.dataProvider = [{
+            'title': 'Website visits',
+            'value': 200
+        }, {
+            'title': 'Downloads',
+            'value': 123
+        }, {
+            'title': 'Requested price list',
+            'value': 98
+        }, {
+            'title': 'Contaced for more info',
+            'value': 72
+        }, {
+            'title': 'Purchased',
+            'value': 35
+        }, {
+            'title': 'Contacted for support',
+            'value': 35
+        }, {
+            'title': 'Purchased additional products',
+            'value': 26
+        }];
+
+        this.balloon = {
+            'fixedPosition': true
+        };
+
+        this.balloonText = '[[title]]: [[value]]n[[description]]';
+    }
+}
+    		]]>
+    </monacoeditor>
+</div>

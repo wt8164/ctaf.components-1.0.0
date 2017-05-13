@@ -1,0 +1,44 @@
+@import "../../less/variables.less";
+ctaf-cp-formcontrol {
+    .ctaf-formcontrol {
+        background: transparent;
+        position: relative;
+        display: inline-block;
+        label {
+            // display: table-cell;
+            color: @text-dark;
+        }
+        input{
+            outline: none;
+        }
+    }
+    .size-0 {
+        height: @height-xs;
+    }
+    .size-1 {
+        height: @height-sm;
+    }
+    .size-2 {
+        height: @height-md;
+    }
+    .size-3 {
+        height: @height-lg;
+    }
+    .isBlock{
+        display: block;
+    }
+    label{
+        margin: 0px;
+        // float: left;
+    }
+    .require{
+        color: @text-danger;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .iconContainer{
+        display: inline-block;
+        width: 10px;
+        height: 100%;
+    }
+}

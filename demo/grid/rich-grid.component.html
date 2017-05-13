@@ -1,0 +1,623 @@
+<div class="text-tips">
+    <div style="padding: 4px;">
+        <div style="float: right;">
+            <input (keyup)="onQuickFilterChanged($event)" type="text" id="quickFilterInput" placeholder="Type text to filter..."/>
+            <button [disabled]="!showGrid" (click)="showGrid=false">Destroy Grid</button>
+            <button [disabled]="showGrid" (click)="showGrid=true">Create Grid</button>
+        </div>
+        <div>
+            <b>Employees Skills and Contact Details</b>
+            {{rowCount}}
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+
+    <div *ngIf="showGrid">
+
+        <!-- Because we are using the Angular ID (ie #ag-grid marker), we have to have all the items that use
+             that marker inside the same ng-if as the grid -->
+
+        <div style="padding: 4px;" class="toolbar">
+            <span>
+                Grid API:
+                <button (click)="agGrid.api.selectAll()">Select All</button>
+                <button (click)="agGrid.api.deselectAll()">Clear Selection</button>
+            </span>
+            <span style="margin-left: 20px;">
+                Column API:
+                <button (click)="agGrid.columnApi.setColumnVisible('country', false)">Hide Country Column</button>
+                <button (click)="agGrid.columnApi.setColumnVisible('country', true)">Show Country Column</button>
+            </span>
+        </div>
+        <div style="clear: both;"></div>
+        <div style="padding: 4px;" class="toolbar">
+            <label>
+                <input type="checkbox" (change)="showToolPanel=$event.target.checked"/>
+                Show Tool Panel
+            </label>
+            <button (click)="createRowData()">Refresh Data</button>
+        </div>
+        <div style="clear: both;"></div>
+
+        <ctaf-cp-grid #agGrid style="width: 100%; height: 350px;" class="ag-fresh"
+
+                     [gridOptions]="gridOptions"
+                     [columnDefs]="columnDefs"
+                     [showToolPanel]="showToolPanel"
+                     [rowData]="rowData"
+
+                     enableColResize
+                     enableSorting
+                     enableFilter
+                     groupHeaders
+                     suppressRowClickSelection
+                     toolPanelSuppressGroups
+                     toolPanelSuppressValues
+                     debug
+                     rowHeight="22"
+                     rowSelection="multiple"
+
+                     (modelUpdated)="onModelUpdated()"
+                     (cellClicked)="onCellClicked($event)"
+                     (cellDoubleClicked)="onCellDoubleClicked($event)"
+                     (cellContextMenu)="onCellContextMenu($event)"
+                     (cellValueChanged)="onCellValueChanged($event)"
+                     (cellFocused)="onCellFocused($event)"
+                     (rowSelected)="onRowSelected($event)"
+                     (selectionChanged)="onSelectionChanged()"
+                     (beforeFilterChanged)="onBeforeFilterChanged()"
+                     (afterFilterChanged)="onAfterFilterChanged()"
+                     (filterModified)="onFilterModified()"
+                     (beforeSortChanged)="onBeforeSortChanged()"
+                     (afterSortChanged)="onAfterSortChanged()"
+                     (virtualRowRemoved)="onVirtualRowRemoved($event)"
+                     (rowClicked)="onRowClicked($event)"
+                     (ready)="onReady($event)"
+
+                     (columnEverythingChanged)="onColumnEvent($event)"
+                     (columnRowGroupChanged)="onColumnEvent($event)"
+                     (columnValueChanged)="onColumnEvent($event)"
+                     (columnMoved)="onColumnEvent($event)"
+                     (columnVisible)="onColumnEvent($event)"
+                     (columnGroupOpened)="onColumnEvent($event)"
+                     (columnResized)="onColumnEvent($event)"
+                     (columnPinnedCountChanged)="onColumnEvent($event)">
+        </ctaf-cp-grid>
+    </div>
+	<h4>Html</h4>
+	<monacoeditor language='html' height="400">
+		<![CDATA[
+    <div style="padding: 4px;">
+        <div style="float: right;">
+            <input (keyup)="onQuickFilterChanged($event)" type="text" id="quickFilterInput" placeholder="Type text to filter..."/>
+            <button [disabled]="!showGrid" (click)="showGrid=false">Destroy Grid</button>
+            <button [disabled]="showGrid" (click)="showGrid=true">Create Grid</button>
+        </div>
+        <div>
+            <b>Employees Skills and Contact Details</b>
+            {{rowCount}}
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+
+    <div *ngIf="showGrid">
+
+        <!-- Because we are using the Angular ID (ie #ag-grid marker), we have to have all the items that use
+             that marker inside the same ng-if as the grid -->
+
+        <div style="padding: 4px;" class="toolbar">
+            <span>
+                Grid API:
+                <button (click)="agGrid.api.selectAll()">Select All</button>
+                <button (click)="agGrid.api.deselectAll()">Clear Selection</button>
+            </span>
+            <span style="margin-left: 20px;">
+                Column API:
+                <button (click)="agGrid.columnApi.setColumnVisible('country', false)">Hide Country Column</button>
+                <button (click)="agGrid.columnApi.setColumnVisible('country', true)">Show Country Column</button>
+            </span>
+        </div>
+        <div style="clear: both;"></div>
+        <div style="padding: 4px;" class="toolbar">
+            <label>
+                <input type="checkbox" (change)="showToolPanel=$event.target.checked"/>
+                Show Tool Panel
+            </label>
+            <button (click)="createRowData()">Refresh Data</button>
+        </div>
+        <div style="clear: both;"></div>
+
+        <ctaf-cp-grid #agGrid style="width: 100%; height: 350px;" class="ag-fresh"
+
+                     [gridOptions]="gridOptions"
+                     [columnDefs]="columnDefs"
+                     [showToolPanel]="showToolPanel"
+                     [rowData]="rowData"
+
+                     enableColResize
+                     enableSorting
+                     enableFilter
+                     groupHeaders
+                     suppressRowClickSelection
+                     toolPanelSuppressGroups
+                     toolPanelSuppressValues
+                     debug
+                     rowHeight="22"
+                     rowSelection="multiple"
+
+                     (modelUpdated)="onModelUpdated()"
+                     (cellClicked)="onCellClicked($event)"
+                     (cellDoubleClicked)="onCellDoubleClicked($event)"
+                     (cellContextMenu)="onCellContextMenu($event)"
+                     (cellValueChanged)="onCellValueChanged($event)"
+                     (cellFocused)="onCellFocused($event)"
+                     (rowSelected)="onRowSelected($event)"
+                     (selectionChanged)="onSelectionChanged()"
+                     (beforeFilterChanged)="onBeforeFilterChanged()"
+                     (afterFilterChanged)="onAfterFilterChanged()"
+                     (filterModified)="onFilterModified()"
+                     (beforeSortChanged)="onBeforeSortChanged()"
+                     (afterSortChanged)="onAfterSortChanged()"
+                     (virtualRowRemoved)="onVirtualRowRemoved($event)"
+                     (rowClicked)="onRowClicked($event)"
+                     (ready)="onReady($event)"
+
+                     (columnEverythingChanged)="onColumnEvent($event)"
+                     (columnRowGroupChanged)="onColumnEvent($event)"
+                     (columnValueChanged)="onColumnEvent($event)"
+                     (columnMoved)="onColumnEvent($event)"
+                     (columnVisible)="onColumnEvent($event)"
+                     (columnGroupOpened)="onColumnEvent($event)"
+                     (columnResized)="onColumnEvent($event)"
+                     (columnPinnedCountChanged)="onColumnEvent($event)">
+        </ctaf-cp-grid>
+    </div>
+	    ]]>
+	</monacoeditor>
+	<h4>RichGridDeclarativeComponent</h4>
+	<monacoeditor language='typescript' height="400">
+		<![CDATA[
+import { Component } from '@angular/core';
+
+import { GridOptions } from 'ag-grid/main';
+
+import ProficiencyFilter from './proficiencyFilter';
+import SkillFilter from './skillFilter';
+import RefData from './refData';
+
+// only import this if you are using the ag-Grid-Enterprise
+import 'ag-grid-enterprise/main';
+
+@Component({
+    templateUrl: './rich-grid.component.html',
+    styles: [ '.toolbar button {margin: 2px; padding: 0px;}' ],
+})
+export class RichGridComponent {
+
+    private gridOptions: GridOptions;
+    private showGrid: boolean;
+    private rowData: any[];
+    private columnDefs: any[];
+    private rowCount: string;
+
+    constructor() {
+        // we pass an empty gridOptions in, so we can grab the api out
+        this.gridOptions = <GridOptions>{};
+        this.createRowData();
+        this.createColumnDefs();
+        this.showGrid = true;
+    }
+
+    private createRowData() {
+        let rowData: any[] = [];
+
+        for (let i = 0; i < 10000; i++) {
+            let countryData = RefData.countries[ i % RefData.countries.length ];
+            rowData.push({
+                name: RefData.firstNames[ i % RefData.firstNames.length ] + ' ' + RefData.lastNames[ i % RefData.lastNames.length ],
+                skills: {
+                    android: Math.random() < 0.4,
+                    html5: Math.random() < 0.4,
+                    mac: Math.random() < 0.4,
+                    windows: Math.random() < 0.4,
+                    css: Math.random() < 0.4
+                },
+                address: RefData.addresses[ i % RefData.addresses.length ],
+                years: Math.round(Math.random() * 100),
+                proficiency: Math.round(Math.random() * 100),
+                country: countryData.country,
+                continent: countryData.continent,
+                language: countryData.language,
+                mobile: createRandomPhoneNumber(),
+                landline: createRandomPhoneNumber()
+            });
+        }
+
+        this.rowData = rowData;
+    }
+
+    private createColumnDefs() {
+        this.columnDefs = [
+            {
+                headerName: '#', width: 30, checkboxSelection: true, suppressSorting: true,
+                suppressMenu: true, pinned: true
+            },
+            {
+                headerName: 'Employee',
+                children: [
+                    {
+                        headerName: 'Name', field: 'name',
+                        width: 150, pinned: true
+                    },
+                    {
+                        headerName: 'Country', field: 'country', width: 150,
+                        cellRenderer: countryCellRenderer, pinned: true,
+                        filterParams: { cellRenderer: countryCellRenderer, cellHeight: 20 }
+                    },
+                ]
+            },
+            {
+                headerName: 'IT Skills',
+                children: [
+                    {
+                        headerName: 'Skills',
+                        width: 125,
+                        suppressSorting: true,
+                        cellRenderer: skillsCellRenderer,
+                        filter: SkillFilter
+                    },
+                    {
+                        headerName: 'Proficiency',
+                        field: 'proficiency',
+                        width: 120,
+                        cellRenderer: percentCellRenderer,
+                        filter: ProficiencyFilter
+                    },
+                ]
+            },
+            {
+                headerName: 'Contact',
+                children: [
+                    { headerName: 'Mobile', field: 'mobile', width: 150, filter: 'text' },
+                    { headerName: 'Land-line', field: 'landline', width: 150, filter: 'text' },
+                    { headerName: 'Address', field: 'address', width: 500, filter: 'text' }
+                ]
+            }
+        ];
+    }
+
+    private calculateRowCount() {
+        if (this.gridOptions.api && this.rowData) {
+            let model = this.gridOptions.api.getModel();
+            let totalRows = this.rowData.length;
+            let processedRows = model.getRowCount();
+            this.rowCount = processedRows.toLocaleString() + ' / ' + totalRows.toLocaleString();
+        }
+    }
+
+    private onModelUpdated() {
+        console.log('onModelUpdated');
+        this.calculateRowCount();
+    }
+
+    private onReady() {
+        console.log('onReady');
+        this.calculateRowCount();
+    }
+
+    private onCellClicked($event) {
+        console.log('onCellClicked: ' + $event.rowIndex + ' ' + $event.colDef.field);
+    }
+
+    private onCellValueChanged($event) {
+        console.log('onCellValueChanged: ' + $event.oldValue + ' to ' + $event.newValue);
+    }
+
+    private onCellDoubleClicked($event) {
+        console.log('onCellDoubleClicked: ' + $event.rowIndex + ' ' + $event.colDef.field);
+    }
+
+    private onCellContextMenu($event) {
+        console.log('onCellContextMenu: ' + $event.rowIndex + ' ' + $event.colDef.field);
+    }
+
+    private onCellFocused($event) {
+        console.log('onCellFocused: (' + $event.rowIndex + ',' + $event.colIndex + ')');
+    }
+
+    private onRowSelected($event) {
+        // taking out, as when we 'select all', it prints to much to the console!!
+        // console.log('onRowSelected: ' + $event.node.data.name);
+    }
+
+    private onSelectionChanged() {
+        console.log('selectionChanged');
+    }
+
+    private onBeforeFilterChanged() {
+        console.log('beforeFilterChanged');
+    }
+
+    private onAfterFilterChanged() {
+        console.log('afterFilterChanged');
+    }
+
+    private onFilterModified() {
+        console.log('onFilterModified');
+    }
+
+    private onBeforeSortChanged() {
+        console.log('onBeforeSortChanged');
+    }
+
+    private onAfterSortChanged() {
+        console.log('onAfterSortChanged');
+    }
+
+    private onVirtualRowRemoved($event) {
+        // because this event gets fired LOTS of times, we don't print it to the
+        // console. if you want to see it, just uncomment out this line
+        // console.log('onVirtualRowRemoved: ' + $event.rowIndex);
+    }
+
+    private onRowClicked($event) {
+        console.log('onRowClicked: ' + $event.node.data.name);
+    }
+
+    private onQuickFilterChanged($event) {
+        this.gridOptions.api.setQuickFilter($event.target.value);
+    }
+
+    // here we use one generic event to handle all the column type events.
+    // the method just prints the event name
+    private onColumnEvent($event) {
+        console.log('onColumnEvent: ' + $event);
+    }
+
+}
+
+function skillsCellRenderer(params) {
+    let data = params.data;
+    let skills = [];
+    RefData.IT_SKILLS.forEach(function (skill) {
+        if (data && data.skills && data.skills[ skill ]) {
+            skills.push(`<img src='/demo/grid/images/skills/${skill}.png' width='16px' title='${skill}' />`);
+        }
+    });
+    return skills.join(' ');
+}
+
+function countryCellRenderer(params) {
+    let flag = `<img border='0' width='15' height='10' style='margin-bottom: 2px' src='/demo/grid/images/flags/${RefData.COUNTRY_CODES[ params.value ]}.png'>`;
+    return flag + ' ' + params.value;
+}
+
+function createRandomPhoneNumber() {
+    let result = '+';
+    for (let i = 0; i < 12; i++) {
+        result += Math.round(Math.random() * 10);
+        if (i === 2 || i === 5 || i === 8) {
+            result += ' ';
+        }
+    }
+    return result;
+}
+
+function percentCellRenderer(params) {
+    let value = params.value;
+
+    let eDivPercentBar = document.createElement('div');
+    eDivPercentBar.className = 'div-percent-bar';
+    eDivPercentBar.style.width = value + '%';
+    if (value < 20) {
+        eDivPercentBar.style.backgroundColor = 'red';
+    } else if (value < 60) {
+        eDivPercentBar.style.backgroundColor = '#ff9900';
+    } else {
+        eDivPercentBar.style.backgroundColor = '#00A000';
+    }
+
+    let eValue = document.createElement('div');
+    eValue.className = 'div-percent-value';
+    eValue.innerHTML = value + '%';
+
+    let eOuterDiv = document.createElement('div');
+    eOuterDiv.className = 'div-outer-div';
+    eOuterDiv.appendChild(eValue);
+    eOuterDiv.appendChild(eDivPercentBar);
+
+    return eOuterDiv;
+}
+        ]]>
+	</monacoeditor>
+	<h4>ProficiencyFilter</h4>
+	<monacoeditor language='typescript' height="400">
+		<![CDATA[
+import { IFilter, IFilterParams } from 'ag-grid/main';
+
+let FILTER_TITLE =
+    '<div style="text-align: center; background: lightgray; width: 100%; display: block; border-bottom: 1px solid grey;">' +
+    '<b>TITLE_NAME</b>' +
+    '</div>';
+
+let PROFICIENCY_TEMPLATE =
+    '<label style="padding-left: 4px;">' +
+    '<input type="radio" name="RANDOM"/>' +
+    'PROFICIENCY_NAME' +
+    '</label>';
+
+let PROFICIENCY_NONE = 'none';
+let PROFICIENCY_ABOVE40 = 'above40';
+let PROFICIENCY_ABOVE60 = 'above60';
+let PROFICIENCY_ABOVE80 = 'above80';
+
+let PROFICIENCY_NAMES = [ 'No Filter', 'Above 40%', 'Above 60%', 'Above 80%' ];
+let PROFICIENCY_VALUES = [ PROFICIENCY_NONE, PROFICIENCY_ABOVE40, PROFICIENCY_ABOVE60, PROFICIENCY_ABOVE80 ];
+
+export default class ProficiencyFilter implements IFilter {
+    private filterChangedCallback: Function;
+    private selected: string;
+    private valueGetter: Function;
+
+    public init(params: IFilterParams): void {
+        this.filterChangedCallback = params.filterChangedCallback;
+        this.selected = PROFICIENCY_NONE;
+        this.valueGetter = params.valueGetter;
+    }
+
+    public getGui() {
+        let eGui = document.createElement('div');
+        let eInstructions = document.createElement('div');
+        eInstructions.innerHTML = FILTER_TITLE.replace('TITLE_NAME', 'Custom Proficiency Filter');
+        eGui.appendChild(eInstructions);
+
+        let random = '' + Math.random();
+
+        let that = this;
+        PROFICIENCY_NAMES.forEach(function (name, index) {
+            let eFilter = document.createElement('div');
+            let html = PROFICIENCY_TEMPLATE.replace('PROFICIENCY_NAME', name).replace('RANDOM', random);
+            eFilter.innerHTML = html;
+            let eRadio = <HTMLInputElement>eFilter.querySelector('input');
+            if (index === 0) {
+                eRadio.checked = true;
+            }
+            eGui.appendChild(eFilter);
+
+            eRadio.addEventListener('click', function () {
+                that.selected = PROFICIENCY_VALUES[ index ];
+                that.filterChangedCallback();
+            });
+        });
+
+        return eGui;
+    }
+
+    public doesFilterPass(params) {
+
+        let value = this.valueGetter(params);
+        let valueAsNumber = parseFloat(value);
+
+        switch (this.selected) {
+            case PROFICIENCY_ABOVE40:
+                return valueAsNumber >= 40;
+            case PROFICIENCY_ABOVE60:
+                return valueAsNumber >= 60;
+            case PROFICIENCY_ABOVE80:
+                return valueAsNumber >= 80;
+            default:
+                return true;
+        }
+
+    }
+
+    public isFilterActive() {
+        return this.selected !== PROFICIENCY_NONE;
+    }
+
+    public getModel(): any {
+        return undefined;
+    }
+
+    public setModel(model: any): void {
+    }
+}
+        ]]>
+	</monacoeditor>
+	<h4>SkillFilter</h4>
+	<monacoeditor language='typescript' height="400">
+		<![CDATA[
+import RefData from './refData';
+import { IFilter, IFilterParams } from 'ag-grid/main';
+
+let SKILL_TEMPLATE =
+    '<label style="border: 1px solid lightgrey; margin: 4px; padding: 4px; display: inline-block;">' +
+    '  <span>' +
+    '    <div style="text-align: center;">SKILL_NAME</div>' +
+    '    <div>' +
+    '      <input type="checkbox"/>' +
+    '      <img src="/demo/grid/images/skills/SKILL.png" width="30px"/>' +
+    '    </div>' +
+    '  </span>' +
+    '</label>';
+
+let FILTER_TITLE =
+    '<div style="text-align: center; background: lightgray; width: 100%; display: block; border-bottom: 1px solid grey;">' +
+    '<b>TITLE_NAME</b>' +
+    '</div>';
+
+export default class SkillFilter implements IFilter {
+    private filterChangedCallback: Function;
+    private model: any;
+
+    public init(params: IFilterParams): void {
+        this.filterChangedCallback = params.filterChangedCallback;
+        this.model = {
+            android: false,
+            css: false,
+            html5: false,
+            mac: false,
+            windows: false
+        };
+    };
+
+    public getGui() {
+        let eGui = document.createElement('div');
+        eGui.style.width = '380px';
+        let eInstructions = document.createElement('div');
+        eInstructions.innerHTML = FILTER_TITLE.replace('TITLE_NAME', 'Custom Skills Filter');
+        eGui.appendChild(eInstructions);
+
+        let that = this;
+
+        RefData.IT_SKILLS.forEach(function (skill, index) {
+            let skillName = RefData.IT_SKILLS_NAMES[ index ];
+            let eSpan = document.createElement('span');
+            let html = SKILL_TEMPLATE.replace('SKILL_NAME', skillName).replace('SKILL', skill);
+            eSpan.innerHTML = html;
+
+            let eCheckbox = <HTMLInputElement>eSpan.querySelector('input');
+            eCheckbox.addEventListener('click', function () {
+                that.model[ skill ] = eCheckbox.checked;
+                that.filterChangedCallback();
+            });
+
+            eGui.appendChild(eSpan);
+        });
+
+        return eGui;
+    };
+
+    public doesFilterPass(params) {
+
+        let rowSkills = params.data.skills;
+        let model = this.model;
+        let passed = true;
+
+        RefData.IT_SKILLS.forEach(function (skill) {
+            if (model[ skill ]) {
+                if (!rowSkills[ skill ]) {
+                    passed = false;
+                }
+            }
+        });
+
+        return passed;
+    };
+
+    public isFilterActive() {
+        let model = this.model;
+        let somethingSelected = model.android || model.css || model.html5 || model.mac || model.windows;
+        return somethingSelected;
+    };
+
+    public getModel(): any {
+        return undefined;
+    }
+
+    public setModel(model: any): void {
+    }
+}
+        ]]>
+	</monacoeditor>
+</div>

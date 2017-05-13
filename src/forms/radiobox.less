@@ -1,0 +1,121 @@
+@import "../../less/variables.less";
+ctaf-cp-radiobox {
+  .radioboxCtaf {
+    display: inline-block;
+    vertical-align: bottom;
+    &.radiobox-block {
+      display: block;
+    }
+    &.radiobox-style-primary .radiobox-wrap {
+      background: @brand-primary;
+      border: 2px solid @brand-primary;
+    }
+    &.radiobox-style-success .radiobox-wrap {
+      background: @brand-success;
+      border: 2px solid @brand-success;
+    }
+    &.radiobox-style-info .radiobox-wrap {
+      background: @brand-info;
+      border: 2px solid @brand-info;
+    }
+    &.radiobox-style-warning .radiobox-wrap {
+      background: @brand-warning;
+      border: 2px solid @brand-warning;
+    }
+    &.radiobox-style-danger .radiobox-wrap {
+      background: @brand-danger;
+      border: 2px solid @brand-danger;
+    }
+    &.radiobox-state-false .radiobox-wrap {
+      background: transparent;
+    }
+    &.radiobox-size-lg .radiobox-wrap {
+      width: @height-lg;
+      height: @height-lg;
+      .radiobox-insert {
+        line-height: @height-lg;
+        i {
+          font-size: 24px;
+        }
+      }
+    }
+    &.radiobox-size-md .radiobox-wrap {
+      width: @height-md;
+      height: @height-md;
+      .radiobox-insert {
+        line-height: @height-md;
+        i {
+          font-size: 18px;
+        }
+      }
+    }
+    &.radiobox-size-sm .radiobox-wrap {
+      width: @height-sm;
+      height: @height-sm;
+      .radiobox-insert {
+        line-height: @height-sm;
+        i {
+          font-size: 16px;
+        }
+      }
+    }
+    &.radiobox-size-xs .radiobox-wrap {
+      width: @height-xs;
+      height: @height-xs;
+      .radiobox-insert {
+        line-height: @height-xs - 4px;
+        i {
+          font-size: 12px;
+        }
+      }
+    }
+    &.radiobox-disabled-true .radiobox-wrap .radiobox-mark {
+      display: block;
+      cursor: not-allowed;
+    }
+    &.radiobox-disabled-false .radiobox-wrap .radiobox-mark {
+      display: none;
+      cursor: not-allowed;
+    }
+    .radiobox-wrap {
+      display: inline-block;
+      vertical-align: bottom;
+      position: relative;
+      width: @height-md;
+      height: @height-md;
+      background: @brand-info;
+      border: 2px solid @brand-info;
+      border-radius: 50%;
+      .radiobox-input {
+        display: none;
+      }
+      .radiobox-insert {
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: @height-md;
+        text-align: center;
+        cursor: pointer;
+        i {
+          font-size: 16px;
+          color: #fff;
+        }
+      }
+    }
+    .detail {
+      display: inline;
+      font-size: 18px;
+      color: @text-dark;
+    }
+  }
+  .radiobox-mark {
+    display: none;
+    z-index: 1001;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+  }
+}

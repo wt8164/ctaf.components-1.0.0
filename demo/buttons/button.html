@@ -1,0 +1,173 @@
+<div class="container text-info">
+    <h4 class="text-tips">style</h4>
+    <ctaf-cp-button style="primary" title="default"></ctaf-cp-button>
+    <ctaf-cp-button style="success" title="success"></ctaf-cp-button>
+    <ctaf-cp-button style="info" title="info"></ctaf-cp-button>
+    <ctaf-cp-button style="warning" title="warning"></ctaf-cp-button>
+    <ctaf-cp-button style="danger" title="danger"></ctaf-cp-button>
+    <!--<ctaf-cp-button style="link" title="link"></ctaf-cp-button>-->
+    <div class="jumbtron">
+        <monacoeditor language='html' height="200">
+            <![CDATA[
+<!--默认-->
+<ctaf-cp-button style="primary" title="default"></ctaf-cp-button>
+<!--成功-->
+<ctaf-cp-button style="success" title="success"></ctaf-cp-button>
+<!--信息-->
+<ctaf-cp-button style="info" title="info"></ctaf-cp-button>
+<!--提醒-->
+<ctaf-cp-button style="warning" title="warning"></ctaf-cp-button>
+<!--危险-->
+<ctaf-cp-button style="warning" title="warning"></ctaf-cp-button>
+		]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">size</h4>
+    <ctaf-cp-button size="4" title="超大"></ctaf-cp-button>
+    <ctaf-cp-button title="默认"></ctaf-cp-button>
+    <ctaf-cp-button size="2" title="小号"></ctaf-cp-button>
+    <ctaf-cp-button size="1" title="超小"></ctaf-cp-button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="160">
+            <![CDATA[
+<!--超大-->
+<ctaf-cp-button size="4" title="超大"></ctaf-cp-button>
+<!--默认-->
+<ctaf-cp-button title="默认"></ctaf-cp-button>
+<!--小号-->   		
+<ctaf-cp-button size="2" title="小号"></ctaf-cp-button>
+<!--超小-->   		
+<ctaf-cp-button size="1" title="超小"></ctaf-cp-button>
+   		]]>
+        </monacoeditor>
+    </div>
+    <h4 class="text-tips">active</h4>
+    <ctaf-cp-button style="success" [active]="true" title="active"></ctaf-cp-button>
+    <ctaf-cp-button style="success" title="unactive"></ctaf-cp-button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--active-->
+<ctaf-cp-button style="success" [active]="true" title="active"></ctaf-cp-button>
+    		]]>
+        </monacoeditor>
+
+        <h4 class="text-tips">禁用(disabled)</h4>
+        <ctaf-cp-button [disabled]=true title="disabled"></ctaf-cp-button>
+        <ctaf-cp-button [disabled]=false title="disabled"></ctaf-cp-button>
+        <div class="jumbtron">
+            <monacoeditor language='html' height="50">
+                <![CDATA[
+<!--disabled-->
+<ctaf-cp-button [disabled]="true" title="disabled"></ctaf-cp-button>
+<ctaf-cp-button [disabled]="false" title="disabled"></ctaf-cp-button>
+    		]]>
+            </monacoeditor>
+        </div>
+
+    </div>
+    <h4 class="text-tips">isBlock</h4>
+    <ctaf-cp-button style="success" [isBlock]=true title="Block"></ctaf-cp-button>
+    <ctaf-cp-button style="primary" title="default"></ctaf-cp-button>
+    <div class="blockContainer">
+
+    </div>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--isBlock-->
+<ctaf-cp-button style="success" isBlock="true" title="Block"></ctaf-cp-button>
+    		]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">title</h4>
+    <div class="blockContainer">
+        <ctaf-cp-button style="warning" title="title"></ctaf-cp-button>
+    </div>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--title-->
+<ctaf-cp-button style="success" title="title"></ctaf-cp-button>
+    		]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">preIcon</h4>
+    <ctaf-cp-button style="info" preIcon="fa-camera-retro"></ctaf-cp-button>
+    <ctaf-cp-button title="preIcon" style="info" preIcon="fa-camera-retro"></ctaf-cp-button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--preIcon-->
+<ctaf-cp-button title="preIcon" style="info" preIcon="fa-camera-retro"></ctaf-cp-button>
+    		]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">afterIcon</h4>
+    <ctaf-cp-button title="afterIcon" style="info" afterIcon="fa-camera-retro"></ctaf-cp-button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--preIcon-->
+<ctaf-cp-button title="afterIcon" style="info" afterIcon="fa-camera-retro"></ctaf-cp-button>
+    		]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">showTooltip</h4>
+    <ctaf-cp-button style="primary" title="default" [showTooltip]=true></ctaf-cp-button>
+    <!--<ctaf-cp-button style="link" title="link"></ctaf-cp-button>-->
+    <div class="jumbtron">
+        <monacoeditor language='html' height="60">
+            <![CDATA[
+<!--设置showTooltip为true后，title提醒文字默认为组件文本内容-->
+<ctaf-cp-button style="primary" title="default" [showTooltip]=true></ctaf-cp-button>
+		]]>
+        </monacoeditor>
+    </div>
+
+    <h4 class="text-tips">click</h4>
+    <ctaf-cp-button (click)="buttonClick($event)" title="Output Click"></ctaf-cp-button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="50">
+            <![CDATA[
+<!--click-->
+<ctaf-cp-button (click)="buttonClick($event)" title="Output Click"></ctaf-cp-button>
+    		]]>
+        </monacoeditor>
+    </div>
+
+    <ctaf-cp-button #clickButton title="API Click"></ctaf-cp-button>
+    <div class="jumbtron">
+        <monacoeditor language='html' height="80">
+            <![CDATA[
+<!--html-->
+<!--button.html-->
+<ctaf-cp-button #clickButton title="API Click"></ctaf-cp-button>
+]]>
+        </monacoeditor>
+        <monacoeditor language='typescript' height="300">
+            <![CDATA[
+// typescript
+// button.ts
+@Component({
+	templateUrl: 'button.html',
+	directives: [ButtonComponent]
+})
+export class DemoButtonComponent {
+	@ViewChild('clickButton') clickButton: ButtonComponent;
+
+	ngOnInit() {
+		this.clickButton.click.subscribe((button: ButtonComponent) => {
+			alert(button.title);
+		});
+	}
+}
+]]>
+        </monacoeditor>
+    </div>
+</div>

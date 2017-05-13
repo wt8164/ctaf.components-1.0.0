@@ -1,0 +1,13 @@
+<div [ngClass]="classes">
+    <div class="grid" #scrollElement>
+        <div class="grid-scroll" [style.height.px]="height">
+            <div style="position: relative;" [style.height.px]="elementHeight">
+                <div class="ctaf-cp-widgetpanel position-highlight">
+                    <div class="inner"></div>
+                </div>
+                <ng-content></ng-content>
+                <div #widgetPanelPlaceHolder></div>
+            </div>
+        </div>
+    </div>
+</div>

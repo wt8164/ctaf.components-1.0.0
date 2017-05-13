@@ -1,0 +1,139 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "malihu-custom-scrollbar-plugin@^3.1.5",
+        "scope": null,
+        "escapedName": "malihu-custom-scrollbar-plugin",
+        "name": "malihu-custom-scrollbar-plugin",
+        "rawSpec": "^3.1.5",
+        "spec": ">=3.1.5 <4.0.0",
+        "type": "range"
+      },
+      "/Users/chenxiaozhong/Documents/GitLab/ctaf.components"
+    ],
+    [
+      {
+        "raw": "malihu-custom-scrollbar-plugin@3.1.6-beta",
+        "scope": null,
+        "escapedName": "malihu-custom-scrollbar-plugin",
+        "name": "malihu-custom-scrollbar-plugin",
+        "rawSpec": "3.1.6-beta",
+        "spec": "3.1.6-beta",
+        "type": "version"
+      },
+      "/Users/chenxiaozhong/Documents/GitLab/ctaf.components"
+    ],
+    [
+      {
+        "raw": "malihu-custom-scrollbar-plugin@3.1.7-beta.0",
+        "scope": null,
+        "escapedName": "malihu-custom-scrollbar-plugin",
+        "name": "malihu-custom-scrollbar-plugin",
+        "rawSpec": "3.1.7-beta.0",
+        "spec": "3.1.7-beta.0",
+        "type": "version"
+      },
+      "/Users/chenxiaozhong/Documents/GitLab/ctaf.components"
+    ],
+    [
+      {
+        "raw": "malihu-custom-scrollbar-plugin@3.1.6-beta.0",
+        "scope": null,
+        "escapedName": "malihu-custom-scrollbar-plugin",
+        "name": "malihu-custom-scrollbar-plugin",
+        "rawSpec": "3.1.6-beta.0",
+        "spec": "3.1.6-beta.0",
+        "type": "version"
+      },
+      "/Users/chenxiaozhong/Documents/GitLab/ctaf.components"
+    ]
+  ],
+  "_cnpm_publish_time": 1468189115216,
+  "_from": "malihu-custom-scrollbar-plugin@3.1.6-beta.0",
+  "_id": "malihu-custom-scrollbar-plugin@3.1.6-beta.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/malihu-custom-scrollbar-plugin",
+  "_nodeVersion": "6.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/malihu-custom-scrollbar-plugin-3.1.5.tgz_1468189112807_0.01810723333619535"
+  },
+  "_npmUser": {},
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "malihu-custom-scrollbar-plugin@3.1.6-beta.0",
+    "scope": null,
+    "escapedName": "malihu-custom-scrollbar-plugin",
+    "name": "malihu-custom-scrollbar-plugin",
+    "rawSpec": "3.1.6-beta.0",
+    "spec": "3.1.6-beta.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "http://r.shuishan-tech.com/malihu-custom-scrollbar-plugin/-/malihu-custom-scrollbar-plugin-3.1.6-beta.0.tgz",
+  "_shasum": "3e4b8faff9d98ebd54679d1843b85c8a3035f24a",
+  "_shrinkwrap": null,
+  "_spec": "malihu-custom-scrollbar-plugin@3.1.6-beta.0",
+  "_where": "/Users/chenxiaozhong/Documents/GitLab/ctaf.components",
+  "author": {
+    "name": "malihu",
+    "url": "http://manos.malihu.gr"
+  },
+  "bugs": {
+    "url": "https://github.com/malihu/malihu-custom-scrollbar-plugin/issues"
+  },
+  "dependencies": {
+    "jquery-mousewheel": "3.1.14-beta.0"
+  },
+  "description": "Highly customizable custom scrollbar jQuery plugin, featuring vertical/horizontal scrollbars, scrolling momentum, mouse-wheel, keyboard and touch support user defined callbacks etc.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "3e4b8faff9d98ebd54679d1843b85c8a3035f24a",
+    "size": 45297,
+    "noattachment": false,
+    "tarball": "http://r.shuishan-tech.com/malihu-custom-scrollbar-plugin/-/malihu-custom-scrollbar-plugin-3.1.6-beta.0.tgz"
+  },
+  "files": [
+    "jquery.mCustomScrollbar.js",
+    "jquery.mCustomScrollbar.concat.min.js",
+    "jquery.mCustomScrollbar.css",
+    "mCSB_buttons.png",
+    "readme.md"
+  ],
+  "gitHead": "eac2b0af71a7ca06cc19e28d15ba60f6db2dfd29",
+  "homepage": "http://manos.malihu.gr/jquery-custom-content-scroller",
+  "jam": {
+    "dependencies": {
+      "jquery-mousewheel": "3.1.15-beta.0"
+    }
+  },
+  "keywords": [
+    "jquery-plugin",
+    "custom-scrollbar",
+    "scrollbar"
+  ],
+  "license": "MIT",
+  "main": "./jquery.mCustomScrollbar.js",
+  "maintainers": [
+    {
+      "name": "malihu",
+      "email": "manos@malihu.gr"
+    }
+  ],
+  "name": "malihu-custom-scrollbar-plugin",
+  "optionalDependencies": {},
+  "publish_time": 1468189115216,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malihu/malihu-custom-scrollbar-plugin.git"
+  },
+  "scripts": {},
+  "version": "3.1.6-beta.0"
+}
